@@ -5,7 +5,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "main": ".open-next/worker.js",
-  "name": "totrmeme-online",
+  "name": "aipolaroidphoto-org",
   "compatibility_date": "2024-12-30",
   "compatibility_flags": [
     // Enable Node.js API
@@ -31,7 +31,7 @@
   // Whether Wrangler should keep variables configured in the dashboard on deploy
   "keep_vars": true,
   "assets": {
-    "binding": "ASSETS",
+    "binding": "STATIC_ASSETS",
     "directory": ".open-next/assets"
   },
   // https://developers.cloudflare.com/workers/wrangler/configuration/#observability
@@ -66,9 +66,9 @@
    * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
    */
   "vars": {
-    "NEXT_PUBLIC_BASE_URL": "https://totrmeme.online",
-    "NEXT_URL": "https://totrmeme.online",
-    "VERCEL_URL": "totrmeme.online",
+    "NEXT_PUBLIC_BASE_URL": "https://aipolaroidphoto.org",
+    "NEXT_URL": "https://aipolaroidphoto.org",
+    "VERCEL_URL": "aipolaroidphoto.org",
     "DISABLE_IMAGE_OPTIMIZATION": "true",
     "NEXT_PUBLIC_DEMO_WEBSITE": "false"
   },
@@ -76,6 +76,7 @@
    * Note: Use secrets to store sensitive data.
    * https://developers.cloudflare.com/workers/configuration/secrets/
    */
+  "pages_build_output_dir": ".next",
   "kv_namespaces": [],
   /**
    * R2 Buckets (required when using r2-incremental-cache)
@@ -85,7 +86,7 @@
   "r2_buckets": [
     {
       "binding": "NEXT_INC_CACHE_R2_BUCKET",
-      "bucket_name": "totrmeme-cache"
+      "bucket_name": "aipolaroidphoto-cache"
     }
   ]
 }

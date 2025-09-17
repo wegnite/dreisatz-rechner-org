@@ -21,8 +21,13 @@ export async function generateMetadata({
   });
 }
 
-export default async function WaitlistPage() {
-  const t = await getTranslations('WaitlistPage');
+export default async function WaitlistPage({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'WaitlistPage' });
 
   return (
     <Container className="py-16 px-4">

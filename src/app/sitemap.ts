@@ -9,15 +9,18 @@ import { getBaseUrl } from '../lib/urls/urls';
 type Href = Parameters<typeof getLocalePathname>[0]['href'];
 
 /**
- * Static routes prioritized for TOTR Meme
+ * Static routes prioritized for AI Polaroid Photo
  */
 const staticRoutes = [
   '/',
-  '/meme/totr',
-  '/generator/totr',
-  '/download/totr-template',
-  '/compare/totr-vs-py',
-  '/trends/totr',
+  '/ai/image',
+  '/ai/polaroid',
+  '/ai/polaroid/generator',
+  '/ai/polaroid/templates',
+  '/ai/vintage-photo',
+  '/tools',
+  '/gallery',
+  '/tutorials',
   '/policy/ugc',
   // legal/basic pages
   '/privacy',
@@ -47,11 +50,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   > = {
     '/': { priority: 1.0, changeFrequency: 'weekly' },
-    '/meme/totr': { priority: 1.0, changeFrequency: 'weekly' },
-    '/generator/totr': { priority: 0.9, changeFrequency: 'weekly' },
-    '/download/totr-template': { priority: 0.9, changeFrequency: 'monthly' },
-    '/compare/totr-vs-py': { priority: 0.8, changeFrequency: 'monthly' },
-    '/trends/totr': { priority: 0.8, changeFrequency: 'daily' },
+    '/ai/image': { priority: 1.0, changeFrequency: 'weekly' },
+    '/ai/polaroid': { priority: 1.0, changeFrequency: 'weekly' },
+    '/ai/polaroid/generator': { priority: 0.95, changeFrequency: 'weekly' },
+    '/ai/polaroid/templates': { priority: 0.9, changeFrequency: 'weekly' },
+    '/ai/vintage-photo': { priority: 0.9, changeFrequency: 'weekly' },
+    '/tools': { priority: 0.8, changeFrequency: 'monthly' },
+    '/gallery': { priority: 0.8, changeFrequency: 'daily' },
+    '/tutorials': { priority: 0.7, changeFrequency: 'weekly' },
     '/policy/ugc': { priority: 0.6, changeFrequency: 'yearly' },
     '/privacy': { priority: 0.5, changeFrequency: 'yearly' },
     '/terms': { priority: 0.5, changeFrequency: 'yearly' },
@@ -74,7 +80,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   );
 
   // Blog routes temporarily disabled to avoid 404 pages in sitemap
-  // TODO: Re-enable when blog content is ready for TOTR Meme
+  // TODO: Re-enable when blog content is ready for AI Polaroid Photo
   /*
   if (websiteConfig.blog.enable) {
     // add categories
@@ -163,7 +169,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   */
 
   // Docs routes temporarily disabled to avoid 404 pages in sitemap
-  // TODO: Re-enable when docs content is relevant for TOTR Meme
+  // TODO: Re-enable when docs content is relevant for AI Polaroid Photo
   /*
   if (websiteConfig.docs.enable) {
     const docsParams = source.generateParams();

@@ -9,10 +9,10 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   await params;
   return constructMetadata({
-    title: 'UGC & Copyright Policy — TOTR Meme',
+    title: 'UGC & Copyright Policy — AI Polaroid Photo',
     description:
-      'Users may upload only their own or licensed material. We use official embeds only and handle takedown requests within 24h.',
-    canonicalUrl: 'https://totrmeme.online/policy/ugc',
+      'Creators may upload only media they have rights to use. We review takedown requests within 24 hours and provide safe remix tools.',
+    canonicalUrl: 'https://aipolaroidphoto.org/policy/ugc',
   });
 }
 
@@ -21,16 +21,18 @@ export default function Page() {
     <main className="mx-auto max-w-3xl px-6 py-12">
       <h1 className="text-3xl font-bold">UGC & Copyright Policy</h1>
       <p className="mt-4 text-muted-foreground">
-        We only provide parody-style base materials and tools. Do not upload or
-        distribute copyrighted IP unless you have rights. For rights issues,
-        please contact us with URLs and details. We aim to respond within 24h.
+        AI Polaroid Photo lets you combine your own photos with AI-generated
+        effects. Only upload images, prompts, and overlays you have permission to
+        use. We do not host unlicensed celebrity likenesses or commercial IP.
+        For takedown requests, email support@aipolaroidphoto.org with the
+        relevant URLs and proof of ownership. We respond within 24 hours.
       </p>
       <div className="mt-6 space-x-4">
-        <a className="underline" href="/generator/totr">
-          Back to Generator →
+        <a className="underline" href="/ai/polaroid/generator">
+          Back to generator →
         </a>
-        <a className="underline" href="/meme/totr">
-          Learn about TOTR →
+        <a className="underline" href="/terms">
+          Review Terms of Service →
         </a>
       </div>
     </main>

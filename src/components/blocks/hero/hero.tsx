@@ -59,7 +59,7 @@ export default function HeroSection() {
                     className="hover:bg-accent group mx-auto flex w-fit items-center gap-2 rounded-full border p-1 pl-4"
                   >
                     <span className="text-foreground text-sm">
-                      {t('introduction')}
+                      {t('badge')}
                     </span>
 
                     <div className="size-6 overflow-hidden rounded-full duration-500">
@@ -123,7 +123,7 @@ export default function HeroSection() {
                       className="rounded-xl px-5 text-base"
                     >
                       <LocaleLink href={linkPrimary}>
-                        <span className="text-nowrap">{t('primary')}</span>
+                        <span className="text-nowrap">{t('primaryCta')}</span>
                       </LocaleLink>
                     </Button>
                   </div>
@@ -135,7 +135,7 @@ export default function HeroSection() {
                     className="h-10.5 rounded-xl px-5"
                   >
                     <LocaleLink href={linkSecondary}>
-                      <span className="text-nowrap">{t('secondary')}</span>
+                      <span className="text-nowrap">{t('secondaryCta')}</span>
                     </LocaleLink>
                   </Button>
                 </AnimatedGroup>

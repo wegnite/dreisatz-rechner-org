@@ -158,7 +158,7 @@ export const useCanvasStore = create<CanvasState & CanvasActions>(
           const shouldUpdate = (
             Object.entries(updates) as [
               keyof CanvasText,
-              CanvasText[keyof CanvasText] | undefined
+              CanvasText[keyof CanvasText] | undefined,
             ][]
           ).some(([key, value]) => {
             if (value === undefined) return false;
@@ -216,7 +216,7 @@ export const useCanvasStore = create<CanvasState & CanvasActions>(
           const shouldUpdate = (
             Object.entries(updates) as [
               keyof CanvasImage,
-              CanvasImage[keyof CanvasImage] | undefined
+              CanvasImage[keyof CanvasImage] | undefined,
             ][]
           ).some(([key, value]) => {
             if (value === undefined) return false;

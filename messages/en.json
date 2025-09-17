@@ -1,8 +1,8 @@
 {
   "Metadata": {
-    "name": "TOTR Meme",
-    "title": "TOTR Meme (TOTЯ, Тотя) — Generator & Guide",
-    "description": "Create viral TOTR memes instantly! Learn about the Russian brainrot meme that got 2M+ plays. Free generator, templates & complete guide."
+    "name": "AI Polaroid Photo",
+    "title": "AI Polaroid Photo Generator — Create Nostalgic AI-Generated Polaroid Style Photos",
+    "description": "Create stunning AI-generated polaroid-style photos with vintage filters, instant effects, and nostalgic aesthetics. Transform your images into beautiful polaroid memories."
   },
   "Common": {
     "login": "Log in",
@@ -297,161 +297,83 @@
   },
   "Marketing": {
     "navbar": {
-      "features": {
-        "title": "Features"
+      "generator": {
+        "title": "Generator"
       },
-      "pricing": {
-        "title": "Pricing"
+      "templates": {
+        "title": "Templates"
+      },
+      "vintage": {
+        "title": "Vintage Mode"
+      },
+      "gallery": {
+        "title": "Gallery"
+      },
+      "tutorials": {
+        "title": "Tutorials"
       },
       "blog": {
         "title": "Blog"
-      },
-      "docs": {
-        "title": "Docs"
-      },
-      "ai": {
-        "title": "AI Tools",
-        "items": {
-          "text": {
-            "title": "AI Text",
-            "description": "Show how to use AI to write stunning text"
-          },
-          "image": {
-            "title": "AI Image",
-            "description": "Thwordle daily word puzzle: guess the word, improve vocabulary, compete with friends"
-          },
-          "chat": {
-            "title": "AI Chat",
-            "description": "Show how to use AI to chat with your customers"
-          },
-          "video": {
-            "title": "AI Video",
-            "description": "Show how to use AI to generate amazing videos"
-          },
-          "audio": {
-            "title": "AI Audio",
-            "description": "Show how to use AI to generate wonderful audio"
-          }
-        }
       },
       "pages": {
         "title": "Pages",
         "items": {
           "tools": {
             "title": "Curated Tools",
-            "description": "Thwordle game tools and word lists"
+            "description": "Prompt packs, integrations, and workflow guides for AI polaroids"
           },
           "about": {
             "title": "About",
-            "description": "Learn more about our company, mission, and values"
+            "description": "Learn more about our team and product vision"
           },
           "contact": {
             "title": "Contact",
-            "description": "Get in touch with our team for support or inquiries"
+            "description": "Partner with us or get support"
           },
           "waitlist": {
             "title": "Waitlist",
-            "description": "Join our waitlist for latest news and updates"
-          },
-          "changelog": {
-            "title": "Changelog",
-            "description": "See the latest updates to our products"
+            "description": "Join the feature preview waitlist"
           },
           "roadmap": {
             "title": "Roadmap",
-            "description": "Explore our future plans and upcoming features"
+            "description": "See upcoming generator releases"
+          },
+          "changelog": {
+            "title": "Changelog",
+            "description": "Review the latest improvements"
           },
           "cookiePolicy": {
             "title": "Cookie Policy",
-            "description": "How we use the cookies on our website"
+            "description": "Understand how we use cookies"
           },
           "privacyPolicy": {
             "title": "Privacy Policy",
-            "description": "How we protect and handle your data"
+            "description": "How we protect your data"
           },
           "termsOfService": {
             "title": "Terms of Service",
-            "description": "The legal agreement between you and our company"
-          }
-        }
-      },
-      "blocks": {
-        "title": "Blocks",
-        "items": {
-          "magicui": {
-            "title": "MagicUI Blocks"
-          },
-          "hero-section": {
-            "title": "Hero Blocks"
-          },
-          "logo-cloud": {
-            "title": "Logo Cloud Blocks"
-          },
-          "integrations": {
-            "title": "Integrations Blocks"
-          },
-          "features": {
-            "title": "Features Blocks"
-          },
-          "content": {
-            "title": "Content Blocks"
-          },
-          "stats": {
-            "title": "Stats Blocks"
-          },
-          "team": {
-            "title": "Team Blocks"
-          },
-          "testimonials": {
-            "title": "Testimonials Blocks"
-          },
-          "callToAction": {
-            "title": "Call to Action Blocks"
-          },
-          "footer": {
-            "title": "Footer Blocks"
-          },
-          "pricing": {
-            "title": "Pricing Blocks"
-          },
-          "comparator": {
-            "title": "Comparator Blocks"
-          },
-          "faq": {
-            "title": "FAQ Blocks"
-          },
-          "login": {
-            "title": "Login Blocks"
-          },
-          "signup": {
-            "title": "Signup Blocks"
-          },
-          "forgot-password": {
-            "title": "Forgot Password Blocks"
-          },
-          "contact": {
-            "title": "Contact Blocks"
+            "description": "Read our platform terms"
           }
         }
       }
     },
     "footer": {
-      "tagline": "Challenge your mind with daily word puzzles",
+      "tagline": "Create nostalgic AI polaroid photos in minutes",
       "product": {
         "title": "Product",
         "items": {
-          "features": "Features",
-          "pricing": "Pricing",
-          "faq": "FAQ"
+          "generator": "Generator",
+          "templates": "Templates",
+          "vintage": "Vintage Mode"
         }
       },
       "resources": {
         "title": "Resources",
         "items": {
-          "blog": "Blog",
+          "gallery": "Gallery",
+          "tutorials": "Tutorials",
           "docs": "Documentation",
-          "changelog": "Changelog",
-          "roadmap": "Roadmap"
+          "blog": "Blog"
         }
       },
       "company": {
@@ -459,6 +381,7 @@
         "items": {
           "about": "About",
           "contact": "Contact",
+          "changelog": "Changelog",
           "waitlist": "Waitlist"
         }
       },
@@ -752,249 +675,140 @@
     }
   },
   "HomePage": {
-    "title": "Thwordle - Daily Word Puzzle",
-    "description": "Challenge your vocabulary with Thwordle, the daily word puzzle game that tests your deduction skills.",
+    "title": "AI Polaroid Photo Generator — Nostalgic Instant Memories",
+    "description": "Create nostalgic instant camera style photos with AI-powered filters, film grain, and storytelling templates for share-ready memories in minutes.",
     "hero": {
-      "title": "Master words, challenge your mind",
-      "description": "Thwordle is the ultimate daily word puzzle game that challenges your vocabulary and deduction skills.",
-      "introduction": "Introducing Thwordle",
-      "primary": "Get Started",
-      "secondary": "See Demo"
+      "badge": "Instant nostalgia, powered by AI",
+      "title": "Capture memories in classic polaroid style",
+      "description": "Transform any photo into a warm, retro instant print with authentic white borders, film grain, and cinematic lighting. No prompt skills required.",
+      "primaryCta": "Launch Generator",
+      "secondaryCta": "Browse Templates"
     },
-    "logocloud": {
-      "title": "Your favorite companies are our partners"
-    },
-    "integration": {
-      "title": "Integrations",
-      "subtitle": "Integrate with your favorite tools",
-      "description": "Connect seamlessly with popular platforms and services to enhance your workflow.",
-      "learnMore": "Learn More",
-      "items": {
-        "item-1": {
-          "title": "Google Gemini",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
+    "stats": {
+      "title": "Why creators choose AI Polaroid Photo",
+      "items": [
+        {
+          "value": "2.3M+",
+          "label": "AI polaroid photos generated"
         },
-        "item-2": {
-          "title": "Replit",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
+        {
+          "value": "140K",
+          "label": "Daily active storytellers"
         },
-        "item-3": {
-          "title": "MagicUI",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        },
-        "item-4": {
-          "title": "VSCodium",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        },
-        "item-5": {
-          "title": "MediaWiki",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        },
-        "item-6": {
-          "title": "Google PaLM",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
+        {
+          "value": "92%",
+          "label": "Users share within 10 minutes"
         }
-      }
-    },
-    "integration2": {
-      "title": "Integrate with your favorite tools",
-      "description": "Connect seamlessly with popular platforms and services to enhance your workflow.",
-      "primaryButton": "Get Started",
-      "secondaryButton": "See Demo"
+      ]
     },
     "features": {
-      "title": "Features",
-      "subtitle": "The features of your product",
-      "description": "Write the description of your product here",
-      "items": {
-        "item-1": {
-          "title": "Product Feature One",
-          "description": "Please write the detailed description of feature one here, make it as detailed as possible, make it more attractive to users"
+      "title": "Crafted for social storytelling",
+      "description": "Everything you need to turn everyday moments into shareable, emotional keepsakes.",
+      "items": [
+        {
+          "title": "Authentic film finishes",
+          "description": "Choose from calibrated looks inspired by Kodak Portra, Fujifilm FP-100C, SX-70 and custom Nano Banana presets."
         },
-        "item-2": {
-          "title": "Product Feature Two",
-          "description": "Please write the detailed description of feature two here, make it as detailed as possible, make it more attractive to users"
+        {
+          "title": "Scene-aware rendering",
+          "description": "Gemini analyzes pose, lighting, and framing to keep faces natural while adding dreamy highlights and glow."
         },
-        "item-3": {
-          "title": "Product Feature Three",
-          "description": "Please write the detailed description of feature three here, make it as detailed as possible, make it more attractive to users"
+        {
+          "title": "Emotion-driven prompts",
+          "description": "Built-in storytelling templates for celeb meetups, reunion hugs, vintage fashion shoots, and more."
         },
-        "item-4": {
-          "title": "Product Feature Four",
-          "description": "Please write the detailed description of feature four here, make it as detailed as possible, make it more attractive to users"
+        {
+          "title": "One-click social outputs",
+          "description": "Export optimized crops for Instagram Stories, Xiaohongshu posts, and printable 3×4\" keepsakes."
         }
-      }
+      ]
     },
-    "features2": {
-      "title": "Features2",
-      "subtitle": "The features of your product",
-      "description": "Write the description of your product here",
-      "feature-1": "Product Feature One",
-      "feature-2": "Product Feature Two",
-      "feature-3": "Product Feature Three",
-      "feature-4": "Product Feature Four"
-    },
-    "features3": {
-      "title": "Features3",
-      "subtitle": "The features of your product",
-      "description": "Write the description of your product here",
-      "items": {
-        "item-1": {
-          "title": "Product Feature One",
-          "description": "Please write the detailed description of feature one here"
+    "workflow": {
+      "title": "Create in three simple steps",
+      "steps": [
+        {
+          "title": "Upload & describe",
+          "description": "Drop in a selfie or group photo and choose the mood you want — from golden-hour romantic to 90s camcorder."
         },
-        "item-2": {
-          "title": "Product Feature Two",
-          "description": "Please write the detailed description of feature two here"
+        {
+          "title": "Pick a template",
+          "description": "Select a ready-made prompt pack that styles borders, captions, and filters for your story."
         },
-        "item-3": {
-          "title": "Product Feature Three",
-          "description": "Please write the detailed description of feature three here"
-        },
-        "item-4": {
-          "title": "Product Feature Four",
-          "description": "Please write the detailed description of feature four here"
-        },
-        "item-5": {
-          "title": "Product Feature Five",
-          "description": "Please write the detailed description of feature five here"
-        },
-        "item-6": {
-          "title": "Product Feature Six",
-          "description": "Please write the detailed description of feature six here"
+        {
+          "title": "Generate & refine",
+          "description": "Review up to four variations, tweak grain or lighting, then save, download, or share instantly."
         }
-      }
+      ],
+      "description": "Go from photo upload to share-ready polaroids without touching complex prompt strings."
+    },
+    "templates": {
+      "title": "Template collections included",
+      "items": [
+        {
+          "title": "Celeb Selfie Set",
+          "description": "Meet your idols with natural posing, flash bloom, and autograph overlays."
+        },
+        {
+          "title": "Reunion Stories",
+          "description": "Warm grain and soft focus tuned for hugging your childhood self or long-distance family."
+        },
+        {
+          "title": "Retro Fashion Diaries",
+          "description": "High-contrast film with stylized typography for Y2K street snaps and magazine covers."
+        }
+      ],
+      "description": "Curated prompt packs and overlays for every storytelling moment."
+    },
+    "testimonials": {
+      "title": "Loved by nostalgic creators",
+      "items": [
+        {
+          "name": "Lena · Lifestyle blogger",
+          "quote": "“My Xiaohongshu followers triple-tapped the Gemini polaroids — they look like real film from my dad's archive.”"
+        },
+        {
+          "name": "Marcus · Wedding filmmaker",
+          "quote": "“We deliver AI polaroid thank-you cards minutes after the ceremony. Couples are obsessed.”"
+        },
+        {
+          "name": "Aya · K-pop fan artist",
+          "quote": "“The celeb meet and greet prompts are magic. I can finally imagine polaroids with my bias.”"
+        }
+      ],
+      "description": "Creators across weddings, fandoms, and lifestyle blogs rely on AI Polaroid Photo to deliver instant nostalgia."
+    },
+    "cta": {
+      "title": "Ready to print your memories?",
+      "description": "Start with 2 free AI polaroid renders daily. Upgrade for HD exports, batch generation, and custom LoRA styles.",
+      "primary": "Start for free",
+      "secondary": "View pricing"
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "question": "Do I need prompt engineering experience?",
+          "answer": "No. Our curated templates layer Gemini prompts, camera metadata, and filter settings automatically. You can still customize keywords if you want finer control."
+        },
+        {
+          "question": "Can I print the photos?",
+          "answer": "Yes. Download high-resolution JPEGs optimized for 3×4\" polaroid printers or send directly to our print partners from the export panel."
+        },
+        {
+          "question": "Is my data private?",
+          "answer": "Uploads are encrypted, auto-deleted after 72 hours, and never used to train third-party models. Enable local-only processing in settings for extra control."
+        },
+        {
+          "question": "Which devices are supported?",
+          "answer": "AI Polaroid Photo works in modern mobile and desktop browsers. Install the PWA for a native-like experience on iOS and Android."
+        }
+      ],
+      "subtitle": "Answers to common questions about tips, printing, privacy, and supported devices."
     },
     "pricing": {
       "title": "Pricing",
-      "subtitle": "Pricing",
-      "description": "Choose the plan that works best for you"
-    },
-    "faqs": {
-      "title": "FAQ",
-      "subtitle": "Frequently Asked Questions",
-      "items": {
-        "item-1": {
-          "question": "Do you offer a free trial?",
-          "answer": "Yes, we offer a 7-day free trial."
-        },
-        "item-2": {
-          "question": "How do I cancel my subscription?",
-          "answer": "You can cancel your subscription by visiting the billing page."
-        },
-        "item-3": {
-          "question": "Can I change my plan?",
-          "answer": "Yes, you can change your plan at any time by visiting the billing page."
-        },
-        "item-4": {
-          "question": "What is the refund policy?",
-          "answer": "We offer a 30-day money-back guarantee if you are not happy with our product."
-        },
-        "item-5": {
-          "question": "Can't find what you're looking for?",
-          "answer": "Please contact our customer support team at support@mksaas.com"
-        }
-      }
-    },
-    "testimonials": {
-      "title": "Testimonials",
-      "subtitle": "What our customers are saying",
-      "items": {
-        "item-1": {
-          "name": "Jonathan Yombo",
-          "role": "Software Engineer",
-          "image": "https://randomuser.me/api/portraits/men/1.jpg",
-          "quote": "MkSaaS is really extraordinary and very practical, no need to break your head. A real gold mine."
-        },
-        "item-2": {
-          "name": "Yves Kalume",
-          "role": "GDE - Android",
-          "image": "https://randomuser.me/api/portraits/men/6.jpg",
-          "quote": "With no experience in webdesign I just redesigned my entire website in a few minutes with tailwindcss thanks to MkSaaS."
-        },
-        "item-3": {
-          "name": "Yucel Faruksahan",
-          "role": "Tailkits Creator",
-          "image": "https://randomuser.me/api/portraits/men/7.jpg",
-          "quote": "Great work on MkSaaS template. This is one of the best personal website that I have seen so far :)"
-        },
-        "item-4": {
-          "name": "Anonymous author",
-          "role": "Product Manager",
-          "image": "https://randomuser.me/api/portraits/men/8.jpg",
-          "quote": "I downloaded the one of MkSaaS template which is very clear to understand at the start and you could modify the codes/blocks to fit perfectly on your purpose of the page."
-        },
-        "item-5": {
-          "name": "Shekinah Tshiokufila",
-          "role": "Senior Software Engineer",
-          "image": "https://randomuser.me/api/portraits/men/4.jpg",
-          "quote": "MkSaaS is redefining the standard of web design, with these blocks it provides an easy and efficient way for those who love beauty but may lack the time to implement it."
-        },
-        "item-6": {
-          "name": "Oketa Fred",
-          "role": "Fullstack Developer",
-          "image": "https://randomuser.me/api/portraits/men/2.jpg",
-          "quote": "I absolutely love MkSaaS! The component blocks are beautifully designed and easy to use, which makes creating a great-looking website a breeze."
-        },
-        "item-7": {
-          "name": "Zeki",
-          "role": "Founder of ChatExtend",
-          "image": "https://randomuser.me/api/portraits/men/5.jpg",
-          "quote": "MkSaaS is the perfect fusion of simplicity and versatility, enabling us to create UIs that are as stunning as they are user-friendly."
-        },
-        "item-8": {
-          "name": "Joseph Kitheka",
-          "role": "Fullstack Developer",
-          "image": "https://randomuser.me/api/portraits/men/9.jpg",
-          "quote": "MkSaaS has transformed the way I develop web applications. Their extensive collection of UI components, blocks, and templates has significantly accelerated my workflow."
-        },
-        "item-9": {
-          "name": "Khatab Wedaa",
-          "role": "MerakiUI Creator",
-          "image": "https://randomuser.me/api/portraits/men/10.jpg",
-          "quote": "MkSaaS is an elegant, clean, and responsive tailwind css components it's very helpful to start fast with your project."
-        },
-        "item-10": {
-          "name": "Rodrigo Aguilar",
-          "role": "TailwindAwesome Creator",
-          "image": "https://randomuser.me/api/portraits/men/11.jpg",
-          "quote": "I love MkSaaS ❤️. The component blocks are well-structured, simple to use, and beautifully designed. It makes it really easy to have a good-looking website in no time."
-        },
-        "item-11": {
-          "name": "Eric Ampire",
-          "role": "@GoogleDevExpert for Android",
-          "image": "https://randomuser.me/api/portraits/men/12.jpg",
-          "quote": "MkSaaS templates are the perfect solution for anyone who wants to create a beautiful and functional website without any web design experience."
-        },
-        "item-12": {
-          "name": "Roland Tubonge",
-          "role": "Software Engineer",
-          "image": "https://randomuser.me/api/portraits/men/13.jpg",
-          "quote": "MkSaaS is so well designed that even with a very poor knowledge of web design you can do miracles. Let yourself be seduced!"
-        }
-      }
-    },
-    "stats": {
-      "title": "Stats",
-      "subtitle": "Thwordle in numbers",
-      "description": "Thwordle brings daily word challenges to puzzle enthusiasts worldwide",
-      "items": {
-        "item-1": {
-          "title": "Stars on GitHub"
-        },
-        "item-2": {
-          "title": "Active Users"
-        },
-        "item-3": {
-          "title": "Powered Apps"
-        }
-      }
-    },
-    "calltoaction": {
-      "title": "Start Playing",
-      "description": "Start your daily word challenge with Thwordle today",
-      "primaryButton": "Get Started",
-      "secondaryButton": "See Demo"
+      "subtitle": "Choose the plan that fits your creative flow",
+      "description": "Start free with two daily renders. Upgrade for HD exports, batch generation, and custom styles."
     }
   },
   "AITextPage": {
@@ -1261,5 +1075,269 @@
       "createMeme": "Create Your TOTR",
       "joinCommunity": "Join Community"
     }
+  },
+  "TotyaPage": {
+    "hero": {
+      "eyebrow": "TOTЯ 深度解析",
+      "title": "TOTЯ Meme：故事、原声与粉丝文化一页看懂",
+      "subtitle": "从最初的双海绵宝宝画面到全球脑腐热潮，汇集视频、时间线、梗点与创作灵感，帮你快速掌握 TOTЯ（Тотя）现象。",
+      "ctaGenerator": "立即制作 TOTR 表情",
+      "ctaCompare": "比较 TOTR 与 ПЫ"
+    },
+    "spotlight": {
+      "title": "TOTЯ 关键看点",
+      "items": [
+        "起源于 2025 年 9 月的 TikTok 视频，配乐选用《Stay》混音版",
+        "核心视觉是两只无裤海绵宝宝，大喊 Тотя（发音接近 tot-ya）",
+        "与 ПЫ、Italian Brainrot 等梗形成跨语种脑腐宇宙",
+        "粉丝二创包含 3D 渲染、AI 重制、字幕混剪等多种形态"
+      ]
+    },
+    "videos": {
+      "title": "热门 TOTЯ 视频合集",
+      "description": "精选 TOTЯ 搜索播放列表，覆盖原始片段、粉丝混剪与 TOTR vs ПЫ 对决。",
+      "items": {
+        "origin": {
+          "title": "原始 TOTЯ 片段合集",
+          "description": "观看最早走红的 TOTЯ 视频与各路转载版本。",
+          "platform": "YouTube 搜索",
+          "duration": "自动播放列表"
+        },
+        "comparison": {
+          "title": "TOTЯ vs ПЫ 混剪",
+          "description": "粉丝对比两大脑腐角色的剪辑合集。",
+          "platform": "YouTube 搜索",
+          "duration": "自动播放列表"
+        },
+        "remix": {
+          "title": "音乐混音与粉丝创作",
+          "description": "收录二创配乐、3D 动画与字幕再加工版本。",
+          "platform": "YouTube 搜索",
+          "duration": "自动播放列表"
+        }
+      }
+    },
+    "timeline": {
+      "title": "TOTЯ 里程碑",
+      "items": {
+        "origin": {
+          "date": "2025-09-01",
+          "title": "TikTok 用户首发 TOTЯ",
+          "description": "账号 @ddghfjwiedi3929 发布了两只海绵宝宝拥抱的 TOTЯ 视频，24 小时内破 200 万播放。"
+        },
+        "remix": {
+          "date": "2025-09-04",
+          "title": "混音版本引爆",
+          "description": "Stay Remix 与加速版配音登上 For You，催生大量音源翻录与口型对嘴作品。"
+        },
+        "vs": {
+          "date": "2025-09-08",
+          "title": "TOTЯ vs ПЫ 热议",
+          "description": "社区开始比较 TOTЯ 与 ПЫ 的设定，引发大量投票贴与 meme 辩论。"
+        },
+        "global": {
+          "date": "2025-09-15",
+          "title": "跨语种扩散",
+          "description": "YouTube Shorts、B站与 Instagram Reels 出现 TOTЯ 混剪，字幕被翻译成多国语言。"
+        }
+      }
+    },
+    "guide": {
+      "title": "一分钟掌握 TOTЯ 梗",
+      "steps": [
+        "记住关键台词：\"Тотяаа!\" 与拥抱动作",
+        "使用 Stay Remix 或其他 120-140 BPM 加速音源",
+        "叠加明亮色块与闪烁字幕突出反差萌",
+        "结尾可添加 TOTR/TOTЯ/PЫ 的彩蛋或投票互动"
+      ]
+    },
+    "cta": {
+      "title": "想亲自玩 TOTЯ？",
+      "description": "打开在线生成器套用模板，或下载合规素材进行二次创作。",
+      "primary": "打开 TOTR/TOTЯ 生成器",
+      "secondary": "浏览模板资源"
+    },
+    "faq": {
+      "title": "常见问题",
+      "items": {
+        "origin": {
+          "question": "TOTЯ 与 TOTR 有什么区别？",
+          "answer": "TOTЯ 是俄语拼写（读音接近 tot-ya），在英语社群常写成 TOTR。视觉主体一致，但粉丝二创会用 TOTЯ 区分俄语原梗。"
+        },
+        "music": {
+          "question": "官方使用的配乐是什么？",
+          "answer": "最常见的是 Kid LAROI x Justin Bieber《Stay》的加速混音，亦有创作者使用鼓点更重的 club remix。"
+        },
+        "copyright": {
+          "question": "可以直接下载这些视频吗？",
+          "answer": "建议通过官方嵌入或在获得授权后再下载。本站提供的是版权友好的模板与文案框架，帮助你安全创作。"
+        }
+      }
+    }
+  },
+  "AIPolaroidPage": {
+    "title": "AI Polaroid Photo",
+    "description": "Everything you need to generate nostalgic instant photos online.",
+    "hero": {
+      "title": "Design your AI polaroid experience",
+      "description": "Build moodboards, manage prompt packs, and publish galleries that turn AI outputs into real stories.",
+      "primaryCta": "Launch Generator",
+      "secondaryCta": "View Templates"
+    },
+    "sections": [
+      {
+        "title": "Core capabilities",
+        "body": [
+          "Auto-detect lighting and faces to keep results natural while adding authentic film glow.",
+          "Save favorite looks as reusable collections for events, fandoms, or clients."
+        ]
+      },
+      {
+        "title": "Built for teams and creators",
+        "body": [
+          "Collaborate with editors through shared folders and approval workflows.",
+          "Track performance metrics like saves, exports, and social share rate."
+        ]
+      }
+    ],
+    "cta": {
+      "title": "Start creating AI polaroids today",
+      "primary": "Get Started",
+      "secondary": "Request demo"
+    }
+  },
+  "AIPolaroidGeneratorPage": {
+    "title": "AI Polaroid Generator",
+    "description": "A deep dive into the generator workspace and controls.",
+    "hero": {
+      "title": "Generate cinematic polaroids without guesswork",
+      "description": "Experience live previews, guided prompts, and Gemini-powered rendering tuned for instant film aesthetics.",
+      "primaryCta": "Open workspace"
+    },
+    "sections": [
+      {
+        "title": "Workspace highlights",
+        "body": [
+          "Side-by-side variations render in seconds so you can compare lighting and mood instantly.",
+          "Adjust color grade, border width, caption overlays, and grain strength without leaving the canvas."
+        ]
+      },
+      {
+        "title": "Advanced controls",
+        "body": [
+          "Prompt composer merges your keywords with camera metadata and film stocks like Kodak Portra or Fuji Instax.",
+          "Batch mode lets you produce up to 20 consistent shots for albums, campaigns, or merch drops."
+        ]
+      },
+      {
+        "title": "Output formats",
+        "body": [
+          "Square 1:1 for feed posts, vertical 9:16 for Stories and Reels, and 3×4 inch 300 DPI for physical prints.",
+          "Export layered files with transparent borders when you need custom layouts in Figma or Canva."
+        ]
+      }
+    ]
+  },
+  "AIPolaroidTemplatesPage": {
+    "title": "AI Polaroid Templates",
+    "description": "Curated template packs inspired by the community's favorite storytelling moments.",
+    "hero": {
+      "title": "Template packs that speak your language",
+      "description": "From celeb meetups to retro travel logs, each pack blends prompts, overlays, and typography for instant results.",
+      "primaryCta": "Browse packs"
+    },
+    "sections": [
+      {
+        "title": "What you get",
+        "body": [
+          "Prompt recipes tuned for Gemini Nano Banana, Midjourney, and custom LoRA styles.",
+          "Matching border frames, captions, stickers, and handwriting fonts for cohesive storytelling."
+        ]
+      },
+      {
+        "title": "Popular collections",
+        "body": [
+          "Celeb Selfie Studio — designed for fans who want a believable autograph moment.",
+          "Reunion Therapy — warm, low-contrast presets ideal for hugging your younger self or long-distance family.",
+          "Runway Archives — high-fashion poses, chromatic aberration, and magazine-style typography."
+        ]
+      }
+    ]
+  },
+  "AIVintagePhotoPage": {
+    "title": "AI Vintage Photo Effects",
+    "description": "Recreate classic film moods with modern AI tooling.",
+    "hero": {
+      "title": "Turn digital shots into timeless vintage keepsakes",
+      "description": "Mix Nano Banana's precision with handcrafted LUTs, dust overlays, and light leaks for believable film outputs.",
+      "primaryCta": "Try vintage mode"
+    },
+    "sections": [
+      {
+        "title": "Film science, simplified",
+        "body": [
+          "Color science profiles emulate Kodak, Polaroid, Ilford, and expired film palettes.",
+          "Adaptive grain scales to your export size so textures stay sharp when printed."
+        ]
+      },
+      {
+        "title": "Use cases",
+        "body": [
+          "Content creators producing nostalgia content for Xiaohongshu and TikTok.",
+          "Wedding and event teams offering same-day polaroid wall experiences.",
+          "Brand activations that need on-location instant prints without analog gear."
+        ]
+      }
+    ]
+  },
+  "GalleryPage": {
+    "title": "AI Polaroid Gallery",
+    "description": "Explore curated examples generated by creators and brand partners.",
+    "hero": {
+      "title": "See what's possible with AI polaroids",
+      "description": "Discover trending looks, community spotlights, and campaign-ready layouts updated every week.",
+      "primaryCta": "Submit your set"
+    },
+    "sections": [
+      {
+        "title": "Featured showcases",
+        "body": [
+          "Creator spotlights highlighting top-performing Xiaohongshu posts.",
+          "Brand collaborations featuring event activations and pop-up print bars."
+        ]
+      },
+      {
+        "title": "How to get featured",
+        "body": [
+          "Tag #aipolaroidphoto on social or submit via the in-app gallery uploader.",
+          "Share behind-the-scenes prompts and lighting notes to help others recreate the look."
+        ]
+      }
+    ]
+  },
+  "TutorialsPage": {
+    "title": "AI Polaroid Tutorials",
+    "description": "Step-by-step guides for crafting the perfect AI polaroid story.",
+    "hero": {
+      "title": "Master the AI polaroid workflow",
+      "description": "Follow quick tutorials to capture, generate, refine, and publish your instant photo narratives.",
+      "primaryCta": "Watch tutorials"
+    },
+    "sections": [
+      {
+        "title": "Starter lessons",
+        "body": [
+          "Picking the right source photo and framing for AI rendering.",
+          "Using mood boards and references to guide template selection."
+        ]
+      },
+      {
+        "title": "Advanced techniques",
+        "body": [
+          "Editing prompts for different lighting scenarios like neon nights or daylight flash.",
+          "Combining LoRA styles with overlays to build a signature brand aesthetic."
+        ]
+      }
+    ]
   }
 }

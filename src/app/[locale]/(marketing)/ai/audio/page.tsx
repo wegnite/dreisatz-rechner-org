@@ -21,8 +21,13 @@ export async function generateMetadata({
   });
 }
 
-export default async function AIAudioPage() {
-  const t = await getTranslations('AIAudioPage');
+export default async function AIAudioPage({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'AIAudioPage' });
 
   return (
     <div className="max-w-4xl mx-auto space-y-8">

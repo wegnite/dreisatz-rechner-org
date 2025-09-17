@@ -13,7 +13,7 @@ import Image from 'next/image';
  * pnpm dlx shadcn@canary add https://nsui.irung.me/r/features-5.json
  */
 export default function Features2Section() {
-  const t = useTranslations('HomePage.features2');
+  const t = useTranslations('HomePage.features');
 
   return (
     <section id="features2" className="px-4 py-16">
@@ -36,19 +36,19 @@ export default function Features2Section() {
             <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
               <li>
                 <MailIcon className="size-5" />
-                {t('feature-1')}
+                {t('items.0.title')}
               </li>
               <li>
                 <ZapIcon className="size-5" />
-                {t('feature-2')}
+                {t('items.1.title')}
               </li>
               <li>
                 <ActivityIcon className="size-5" />
-                {t('feature-3')}
+                {t('items.2.title')}
               </li>
               <li>
                 <DraftingCompassIcon className="size-5" />
-                {t('feature-4')}
+                {t('items.3.title')}
               </li>
             </ul>
           </div>

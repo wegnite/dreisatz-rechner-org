@@ -5,7 +5,7 @@ import type { WebsiteConfig } from '@/types';
  * website config, without translations
  *
  * docs:
- * https://totrmeme.online/docs/config/website
+ * https://aipolaroidphoto.org/docs/config/website
  */
 export const websiteConfig: WebsiteConfig = {
   ui: {
@@ -25,13 +25,13 @@ export const websiteConfig: WebsiteConfig = {
       logoDark: '/logo-dark.png',
     },
     social: {
-      github: 'https://github.com/totrmeme',
-      twitter: 'https://twitter.com/totrmeme',
-      blueSky: 'https://bsky.app/profile/totrmeme.online',
-      discord: 'https://discord.gg/totrmeme',
-      mastodon: 'https://mastodon.social/@totrmeme',
-      linkedin: 'https://linkedin.com/company/totrmeme',
-      youtube: 'https://youtube.com/@totrmeme',
+      github: 'https://github.com/aipolaroidphoto',
+      twitter: 'https://twitter.com/aipolaroidphoto',
+      blueSky: 'https://bsky.app/profile/aipolaroidphoto.org',
+      discord: 'https://discord.gg/aipolaroidphoto',
+      mastodon: 'https://mastodon.social/@aipolaroidphoto',
+      linkedin: 'https://linkedin.com/company/aipolaroidphoto',
+      youtube: 'https://youtube.com/@aipolaroidphoto',
     },
   },
   features: {
@@ -78,8 +78,8 @@ export const websiteConfig: WebsiteConfig = {
   },
   mail: {
     provider: 'resend',
-    fromEmail: 'TOTR Meme <support@totrmeme.online>',
-    supportEmail: 'TOTR Meme <support@totrmeme.online>',
+    fromEmail: 'AI Polaroid Photo <support@aipolaroidphoto.org>',
+    supportEmail: 'AI Polaroid Photo <support@aipolaroidphoto.org>',
   },
   newsletter: {
     enable: true,

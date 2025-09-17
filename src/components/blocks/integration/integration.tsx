@@ -15,7 +15,7 @@ import { useTranslations } from 'next-intl';
 import type * as React from 'react';
 
 export default function IntegrationSection() {
-  const t = useTranslations('HomePage.integration');
+  const t = useTranslations('HomePage.templates');
 
   return (
     <section id="integration" className="px-4 py-16">
@@ -30,45 +30,24 @@ export default function IntegrationSection() {
 
         <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <IntegrationCard
-            title={t('items.item-1.title')}
-            description={t('items.item-1.description')}
+            title={t('items.0.title')}
+            description={t('items.0.description')}
           >
             <Gemini />
           </IntegrationCard>
 
           <IntegrationCard
-            title={t('items.item-2.title')}
-            description={t('items.item-2.description')}
+            title={t('items.1.title')}
+            description={t('items.1.description')}
           >
             <Replit />
           </IntegrationCard>
 
           <IntegrationCard
-            title={t('items.item-3.title')}
-            description={t('items.item-3.description')}
+            title={t('items.2.title')}
+            description={t('items.2.description')}
           >
             <MagicUI />
-          </IntegrationCard>
-
-          <IntegrationCard
-            title={t('items.item-4.title')}
-            description={t('items.item-4.description')}
-          >
-            <VSCodium />
-          </IntegrationCard>
-
-          <IntegrationCard
-            title={t('items.item-5.title')}
-            description={t('items.item-5.description')}
-          >
-            <MediaWiki />
-          </IntegrationCard>
-
-          <IntegrationCard
-            title={t('items.item-6.title')}
-            description={t('items.item-6.description')}
-          >
-            <GooglePaLM />
           </IntegrationCard>
         </div>
       </div>
@@ -87,7 +66,7 @@ const IntegrationCard = ({
   children: React.ReactNode;
   link?: string;
 }) => {
-  const t = useTranslations('HomePage.integration');
+  const t = useTranslations('HomePage.templates');
 
   return (
     <Card className="p-6 bg-transparent hover:bg-accent dark:hover:bg-card">
@@ -109,7 +88,7 @@ const IntegrationCard = ({
             className="gap-1 pr-2 shadow-none"
           >
             <LocaleLink href={link}>
-              {t('learnMore')}
+              {t('description')}
               <ChevronRight className="ml-0 !size-3.5 opacity-50" />
             </LocaleLink>
           </Button>

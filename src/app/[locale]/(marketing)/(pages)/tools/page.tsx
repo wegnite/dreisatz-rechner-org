@@ -24,8 +24,13 @@ export async function generateMetadata({
   });
 }
 
-export default async function ToolsPage() {
-  const t = await getTranslations('ToolsPage');
+export default async function ToolsPage({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'ToolsPage' });
   const items = [
     {
       title: t('items.wordGame.title'),

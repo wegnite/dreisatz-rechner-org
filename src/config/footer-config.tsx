@@ -20,82 +20,42 @@ export function getFooterLinks(): NestedMenuItem[] {
 
   return [
     {
-      title: 'TOTR Meme',
+      title: t('product.title'),
       items: [
         {
-          title: 'TOTR Generator',
-          href: '/',
+          title: t('product.items.generator'),
+          href: Routes.AiPolaroidGenerator,
           external: false,
         },
         {
-          title: 'What is TOTR?',
-          href: '/#what-is-totr',
+          title: t('product.items.templates'),
+          href: Routes.AiPolaroidTemplates,
           external: false,
         },
         {
-          title: 'TOTR Templates',
-          href: '/#templates',
-          external: false,
-        },
-        {
-          title: 'TOTR Timeline',
-          href: '/#timeline',
+          title: t('product.items.vintage'),
+          href: Routes.AiVintagePhoto,
           external: false,
         },
       ],
     },
     {
-      title: 'Meme Tools',
+      title: t('resources.title'),
       items: [
         {
-          title: 'TOTR vs ПЫ',
-          href: '/#totr-vs-py',
+          title: t('resources.items.gallery'),
+          href: Routes.Gallery,
           external: false,
         },
         {
-          title: 'Meme Creator',
-          href: '/#creator',
-          external: false,
-        },
-        {
-          title: 'Template Library',
-          href: '/#library',
-          external: false,
-        },
-        {
-          title: 'Trending Memes',
-          href: '/#trending',
-          external: false,
-        },
-        {
-          title: 'Meme History',
-          href: '/#history',
-          external: false,
-        },
-      ],
-    },
-    {
-      title: 'Help & Guides',
-      items: [
-        {
-          title: 'How to Use Generator',
-          href: '/#how-to-use',
-          external: false,
-        },
-        {
-          title: 'TOTR Meme Guide',
-          href: '/#guide',
-          external: false,
-        },
-        {
-          title: 'Meme FAQ',
-          href: '/#faq',
+          title: t('resources.items.tutorials'),
+          href: Routes.Tutorials,
           external: false,
         },
         ...(websiteConfig.blog.enable
           ? [
               {
-                title: 'TOTR Meme Blog',
+                title: t('resources.items.blog'),
                 href: Routes.Blog,
                 external: false,
               },
@@ -104,7 +64,7 @@ export function getFooterLinks(): NestedMenuItem[] {
         ...(websiteConfig.docs.enable
           ? [
               {
-                title: 'Meme Documentation',
+                title: t('resources.items.docs'),
                 href: Routes.Docs,
                 external: false,
               },
@@ -113,25 +73,25 @@ export function getFooterLinks(): NestedMenuItem[] {
       ],
     },
     {
-      title: 'About TOTR',
+      title: t('company.title'),
       items: [
         {
-          title: 'About the Project',
+          title: t('company.items.about'),
           href: Routes.About,
           external: false,
         },
         {
-          title: 'Contact Support',
+          title: t('company.items.contact'),
           href: Routes.Contact,
           external: false,
         },
         {
-          title: 'Updates',
+          title: t('company.items.changelog'),
           href: Routes.Changelog,
           external: false,
         },
         {
-          title: 'Feature Requests',
+          title: t('company.items.waitlist'),
           href: Routes.Waitlist,
           external: false,
         },

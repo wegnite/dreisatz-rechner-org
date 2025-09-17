@@ -34,18 +34,28 @@ export function getNavbarLinks(): NestedMenuItem[] {
 
   return [
     {
-      title: 'TOTR Generator',
-      href: '/',
+      title: t('generator.title'),
+      href: Routes.AiPolaroidGenerator,
       external: false,
     },
     {
-      title: 'What is TOTR?',
-      href: '/#what-is-totr',
+      title: t('templates.title'),
+      href: Routes.AiPolaroidTemplates,
       external: false,
     },
     {
-      title: 'Templates',
-      href: '/#templates',
+      title: t('vintage.title'),
+      href: Routes.AiVintagePhoto,
+      external: false,
+    },
+    {
+      title: t('gallery.title'),
+      href: Routes.Gallery,
+      external: false,
+    },
+    {
+      title: t('tutorials.title'),
+      href: Routes.Tutorials,
       external: false,
     },
     ...(websiteConfig.blog.enable
@@ -57,46 +67,6 @@ export function getNavbarLinks(): NestedMenuItem[] {
           },
         ]
       : []),
-    {
-      title: 'Meme Tools',
-      items: [
-        {
-          title: 'TOTR vs ПЫ',
-          description: 'Compare TOTR and PY memes side by side',
-          icon: <WandSparklesIcon className="size-4 shrink-0" />,
-          href: '/#totr-vs-py',
-          external: false,
-        },
-        {
-          title: 'Meme Creator',
-          description: 'Advanced meme generation tools',
-          icon: <FlameIcon className="size-4 shrink-0" />,
-          href: '/#creator',
-          external: false,
-        },
-        {
-          title: 'Template Library',
-          description: 'Browse and download meme templates',
-          icon: <ShieldCheckIcon className="size-4 shrink-0" />,
-          href: '/#library',
-          external: false,
-        },
-        {
-          title: 'Trending Memes',
-          description: "Explore what's trending in the meme world",
-          icon: <RocketIcon className="size-4 shrink-0" />,
-          href: '/#trending',
-          external: false,
-        },
-        {
-          title: 'Meme Timeline',
-          description: 'Track the evolution of TOTR memes',
-          icon: <ComponentIcon className="size-4 shrink-0" />,
-          href: '/#timeline',
-          external: false,
-        },
-      ],
-    },
     {
       title: t('pages.title'),
       items: [

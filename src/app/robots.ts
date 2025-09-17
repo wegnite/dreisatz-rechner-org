@@ -11,7 +11,6 @@ export default function robots(): MetadataRoute.Robots {
           '/api/*', // API endpoints
           '/_next/*', // Next.js internal files
           '/auth/*', // Authentication pages
-          '/*?*', // Pages with query parameters (avoid duplicate content)
           '/admin/*', // Admin pages (if any)
         ],
       },

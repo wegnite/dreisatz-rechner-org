@@ -37,7 +37,7 @@ export function TotrMemeGenerator() {
         {/* Top Row - Templates and Quick Actions */}
         <div className="grid md:grid-cols-2 gap-6">
           <TemplateSelector />
-          
+
           {/* Quick Actions */}
           {template && (
             <Card>

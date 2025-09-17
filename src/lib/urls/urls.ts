@@ -1,11 +1,14 @@
 import { routing } from '@/i18n/routing';
 import type { Locale } from 'next-intl';
 
+const fallbackDevBaseUrl = `http://localhost:${process.env.PORT ?? 3000}`;
+const defaultProdBaseUrl = 'https://aipolaroidphoto.org';
+
 const baseUrl =
-  process.env.NODE_ENV === 'production'
-    ? 'https://totrmeme.online' // 生产环境域名
-    : (process.env.NEXT_PUBLIC_BASE_URL ??
-      `http://localhost:${process.env.PORT ?? 3000}`);
+  process.env.NEXT_PUBLIC_BASE_URL ??
+  (process.env.NODE_ENV === 'production'
+    ? defaultProdBaseUrl
+    : fallbackDevBaseUrl);
 
 /**
  * Get the base URL of the application

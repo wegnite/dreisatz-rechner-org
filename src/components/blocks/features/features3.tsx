@@ -14,7 +14,7 @@ import { useTranslations } from 'next-intl';
  * pnpm dlx shadcn@canary add https://nsui.irung.me/r/features-4.json
  */
 export default function Features3Section() {
-  const t = useTranslations('HomePage.features3');
+  const t = useTranslations('HomePage.features');
 
   return (
     <section id="features3" className="px-4 py-16">
@@ -32,22 +32,22 @@ export default function Features3Section() {
             <div className="flex items-center gap-2">
               <ZapIcon className="size-4" />
               <h3 className="text-base font-medium">
-                {t('items.item-1.title')}
+                {t('items.0.title')}
               </h3>
             </div>
             <p className="text-sm text-muted-foreground mt-4">
-              {t('items.item-1.description')}
+              {t('items.0.description')}
             </p>
           </div>
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <CpuIcon className="size-4" />
               <h3 className="text-base font-medium">
-                {t('items.item-2.title')}
+                {t('items.1.title')}
               </h3>
             </div>
             <p className="text-sm text-muted-foreground mt-4">
-              {t('items.item-2.description')}
+              {t('items.1.description')}
             </p>
           </div>
           <div className="space-y-2">
@@ -55,11 +55,11 @@ export default function Features3Section() {
               <FingerprintIcon className="size-4" />
 
               <h3 className="text-base font-medium">
-                {t('items.item-3.title')}
+                {t('items.2.title')}
               </h3>
             </div>
             <p className="text-sm text-muted-foreground mt-4">
-              {t('items.item-3.description')}
+              {t('items.2.description')}
             </p>
           </div>
           <div className="space-y-2">
@@ -67,11 +67,11 @@ export default function Features3Section() {
               <PencilIcon className="size-4" />
 
               <h3 className="text-base font-medium">
-                {t('items.item-4.title')}
+                {t('items.3.title')}
               </h3>
             </div>
             <p className="text-sm text-muted-foreground mt-4">
-              {t('items.item-4.description')}
+              {t('items.3.description')}
             </p>
           </div>
           <div className="space-y-2">
@@ -79,11 +79,11 @@ export default function Features3Section() {
               <Settings2Icon className="size-4" />
 
               <h3 className="text-base font-medium">
-                {t('items.item-5.title')}
+                {t('items.0.title')}
               </h3>
             </div>
             <p className="text-sm text-muted-foreground mt-4">
-              {t('items.item-5.description')}
+              {t('items.0.description')}
             </p>
           </div>
           <div className="space-y-2">
@@ -91,11 +91,11 @@ export default function Features3Section() {
               <SparklesIcon className="size-4" />
 
               <h3 className="text-base font-medium">
-                {t('items.item-6.title')}
+                {t('items.1.title')}
               </h3>
             </div>
             <p className="text-sm text-muted-foreground mt-4">
-              {t('items.item-6.description')}
+              {t('items.1.description')}
             </p>
           </div>
         </div>

@@ -179,18 +179,26 @@ export function ExportPanel({ stageRef, className }: ExportPanelProps) {
             <summary className="cursor-pointer flex items-center gap-2 text-sm font-medium">
               <Zap className="w-4 h-4" />
               {t('exportInfo.title')}
-              <span className="ml-auto group-open:rotate-90 transition-transform">▶</span>
+              <span className="ml-auto group-open:rotate-90 transition-transform">
+                ▶
+              </span>
             </summary>
             <div className="mt-2 space-y-1">
-              <p className="text-xs text-muted-foreground">• {t('exportInfo.freeNote')}</p>
-              <p className="text-xs text-muted-foreground">• {t('exportInfo.premiumNote')}</p>
+              <p className="text-xs text-muted-foreground">
+                • {t('exportInfo.freeNote')}
+              </p>
+              <p className="text-xs text-muted-foreground">
+                • {t('exportInfo.premiumNote')}
+              </p>
             </div>
           </details>
         </div>
 
         {/* Payment Upgrade Hint - Compact */}
         <div className="border border-dashed border-primary/20 rounded-lg p-1 text-center">
-          <p className="text-xs text-primary font-medium mb-1">{t('upgradeHint.title')}</p>
+          <p className="text-xs text-primary font-medium mb-1">
+            {t('upgradeHint.title')}
+          </p>
           <Button size="sm" variant="outline" className="text-xs h-6 px-2">
             {t('upgradeHint.learnMore')}
           </Button>

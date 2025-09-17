@@ -13,7 +13,7 @@ import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
 
 export default function Integration2Section() {
-  const t = useTranslations('HomePage.integration2');
+  const t = useTranslations('HomePage.templates');
 
   return (
     <section>
@@ -64,13 +64,13 @@ export default function Integration2Section() {
               <div className="mt-12 flex flex-wrap justify-center md:justify-start gap-4">
                 <Button asChild size="lg">
                   <LocaleLink href="/">
-                    <span>{t('primaryButton')}</span>
+                    <span>{t('title')}</span>
                   </LocaleLink>
                 </Button>
 
                 <Button asChild size="lg" variant="outline">
                   <LocaleLink href="/">
-                    <span>{t('secondaryButton')}</span>
+                    <span>{t('description')}</span>
                   </LocaleLink>
                 </Button>
               </div>

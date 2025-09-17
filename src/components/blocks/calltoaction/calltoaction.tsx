@@ -3,7 +3,7 @@ import { LocaleLink } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 
 export default function CallToActionSection() {
-  const t = useTranslations('HomePage.calltoaction');
+  const t = useTranslations('HomePage.cta');
 
   return (
     <section id="call-to-action" className="px-4 py-24 bg-muted/50">
@@ -17,13 +17,13 @@ export default function CallToActionSection() {
           <div className="mt-12 flex flex-wrap justify-center gap-4">
             <Button asChild size="lg">
               <LocaleLink href="/">
-                <span>{t('primaryButton')}</span>
+                <span>{t('primary')}</span>
               </LocaleLink>
             </Button>
 
             <Button asChild size="lg" variant="outline">
               <LocaleLink href="/">
-                <span>{t('secondaryButton')}</span>
+                <span>{t('secondary')}</span>
               </LocaleLink>
             </Button>
           </div>

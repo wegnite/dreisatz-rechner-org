@@ -48,7 +48,9 @@ export default async function middleware(req: NextRequest) {
     /^\/(zh\/)?tailark\/preview\/(login|sign-up|forgot-password)(\/|$)/,
     /^\/(zh\/)?blocks\/(login|sign-up|forgot-password)(\/|$)/,
   ];
-  if (blockedPreviewPatterns.some((pattern) => pattern.test(nextUrl.pathname))) {
+  if (
+    blockedPreviewPatterns.some((pattern) => pattern.test(nextUrl.pathname))
+  ) {
     return new NextResponse('Not Found', { status: 404 });
   }
 

@@ -16,11 +16,17 @@ export enum Routes {
   Contact = '/contact',
   Waitlist = '/waitlist',
   Changelog = '/changelog',
-  Roadmap = 'https://totrmeme.online/roadmap',
+  Roadmap = 'https://aipolaroidphoto.org/roadmap',
   CookiePolicy = '/cookie',
   PrivacyPolicy = '/privacy',
   TermsOfService = '/terms',
   Tools = '/tools',
+  AiPolaroid = '/ai/polaroid',
+  AiPolaroidGenerator = '/ai/polaroid/generator',
+  AiPolaroidTemplates = '/ai/polaroid/templates',
+  AiVintagePhoto = '/ai/vintage-photo',
+  Gallery = '/gallery',
+  Tutorials = '/tutorials',
 
   // auth routes
   Login = '/auth/login',

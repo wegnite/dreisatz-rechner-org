@@ -19,38 +19,32 @@ type FAQItem = {
 
 export default function FaqSection() {
   const locale = useLocale();
-  const t = useTranslations('HomePage.faqs');
+  const t = useTranslations('HomePage.faq');
 
   const faqItems: FAQItem[] = [
     {
       id: 'item-1',
       icon: 'calendar-clock',
-      question: t('items.item-1.question'),
-      answer: t('items.item-1.answer'),
+      question: t('items.0.question'),
+      answer: t('items.0.answer'),
     },
     {
       id: 'item-2',
       icon: 'wallet',
-      question: t('items.item-2.question'),
-      answer: t('items.item-2.answer'),
+      question: t('items.1.question'),
+      answer: t('items.1.answer'),
     },
     {
       id: 'item-3',
       icon: 'refresh-cw',
-      question: t('items.item-3.question'),
-      answer: t('items.item-3.answer'),
+      question: t('items.2.question'),
+      answer: t('items.2.answer'),
     },
     {
       id: 'item-4',
       icon: 'hand-coins',
-      question: t('items.item-4.question'),
-      answer: t('items.item-4.answer'),
-    },
-    {
-      id: 'item-5',
-      icon: 'mail',
-      question: t('items.item-5.question'),
-      answer: t('items.item-5.answer'),
+      question: t('items.3.question'),
+      answer: t('items.3.answer'),
     },
   ];
 

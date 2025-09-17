@@ -76,7 +76,6 @@
    * Note: Use secrets to store sensitive data.
    * https://developers.cloudflare.com/workers/configuration/secrets/
    */
-  "pages_build_output_dir": ".next",
   "kv_namespaces": [],
   /**
    * R2 Buckets (required when using r2-incremental-cache)

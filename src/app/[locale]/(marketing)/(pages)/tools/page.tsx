@@ -1,5 +1,6 @@
 import { buttonVariants } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { LocaleLink } from '@/i18n/navigation';
 import { constructMetadata } from '@/lib/metadata';
 import { getUrlWithLocale } from '@/lib/urls/urls';
 import { cn } from '@/lib/utils';
@@ -7,7 +8,6 @@ import { Routes } from '@/routes';
 import type { Metadata } from 'next';
 import type { Locale } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import Link from 'next/link';
 
 export async function generateMetadata({
   params,
@@ -66,7 +66,7 @@ export default async function ToolsPage({
           <Card key={it.title} className="p-6 space-y-2 border bg-card/50">
             <h3 className="font-medium text-lg">{it.title}</h3>
             <p className="text-sm text-muted-foreground">{it.desc}</p>
-            <Link
+            <LocaleLink
               href={it.href}
               className={cn(
                 buttonVariants({ variant: 'default', size: 'sm' }),
@@ -74,7 +74,7 @@ export default async function ToolsPage({
               )}
             >
               {t('cta')}
-            </Link>
+            </LocaleLink>
           </Card>
         ))}
       </div>

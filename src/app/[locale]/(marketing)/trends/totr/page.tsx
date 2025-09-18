@@ -1,38 +1,35 @@
 import { constructMetadata } from '@/lib/metadata';
+import { getUrlWithLocale, shouldAppendLocale } from '@/lib/urls/urls';
+import { redirect } from 'next/navigation';
 import type { Metadata } from 'next';
 import type { Locale } from 'next-intl';
+
+const TARGET_PATH = '/ai/polaroid';
+
+function getLocalizedTarget(locale: Locale): string {
+  return shouldAppendLocale(locale) ? `/${locale}${TARGET_PATH}` : TARGET_PATH;
+}
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: Locale }>;
 }): Promise<Metadata | undefined> {
-  await params;
+  const { locale } = await params;
   return constructMetadata({
-    title: 'TOTR Trends — Timeline of Viral Moments & Links',
+    title: 'AI Polaroid Photo — Latest Updates & Inspiration',
     description:
-      'News-style tracker for the TOTR (TOTЯ, Тотя) meme: breakout nodes, timeline updates, and official links. Updated regularly.',
-    canonicalUrl: 'https://totrmeme.online/trends/totr',
+      'Stay current with AI polaroid photo trends, gallery spotlights, and workflow updates for instant-film style edits.',
+    canonicalUrl: getUrlWithLocale(TARGET_PATH, locale),
+    noIndex: true,
   });
 }
 
-export default function Page() {
-  return (
-    <main className="mx-auto max-w-3xl px-6 py-12">
-      <h1 className="text-3xl font-bold">TOTR Trends</h1>
-      <p className="mt-4 text-muted-foreground">
-        Placeholder for the timeline and link index. We will update with
-        breakout moments and official embeds only. This page is intended to be
-        refreshed frequently.
-      </p>
-      <div className="mt-6 space-x-4">
-        <a className="underline" href="/meme/totr">
-          Learn the meme →
-        </a>
-        <a className="underline" href="/generator/totr">
-          Make yours →
-        </a>
-      </div>
-    </main>
-  );
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  redirect(getLocalizedTarget(locale));
 }

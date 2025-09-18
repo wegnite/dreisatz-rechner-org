@@ -25,7 +25,7 @@ import { websiteConfig } from './website';
  * NOTICE: used in client components only
  *
  * docs:
- * https://totrmeme.online/docs/config/navbar
+ * https://aipolaroidphoto.org/docs/config/navbar
  *
  * @returns The navbar config with translated titles and descriptions
  */

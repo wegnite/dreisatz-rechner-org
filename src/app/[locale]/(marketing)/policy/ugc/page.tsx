@@ -1,39 +1,56 @@
+import { LocaleLink } from '@/i18n/navigation';
 import { constructMetadata } from '@/lib/metadata';
+import { getUrlWithLocale } from '@/lib/urls/urls';
 import type { Metadata } from 'next';
 import type { Locale } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: Locale }>;
 }): Promise<Metadata | undefined> {
-  await params;
+  const { locale } = await params;
+  const metaTranslations = await getTranslations({
+    locale,
+    namespace: 'Metadata',
+  });
+  const pageTranslations = await getTranslations({
+    locale,
+    namespace: 'PolicyUgcPage',
+  });
+
   return constructMetadata({
-    title: 'UGC & Copyright Policy — AI Polaroid Photo',
-    description:
-      'Creators may upload only media they have rights to use. We review takedown requests within 24 hours and provide safe remix tools.',
-    canonicalUrl: 'https://aipolaroidphoto.org/policy/ugc',
+    title: `${pageTranslations('title')} | ${metaTranslations('title')}`,
+    description: pageTranslations('description'),
+    canonicalUrl: getUrlWithLocale('/policy/ugc', locale),
   });
 }
 
-export default function Page() {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'PolicyUgcPage' });
+  const paragraphs = t.raw('body') as string[];
+
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
-      <h1 className="text-3xl font-bold">UGC & Copyright Policy</h1>
-      <p className="mt-4 text-muted-foreground">
-        AI Polaroid Photo lets you combine your own photos with AI-generated
-        effects. Only upload images, prompts, and overlays you have permission to
-        use. We do not host unlicensed celebrity likenesses or commercial IP.
-        For takedown requests, email support@aipolaroidphoto.org with the
-        relevant URLs and proof of ownership. We respond within 24 hours.
-      </p>
+      <h1 className="text-3xl font-bold">{t('title')}</h1>
+      <div className="mt-4 space-y-4 text-muted-foreground">
+        {paragraphs.map((paragraph, index) => (
+          <p key={index}>{paragraph}</p>
+        ))}
+      </div>
       <div className="mt-6 space-x-4">
-        <a className="underline" href="/ai/polaroid/generator">
-          Back to generator →
-        </a>
-        <a className="underline" href="/terms">
-          Review Terms of Service →
-        </a>
+        <LocaleLink className="underline" href="/ai/polaroid/generator">
+          {t('backLink')}
+        </LocaleLink>
+        <LocaleLink className="underline" href="/terms">
+          {t('termsLink')}
+        </LocaleLink>
       </div>
     </main>
   );

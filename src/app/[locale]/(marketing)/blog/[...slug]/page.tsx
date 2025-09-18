@@ -82,6 +82,9 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
   if (!post) {
     notFound();
   }
+  if (!post.data.published) {
+    notFound();
+  }
 
   const { date, title, description, image, author, categories } = post.data;
   const publishDate = formatDate(new Date(date));

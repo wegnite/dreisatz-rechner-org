@@ -11,7 +11,7 @@ import { websiteConfig } from './website';
  * NOTICE: used in client components only
  *
  * docs:
- * https://totrmeme.online/docs/config/footer
+ * https://aipolaroidphoto.org/docs/config/footer
  *
  * @returns The footer config with translated titles
  */

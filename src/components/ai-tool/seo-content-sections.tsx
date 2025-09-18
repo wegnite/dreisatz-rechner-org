@@ -19,77 +19,87 @@ import Link from 'next/link';
 const CORE_FEATURES = [
   {
     icon: Camera,
-    title: 'Natural Language Editing',
-    description: 'Edit images using simple text prompts. Our AI understands complex instructions like GPT for images.',
+    title: 'Prompt-to-Polaroid Editing',
+    description:
+      'Edit AI polaroid photos using simple text prompts. The generator handles captions, borders, and lighting automatically.',
   },
   {
     icon: Shield,
-    title: 'Character Consistency',
-    description: 'Maintain perfect character details across edits. This model excels at preserving faces and identities.',
+    title: 'Consistent Faces in Every Polaroid',
+    description:
+      'Maintain perfect character details across a series of AI polaroid shots—ideal for weddings, brand shoots, and fandom edits.',
   },
   {
     icon: Palette,
-    title: 'Scene Blending',
-    description: 'Seamlessly blend edits with original backgrounds. Superior scene fusion compared to other tools.',
+    title: 'Seamless Scene Blending',
+    description:
+      'Blend new outfits, props, or backgrounds into existing polaroid photos while keeping the film grain natural.',
   },
   {
     icon: Zap,
-    title: 'One-Shot Editing',
-    description: 'Perfect results in a single attempt. Our AI solves one-shot image editing challenges effortlessly.',
+    title: 'One-Tap Polaroid Magic',
+    description:
+      'Get production-ready AI polaroid photos in a single render—no retakes, no manual masking, no prompt guesswork.',
   },
   {
     icon: Users,
-    title: 'Batch Processing',
-    description: 'Process multiple images simultaneously. Support for advanced multi-image editing workflows.',
+    title: 'Batch Polaroid Printer',
+    description:
+      'Process multiple AI polaroid photos simultaneously for lookbooks, launch campaigns, or memory walls.',
   },
   {
     icon: Star,
-    title: 'AI Influencer Creation',
-    description: 'Create consistent AI influencers and UGC content. Perfect for social media and marketing campaigns.',
+    title: 'Branded Polaroid Sets',
+    description:
+      'Create on-brand AI polaroid collections with consistent typography and captions for marketing and community drops.',
   },
 ];
 
 const HOW_IT_WORKS_STEPS = [
   {
     step: 1,
-    title: 'Upload Your Image',
-    description: 'Start by uploading any photo you want to transform. Our AI supports all common image formats.',
+    title: 'Upload Your Photo',
+    description:
+      'Start by uploading the photo you want to develop as an AI polaroid. We support all common formats.',
   },
   {
     step: 2,
-    title: 'Describe Your Vision',
-    description: 'Use natural language to describe the changes you want. Be as creative and detailed as you like.',
+    title: 'Describe Your Polaroid',
+    description:
+      'Explain the mood, caption, film stock, and styling you want using natural language prompts.',
   },
   {
     step: 3,
-    title: 'AI Magic Happens',
-    description: 'Our advanced AI model processes your request and generates stunning results in seconds.',
+    title: 'AI Lab Develops',
+    description:
+      'Our AI polaroid lab handles lighting, grain, and framing in seconds—no manual editing required.',
   },
   {
     step: 4,
     title: 'Download & Share',
-    description: 'Get your transformed image instantly. Download, share, or continue editing with new prompts.',
+    description:
+      'Download high-resolution AI polaroid photos ready for social feeds, prints, or client delivery.',
   },
 ];
 
 const USE_CASES = [
-  'Social Media Content Creation',
-  'Professional Photography Enhancement',
-  'Marketing Campaign Visuals',
-  'AI Influencer Development',
-  'E-commerce Product Photos',
-  'Creative Art Projects',
-  'Brand Identity Design',
-  'Personal Photo Editing',
+  'Social media polaroid drops',
+  'Wedding and event guestbooks',
+  'Brand storytelling lookbooks',
+  'AI influencer moodboards',
+  'E-commerce product reveal cards',
+  'Travel diary scrapbooks',
+  'Fan meet-and-greet keepsakes',
+  'Personal memory boxes',
 ];
 
 const BENEFITS = [
-  'Save hours of manual editing time',
-  'No technical skills required',
-  'Consistent professional results',
-  'Unlimited creative possibilities',
-  'Cost-effective solution',
-  'Real-time collaboration',
+  'Save hours on manual polaroid mockups',
+  'No design or film gear required',
+  'Consistent film-style finishing every time',
+  'Unlimited storytelling possibilities',
+  'Cost-effective compared to studio shoots',
+  'Ready for print or social export',
 ];
 
 export function SeoContentSections() {
@@ -100,14 +110,13 @@ export function SeoContentSections() {
         <div className="text-center mb-12">
           <Badge variant="outline" className="mb-4">
             <Wand2 className="h-3.5 w-3.5 mr-2" />
-            Core Features
+            AI Polaroid Features
           </Badge>
           <h2 className="text-3xl font-serif font-bold mb-4 md:text-4xl">
-            Why Choose Our AI Editor?
+            Why Creators Love Our AI Polaroid Editor
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Experience the most advanced AI image editing technology. Our platform delivers 
-            professional-grade results with simple text commands.
+            Experience the AI polaroid photo generator built for storytellers, marketers, and event teams who need film-style assets fast.
           </p>
         </div>
 
@@ -139,11 +148,11 @@ export function SeoContentSections() {
               How It Works
             </Badge>
             <h2 className="text-3xl font-serif font-bold mb-4 md:text-4xl">
-              Transform Images in 4 Simple Steps
+              Develop AI Polaroid Photos in Four Steps
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Our intuitive workflow makes professional image editing accessible to everyone. 
-              No design experience needed.
+              Our intuitive workflow makes creating AI polaroid photos accessible to everyone. 
+              No design experience or film knowledge needed.
             </p>
           </div>
 
@@ -167,7 +176,7 @@ export function SeoContentSections() {
           <div className="text-center mt-12">
             <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
               <Sparkles className="h-4 w-4 mr-2" />
-              Start Creating Now
+              Start Making AI Polaroid Photos
             </Button>
           </div>
         </div>
@@ -180,10 +189,10 @@ export function SeoContentSections() {
           <div>
             <Badge variant="outline" className="mb-4">
               <Users className="h-3.5 w-3.5 mr-2" />
-              Use Cases
+              Polaroid Use Cases
             </Badge>
             <h3 className="text-2xl font-serif font-bold mb-6">
-              Perfect for Every Creative Need
+              Perfect for Every AI Polaroid Workflow
             </h3>
             <div className="grid grid-cols-2 gap-3">
               {USE_CASES.map((useCase, index) => (
@@ -202,7 +211,7 @@ export function SeoContentSections() {
               Benefits
             </Badge>
             <h3 className="text-2xl font-serif font-bold mb-6">
-              Why Professionals Choose Us
+              Why teams choose our AI polaroid generator
             </h3>
             <div className="space-y-3">
               {BENEFITS.map((benefit, index) => (
@@ -214,7 +223,7 @@ export function SeoContentSections() {
             </div>
             <div className="mt-8">
               <Button variant="outline" className="group">
-                Learn More About Benefits
+                Learn More About AI Polaroid Benefits
                 <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>

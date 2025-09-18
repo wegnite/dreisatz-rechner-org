@@ -6,6 +6,7 @@ import { ModeSwitcherHorizontal } from '@/components/layout/mode-switcher-horizo
 import { getFooterLinks } from '@/config/footer-config';
 import { getSocialLinks } from '@/config/social-config';
 import { LocaleLink } from '@/i18n/navigation';
+import { Routes } from '@/routes';
 import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
 import type React from 'react';
@@ -97,19 +98,19 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
             {/* Legal Links */}
             <div className="flex flex-wrap items-center gap-4 text-sm">
               <LocaleLink
-                href="/privacy-policy"
+                href={Routes.PrivacyPolicy}
                 className="text-muted-foreground hover:text-primary"
               >
                 {t('Marketing.footer.legal.items.privacyPolicy')}
               </LocaleLink>
               <LocaleLink
-                href="/terms-of-service"
+                href={Routes.TermsOfService}
                 className="text-muted-foreground hover:text-primary"
               >
                 {t('Marketing.footer.legal.items.termsOfService')}
               </LocaleLink>
               <LocaleLink
-                href="/cookie-policy"
+                href={Routes.CookiePolicy}
                 className="text-muted-foreground hover:text-primary"
               >
                 {t('Marketing.footer.legal.items.cookiePolicy')}

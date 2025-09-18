@@ -33,84 +33,84 @@ interface FeaturedImage {
 const FEATURED_CREATIONS: FeaturedImage[] = [
   {
     id: '1',
-    url: '/api/placeholder/400/500',
-    title: 'Ultra-Fast Mountain Generation',
-    prompt: 'A majestic snow-capped mountain at sunrise with golden lighting',
-    style: 'Photorealistic',
+    url: '/images/docs/themes/ocean.png',
+    title: 'Sunset Boardwalk Keepsake',
+    prompt: 'AI polaroid photo of friends laughing on a beach boardwalk with handwritten caption “golden hour crew”',
+    style: 'Vintage Film Polaroid',
     generationTime: '0.8s',
     views: 12543,
     likes: 892,
     downloads: 234,
     author: 'AlexArt',
-    category: 'Landscape',
+    category: 'Lifestyle Polaroid',
   },
   {
     id: '2',
-    url: '/api/placeholder/400/500',
-    title: 'Instant Garden Creation',
-    prompt: 'Lush tropical garden with exotic flowers and butterflies',
-    style: 'Artistic',
+    url: '/images/docs/themes/dusk.png',
+    title: 'Neon City Story',
+    prompt: 'AI polaroid photo of a neon Tokyo alley, rain-soaked pavement, neon pink caption “midnight run”',
+    style: 'Retro Chrome Polaroid',
     generationTime: '1.2s',
     views: 8921,
     likes: 645,
     downloads: 178,
     author: 'NatureGuru',
     isPremium: true,
-    category: 'Nature',
+    category: 'Travel Polaroid',
   },
   {
     id: '3',
-    url: '/api/placeholder/400/500',
-    title: 'Real-time Beach Synthesis',
-    prompt: 'Crystal clear beach with turquoise water and palm trees',
-    style: 'HDR',
+    url: '/images/docs/themes/catppuccin.png',
+    title: 'Cozy Cafe Memory',
+    prompt: 'AI polaroid photo of a couple in a candlelit cafe, soft grain, caption “latte love”',
+    style: 'Modern Minimal Polaroid',
     generationTime: '0.9s',
     views: 15672,
     likes: 1234,
     downloads: 445,
     author: 'BeachLover',
-    category: 'Travel',
+    category: 'Lifestyle Polaroid',
   },
   {
     id: '4',
-    url: '/api/placeholder/400/500',
-    title: 'Rapid Aurora Generation',
-    prompt: 'Northern lights dancing over a frozen lake with stars',
-    style: 'Cinematic',
+    url: '/images/docs/themes/black.png',
+    title: 'Aurora Night Polaroid',
+    prompt: 'AI polaroid photo of northern lights over a frozen lake with handwritten caption “arctic glow”',
+    style: 'Cinematic Polaroid',
     generationTime: '1.5s',
     views: 20145,
     likes: 1567,
     downloads: 623,
     author: 'SkyWatcher',
     isPremium: true,
-    category: 'Celestial',
+    category: 'Adventure Polaroid',
   },
   {
     id: '5',
-    url: '/api/placeholder/400/500',
-    title: 'Instant Portrait Transform',
-    prompt: 'Professional headshot with studio lighting and bokeh',
-    style: 'Portrait',
+    url: '/images/docs/themes/neutral.png',
+    title: 'Studio Portrait Polaroid',
+    prompt: 'AI polaroid photo of a model with studio lighting, sharp eyes, caption “campaign day”',
+    style: 'Editorial Polaroid',
     generationTime: '0.7s',
     views: 9834,
     likes: 743,
     downloads: 298,
     author: 'PortraitPro',
-    category: 'Portrait',
+    category: 'Campaign Polaroid',
   },
   {
     id: '6',
-    url: '/api/placeholder/400/500',
-    title: 'Lightning-Fast City Scene',
-    prompt: 'Futuristic cyberpunk cityscape with neon lights at night',
-    style: 'Cyberpunk',
+    url: '/images/docs/themes/vitepress.png',
+    title: 'Neo-Noir Night Run',
+    prompt: 'AI polaroid photo of a cyberpunk street racer, blue neon, caption “02:17 am”',
+    style: 'Cyberpunk Polaroid',
     generationTime: '1.1s',
     views: 18923,
     likes: 1432,
     downloads: 567,
     author: 'CyberArtist',
     isPremium: true,
-    category: 'Sci-Fi',
+    category: 'Fandom Polaroid',
   },
 ];
 
@@ -119,21 +119,21 @@ const TESTIMONIALS = [
     name: 'AIArtistPro',
     role: 'Digital Creator',
     avatar: '/api/placeholder/40/40',
-    quote: 'This editor completely changed my workflow. The character consistency is incredible - miles ahead of other tools!',
+    quote: 'This AI polaroid editor completely changed my workflow. The character consistency across every frame is incredible.',
     rating: 5,
   },
   {
     name: 'ContentCreator',
     role: 'UGC Specialist',
     avatar: '/api/placeholder/40/40',
-    quote: 'Creating consistent AI influencers has never been easier. It maintains perfect face details across edits!',
+    quote: 'Creating consistent AI influencers has never been easier. Each polaroid drop keeps faces and styling perfectly aligned.',
     rating: 5,
   },
   {
     name: 'PhotoEditor',
     role: 'Professional Editor',
     avatar: '/api/placeholder/40/40',
-    quote: 'One-shot editing is basically solved with this tool. The scene blending is so natural and realistic!',
+    quote: 'One-shot polaroid editing is basically solved here. The blending and film grain feel handcrafted every time.',
     rating: 5,
   },
 ];
@@ -146,14 +146,13 @@ export function FeaturedGallery() {
         <div className="text-center mb-12">
           <Badge className="bg-gradient-to-r from-purple-600 to-pink-600 text-white mb-4">
             <Trophy className="h-3.5 w-3.5 mr-2" />
-            Showcase
+            Polaroid Gallery
           </Badge>
           <h2 className="text-3xl font-serif font-bold mb-4 md:text-4xl">
-            Lightning-Fast AI Creations
+            AI Polaroid Photo Gallery
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            See what our AI generates in milliseconds. Every image created with simple text prompts 
-            and delivered at lightning speed.
+            See how creators turn simple prompts into AI polaroid photos with film-grade borders, captions, and nostalgic moods.
           </p>
         </div>
 
@@ -246,10 +245,10 @@ export function FeaturedGallery() {
         {/* Call to Action */}
         <div className="text-center">
           <p className="text-muted-foreground mb-4">
-            Experience the power of instant AI generation yourself
+            See how fast you can develop your own AI polaroid photos
           </p>
           <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-            Try Our AI Generator
+            Open the AI Polaroid Generator
             <ArrowRight className="h-4 w-4 ml-2" />
           </Button>
         </div>
@@ -263,12 +262,12 @@ export function FeaturedGallery() {
               <Star className="h-3.5 w-3.5 mr-2" />
               User Reviews
             </Badge>
-            <h2 className="text-3xl font-serif font-bold mb-4 md:text-4xl">
-              What Creators Are Saying
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Join thousands of creators who have transformed their workflow with our AI editor
-            </p>
+          <h2 className="text-3xl font-serif font-bold mb-4 md:text-4xl">
+            What Creators Are Saying
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Join thousands of creators who have transformed their workflow with our AI polaroid photo generator
+          </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">

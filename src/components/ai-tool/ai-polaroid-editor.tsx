@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -45,26 +45,26 @@ const STYLE_TEMPLATES: StyleTemplate[] = [
     id: 'vintage-polaroid',
     name: 'Vintage Polaroid',
     description: 'Classic instant camera aesthetic with warm tones',
-    preview: '/api/placeholder/120/80',
+    preview: '/images/docs/themes/ocean.png',
   },
   {
     id: 'retro-film',
     name: 'Retro Film',
     description: '70s film photography with grain and faded colors',
-    preview: '/api/placeholder/120/80',
+    preview: '/images/docs/themes/dusk.png',
   },
   {
     id: 'modern-minimal',
     name: 'Modern Minimal',
     description: 'Clean, contemporary style with crisp edges',
-    preview: '/api/placeholder/120/80',
+    preview: '/images/docs/themes/neutral.png',
     isPro: true,
   },
   {
     id: 'artistic-sketch',
     name: 'Artistic Sketch',
     description: 'Hand-drawn illustration style',
-    preview: '/api/placeholder/120/80',
+    preview: '/images/docs/themes/catppuccin.png',
     isPro: true,
   },
 ];
@@ -72,22 +72,22 @@ const STYLE_TEMPLATES: StyleTemplate[] = [
 const SAMPLE_GALLERY: GeneratedImage[] = [
   {
     id: '1',
-    url: '/api/placeholder/300/400',
-    prompt: 'A sunny beach vacation memory',
+    url: '/images/docs/banner.png',
+    prompt: 'Polaroid of friends laughing on a boardwalk at sunset',
     timestamp: new Date(),
     style: 'Vintage Polaroid',
   },
   {
     id: '2',
-    url: '/api/placeholder/300/400',
-    prompt: 'City skyline at golden hour',
+    url: '/images/docs/nav.png',
+    prompt: 'Polaroid travel diary of a neon Tokyo street at night',
     timestamp: new Date(),
     style: 'Retro Film',
   },
   {
     id: '3',
-    url: '/api/placeholder/300/400',
-    prompt: 'Cozy coffee shop moment',
+    url: '/images/docs/notebook.png',
+    prompt: 'Polaroid portrait of a couple in a cozy coffee shop',
     timestamp: new Date(),
     style: 'Modern Minimal',
   },
@@ -97,11 +97,21 @@ export function AiPolaroidEditor() {
   const [selectedTab, setSelectedTab] = useState<'image-to-image' | 'text-to-image'>('image-to-image');
   const [selectedTemplate, setSelectedTemplate] = useState<string>('vintage-polaroid');
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
-  const [prompt, setPrompt] = useState('A futuristic city powered by nano technology, golden hour lighting, ultra detailed...');
+  const [prompt, setPrompt] = useState(
+    'Polaroid photo of a couple laughing under string lights, soft grain, handwritten caption "forever summer"'
+  );
   const [isGenerating, setIsGenerating] = useState(false);
   const [progress, setProgress] = useState(0);
   const [generatedImages, setGeneratedImages] = useState<GeneratedImage[]>(SAMPLE_GALLERY);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const progressIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const clearProgressInterval = () => {
+    if (progressIntervalRef.current) {
+      clearInterval(progressIntervalRef.current);
+      progressIntervalRef.current = null;
+    }
+  };
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -117,12 +127,13 @@ export function AiPolaroidEditor() {
   const handleGenerate = async () => {
     setIsGenerating(true);
     setProgress(0);
-    
+    clearProgressInterval();
+
     // Simulate generation progress
-    const interval = setInterval(() => {
+    progressIntervalRef.current = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
-          clearInterval(interval);
+          clearProgressInterval();
           setIsGenerating(false);
           return 100;
         }
@@ -131,7 +142,19 @@ export function AiPolaroidEditor() {
     }, 200);
   };
 
-  const selectedTemplateData = STYLE_TEMPLATES.find(t => t.id === selectedTemplate);
+  const handleCopyPrompt = async () => {
+    try {
+      await navigator.clipboard.writeText(prompt);
+    } catch (error) {
+      console.error('Failed to copy prompt', error);
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      clearProgressInterval();
+    };
+  }, []);
 
   return (
     <div className="w-full">
@@ -142,14 +165,14 @@ export function AiPolaroidEditor() {
           <div className="text-center mb-12">
             <Badge className="bg-blue-600 hover:bg-blue-700 text-white mb-4">
               <Sparkles className="h-3.5 w-3.5 mr-2" />
-              Get Started
+              AI Polaroid Photo
             </Badge>
             <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">
-              Try The AI Editor
+              Try the AI Polaroid Photo Editor
             </h1>
             <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-              Experience the power of nano-banana's natural language image editing.
-              Transform any photo with simple text commands
+              Turn everyday snapshots into AI polaroid photos with authentic film borders,
+              captions, and dreamy lighting. Describe the vibe and let the editor do the rest.
             </p>
           </div>
 
@@ -161,10 +184,10 @@ export function AiPolaroidEditor() {
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-2">
                     <Wand2 className="h-5 w-5 text-amber-400" />
-                    <CardTitle className="text-white text-lg">Prompt Engine</CardTitle>
+                    <CardTitle className="text-white text-lg">Polaroid Prompt Engine</CardTitle>
                   </div>
                   <CardDescription className="text-slate-400">
-                    Transform your image with AI-powered editing
+                    Describe the scene and we develop the AI polaroid for you instantly
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
@@ -201,7 +224,7 @@ export function AiPolaroidEditor() {
                           </Button>
                         </div>
                         <p className="text-slate-400 text-sm mt-2">
-                          Enable batch mode to process multiple images at once
+                          Enable batch mode to develop multiple polaroid shots at once
                         </p>
                       </div>
 
@@ -209,7 +232,7 @@ export function AiPolaroidEditor() {
                       <div className="space-y-3">
                         <div className="flex items-center gap-2">
                           <ImageIcon className="h-4 w-4 text-slate-400" />
-                          <Label className="text-white font-medium">Reference Image</Label>
+                          <Label className="text-white font-medium">Reference Photo</Label>
                           <Badge variant="outline" className="text-xs">0/9</Badge>
                         </div>
                         
@@ -227,8 +250,8 @@ export function AiPolaroidEditor() {
                             <div className="space-y-3">
                               <Upload className="h-8 w-8 text-amber-400 mx-auto" />
                               <div>
-                                <p className="text-white font-medium">Add Image</p>
-                                <p className="text-slate-400 text-sm">Max 50MB</p>
+                                <p className="text-white font-medium">Upload photo to restyle as a polaroid</p>
+                                <p className="text-slate-400 text-sm">JPG or PNG up to 50MB</p>
                               </div>
                             </div>
                           )}
@@ -255,18 +278,20 @@ export function AiPolaroidEditor() {
                   <div className="space-y-3">
                     <div className="flex items-center gap-2">
                       <Sparkles className="h-4 w-4 text-slate-400" />
-                      <Label className="text-white font-medium">Main Prompt</Label>
+                      <Label className="text-white font-medium">Polaroid Prompt</Label>
                     </div>
                     <Textarea
                       value={prompt}
                       onChange={(e) => setPrompt(e.target.value)}
-                      placeholder="Describe how you want to transform your image..."
+                      placeholder="Describe the polaroid mood, lighting, film stock, and caption..."
                       className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400 min-h-[100px] resize-none"
                     />
-                    <Button 
-                      size="sm" 
-                      variant="ghost" 
+                    <Button
+                      type="button"
+                      size="sm"
+                      variant="ghost"
                       className="text-slate-400 hover:text-white"
+                      onClick={handleCopyPrompt}
                     >
                       <Copy className="h-3 w-3 mr-1" />
                       Copy
@@ -282,12 +307,12 @@ export function AiPolaroidEditor() {
                     {isGenerating ? (
                       <>
                         <Clock className="h-5 w-5 mr-2 animate-spin" />
-                        Generating...
+                        Developing...
                       </>
                     ) : (
                       <>
                         <Sparkles className="h-5 w-5 mr-2" />
-                        Generate Now
+                        Generate Polaroid
                       </>
                     )}
                   </Button>
@@ -296,7 +321,7 @@ export function AiPolaroidEditor() {
                     <div className="space-y-2">
                       <Progress value={progress} className="h-2" />
                       <p className="text-sm text-slate-400 text-center">
-                        Processing your request... {progress}%
+                        Developing your polaroid... {progress}%
                       </p>
                     </div>
                   )}
@@ -310,10 +335,10 @@ export function AiPolaroidEditor() {
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-2">
                     <Camera className="h-5 w-5 text-blue-400" />
-                    <CardTitle className="text-white text-lg">Output Gallery</CardTitle>
+                    <CardTitle className="text-white text-lg">AI Polaroid Gallery</CardTitle>
                   </div>
                   <CardDescription className="text-slate-400">
-                    Your ultra-fast AI creations appear here instantly
+                    Your finished AI polaroid photos appear here with captions and film borders
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -347,10 +372,10 @@ export function AiPolaroidEditor() {
                     <div className="text-center py-12">
                       <ImageIcon className="h-16 w-16 text-slate-600 mx-auto mb-4" />
                       <h3 className="text-white text-lg font-medium mb-2">
-                        Ready for instant generation
+                        Ready to develop your next polaroid
                       </h3>
                       <p className="text-slate-400">
-                        Enter your prompt and unleash the power
+                        Describe your story to develop an AI polaroid photo
                       </p>
                     </div>
                   )}
@@ -360,9 +385,9 @@ export function AiPolaroidEditor() {
               {/* Style Templates */}
               <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
                 <CardHeader className="pb-4">
-                  <CardTitle className="text-white text-lg">Style Templates</CardTitle>
+                  <CardTitle className="text-white text-lg">Polaroid Film Templates</CardTitle>
                   <CardDescription className="text-slate-400">
-                    Choose from professional presets
+                    Choose from fan-favorite instant film presets
                   </CardDescription>
                 </CardHeader>
                 <CardContent>

@@ -1,8 +1,14 @@
-import { TotrMemeGenerator } from '@/components/totr/TotrMemeGenerator';
 import { constructMetadata } from '@/lib/metadata';
-import { getUrlWithLocale } from '@/lib/urls/urls';
+import { getUrlWithLocale, shouldAppendLocale } from '@/lib/urls/urls';
+import { redirect } from 'next/navigation';
 import type { Metadata } from 'next';
 import type { Locale } from 'next-intl';
+
+const TARGET_PATH = '/ai/polaroid/generator';
+
+function getLocalizedTarget(locale: Locale): string {
+  return shouldAppendLocale(locale) ? `/${locale}${TARGET_PATH}` : TARGET_PATH;
+}
 
 export async function generateMetadata({
   params,
@@ -11,17 +17,19 @@ export async function generateMetadata({
 }): Promise<Metadata | undefined> {
   const { locale } = await params;
   return constructMetadata({
-    title: 'TOTR Meme Generator — Make a TOTR (TOTЯ, Тотя) Meme Online',
+    title: 'AI Polaroid Generator — Edit Photos with Vintage Film Styles',
     description:
-      'Free online TOTR meme generator with parody-style templates. Add text, resize, and export PNG with watermark. No copyrighted assets built-in.',
-    canonicalUrl: getUrlWithLocale('/generator/totr', locale),
+      'Use the AI polaroid generator to transform photos with instant film borders, captions, and Gemini-powered style presets.',
+    canonicalUrl: getUrlWithLocale(TARGET_PATH, locale),
+    noIndex: true,
   });
 }
 
-export default function Page() {
-  return (
-    <main className="container mx-auto py-8">
-      <TotrMemeGenerator />
-    </main>
-  );
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  redirect(getLocalizedTarget(locale));
 }

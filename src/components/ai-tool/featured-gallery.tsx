@@ -2,16 +2,16 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import {
-  Star,
+  ArrowRight,
   Clock,
+  Download,
   Eye,
   Heart,
-  Download,
   Share2,
-  ArrowRight,
-  Zap,
+  Star,
   Trophy,
   User,
+  Zap,
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -35,7 +35,8 @@ const FEATURED_CREATIONS: FeaturedImage[] = [
     id: '1',
     url: '/images/docs/themes/ocean.png',
     title: 'Sunset Boardwalk Keepsake',
-    prompt: 'AI polaroid photo of friends laughing on a beach boardwalk with handwritten caption “golden hour crew”',
+    prompt:
+      'AI polaroid photo of friends laughing on a beach boardwalk with handwritten caption “golden hour crew”',
     style: 'Vintage Film Polaroid',
     generationTime: '0.8s',
     views: 12543,
@@ -48,7 +49,8 @@ const FEATURED_CREATIONS: FeaturedImage[] = [
     id: '2',
     url: '/images/docs/themes/dusk.png',
     title: 'Neon City Story',
-    prompt: 'AI polaroid photo of a neon Tokyo alley, rain-soaked pavement, neon pink caption “midnight run”',
+    prompt:
+      'AI polaroid photo of a neon Tokyo alley, rain-soaked pavement, neon pink caption “midnight run”',
     style: 'Retro Chrome Polaroid',
     generationTime: '1.2s',
     views: 8921,
@@ -62,7 +64,8 @@ const FEATURED_CREATIONS: FeaturedImage[] = [
     id: '3',
     url: '/images/docs/themes/catppuccin.png',
     title: 'Cozy Cafe Memory',
-    prompt: 'AI polaroid photo of a couple in a candlelit cafe, soft grain, caption “latte love”',
+    prompt:
+      'AI polaroid photo of a couple in a candlelit cafe, soft grain, caption “latte love”',
     style: 'Modern Minimal Polaroid',
     generationTime: '0.9s',
     views: 15672,
@@ -75,7 +78,8 @@ const FEATURED_CREATIONS: FeaturedImage[] = [
     id: '4',
     url: '/images/docs/themes/black.png',
     title: 'Aurora Night Polaroid',
-    prompt: 'AI polaroid photo of northern lights over a frozen lake with handwritten caption “arctic glow”',
+    prompt:
+      'AI polaroid photo of northern lights over a frozen lake with handwritten caption “arctic glow”',
     style: 'Cinematic Polaroid',
     generationTime: '1.5s',
     views: 20145,
@@ -89,7 +93,8 @@ const FEATURED_CREATIONS: FeaturedImage[] = [
     id: '5',
     url: '/images/docs/themes/neutral.png',
     title: 'Studio Portrait Polaroid',
-    prompt: 'AI polaroid photo of a model with studio lighting, sharp eyes, caption “campaign day”',
+    prompt:
+      'AI polaroid photo of a model with studio lighting, sharp eyes, caption “campaign day”',
     style: 'Editorial Polaroid',
     generationTime: '0.7s',
     views: 9834,
@@ -102,7 +107,8 @@ const FEATURED_CREATIONS: FeaturedImage[] = [
     id: '6',
     url: '/images/docs/themes/vitepress.png',
     title: 'Neo-Noir Night Run',
-    prompt: 'AI polaroid photo of a cyberpunk street racer, blue neon, caption “02:17 am”',
+    prompt:
+      'AI polaroid photo of a cyberpunk street racer, blue neon, caption “02:17 am”',
     style: 'Cyberpunk Polaroid',
     generationTime: '1.1s',
     views: 18923,
@@ -119,21 +125,24 @@ const TESTIMONIALS = [
     name: 'AIArtistPro',
     role: 'Digital Creator',
     avatar: '/api/placeholder/40/40',
-    quote: 'This AI polaroid editor completely changed my workflow. The character consistency across every frame is incredible.',
+    quote:
+      'This AI polaroid editor completely changed my workflow. The character consistency across every frame is incredible.',
     rating: 5,
   },
   {
     name: 'ContentCreator',
     role: 'UGC Specialist',
     avatar: '/api/placeholder/40/40',
-    quote: 'Creating consistent AI influencers has never been easier. Each polaroid drop keeps faces and styling perfectly aligned.',
+    quote:
+      'Creating consistent AI influencers has never been easier. Each polaroid drop keeps faces and styling perfectly aligned.',
     rating: 5,
   },
   {
     name: 'PhotoEditor',
     role: 'Professional Editor',
     avatar: '/api/placeholder/40/40',
-    quote: 'One-shot polaroid editing is basically solved here. The blending and film grain feel handcrafted every time.',
+    quote:
+      'One-shot polaroid editing is basically solved here. The blending and film grain feel handcrafted every time.',
     rating: 5,
   },
 ];
@@ -152,33 +161,53 @@ export function FeaturedGallery() {
             AI Polaroid Photo Gallery
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            See how creators turn simple prompts into AI polaroid photos with film-grade borders, captions, and nostalgic moods.
+            See how creators turn simple prompts into AI polaroid photos with
+            film-grade borders, captions, and nostalgic moods.
           </p>
         </div>
 
         {/* Featured Images Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {FEATURED_CREATIONS.map((image) => (
-            <Card key={image.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <Card
+              key={image.id}
+              className="group hover:shadow-xl transition-all duration-300 overflow-hidden"
+            >
               <div className="relative">
                 <img
                   src={image.url}
                   alt={image.title}
                   className="w-full aspect-[4/5] object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                
+
                 {/* Overlay on Hover */}
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
-                  <Button size="sm" variant="ghost" className="text-white hover:bg-white/20">
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    className="text-white hover:bg-white/20"
+                  >
                     <Eye className="h-4 w-4" />
                   </Button>
-                  <Button size="sm" variant="ghost" className="text-white hover:bg-white/20">
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    className="text-white hover:bg-white/20"
+                  >
                     <Heart className="h-4 w-4" />
                   </Button>
-                  <Button size="sm" variant="ghost" className="text-white hover:bg-white/20">
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    className="text-white hover:bg-white/20"
+                  >
                     <Download className="h-4 w-4" />
                   </Button>
-                  <Button size="sm" variant="ghost" className="text-white hover:bg-white/20">
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    className="text-white hover:bg-white/20"
+                  >
                     <Share2 className="h-4 w-4" />
                   </Button>
                 </div>
@@ -216,7 +245,7 @@ export function FeaturedGallery() {
                 <p className="text-sm text-muted-foreground mb-3 line-clamp-2">
                   "{image.prompt}"
                 </p>
-                
+
                 <div className="flex items-center justify-between text-xs text-muted-foreground">
                   <div className="flex items-center gap-3">
                     <span className="flex items-center gap-1">
@@ -247,7 +276,10 @@ export function FeaturedGallery() {
           <p className="text-muted-foreground mb-4">
             See how fast you can develop your own AI polaroid photos
           </p>
-          <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+          >
             Open the AI Polaroid Generator
             <ArrowRight className="h-4 w-4 ml-2" />
           </Button>
@@ -262,17 +294,21 @@ export function FeaturedGallery() {
               <Star className="h-3.5 w-3.5 mr-2" />
               User Reviews
             </Badge>
-          <h2 className="text-3xl font-serif font-bold mb-4 md:text-4xl">
-            What Creators Are Saying
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Join thousands of creators who have transformed their workflow with our AI polaroid photo generator
-          </p>
+            <h2 className="text-3xl font-serif font-bold mb-4 md:text-4xl">
+              What Creators Are Saying
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Join thousands of creators who have transformed their workflow
+              with our AI polaroid photo generator
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {TESTIMONIALS.map((testimonial, index) => (
-              <Card key={index} className="bg-background border-l-4 border-l-yellow-400">
+              <Card
+                key={index}
+                className="bg-background border-l-4 border-l-yellow-400"
+              >
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <img
@@ -281,17 +317,24 @@ export function FeaturedGallery() {
                       className="w-10 h-10 rounded-full object-cover"
                     />
                     <div>
-                      <h4 className="font-semibold text-sm">{testimonial.name}</h4>
-                      <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                      <h4 className="font-semibold text-sm">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-xs text-muted-foreground">
+                        {testimonial.role}
+                      </p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center gap-1 mb-3">
                     {Array.from({ length: testimonial.rating }).map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      <Star
+                        key={i}
+                        className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                      />
                     ))}
                   </div>
-                  
+
                   <blockquote className="text-sm text-muted-foreground">
                     "{testimonial.quote}"
                   </blockquote>
@@ -304,18 +347,26 @@ export function FeaturedGallery() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 border-t">
             <div className="text-center">
               <div className="text-2xl font-bold text-blue-600 mb-1">500K+</div>
-              <div className="text-sm text-muted-foreground">Images Generated</div>
+              <div className="text-sm text-muted-foreground">
+                Images Generated
+              </div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-green-600 mb-1">50K+</div>
               <div className="text-sm text-muted-foreground">Active Users</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-purple-600 mb-1">0.8s</div>
-              <div className="text-sm text-muted-foreground">Avg. Generation Time</div>
+              <div className="text-2xl font-bold text-purple-600 mb-1">
+                0.8s
+              </div>
+              <div className="text-sm text-muted-foreground">
+                Avg. Generation Time
+              </div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-orange-600 mb-1">99.9%</div>
+              <div className="text-2xl font-bold text-orange-600 mb-1">
+                99.9%
+              </div>
               <div className="text-sm text-muted-foreground">Uptime</div>
             </div>
           </div>

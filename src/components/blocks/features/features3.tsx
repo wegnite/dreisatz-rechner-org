@@ -31,9 +31,7 @@ export default function Features3Section() {
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <ZapIcon className="size-4" />
-              <h3 className="text-base font-medium">
-                {t('items.0.title')}
-              </h3>
+              <h3 className="text-base font-medium">{t('items.0.title')}</h3>
             </div>
             <p className="text-sm text-muted-foreground mt-4">
               {t('items.0.description')}
@@ -42,9 +40,7 @@ export default function Features3Section() {
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <CpuIcon className="size-4" />
-              <h3 className="text-base font-medium">
-                {t('items.1.title')}
-              </h3>
+              <h3 className="text-base font-medium">{t('items.1.title')}</h3>
             </div>
             <p className="text-sm text-muted-foreground mt-4">
               {t('items.1.description')}
@@ -54,9 +50,7 @@ export default function Features3Section() {
             <div className="flex items-center gap-2">
               <FingerprintIcon className="size-4" />
 
-              <h3 className="text-base font-medium">
-                {t('items.2.title')}
-              </h3>
+              <h3 className="text-base font-medium">{t('items.2.title')}</h3>
             </div>
             <p className="text-sm text-muted-foreground mt-4">
               {t('items.2.description')}
@@ -66,9 +60,7 @@ export default function Features3Section() {
             <div className="flex items-center gap-2">
               <PencilIcon className="size-4" />
 
-              <h3 className="text-base font-medium">
-                {t('items.3.title')}
-              </h3>
+              <h3 className="text-base font-medium">{t('items.3.title')}</h3>
             </div>
             <p className="text-sm text-muted-foreground mt-4">
               {t('items.3.description')}
@@ -78,9 +70,7 @@ export default function Features3Section() {
             <div className="flex items-center gap-2">
               <Settings2Icon className="size-4" />
 
-              <h3 className="text-base font-medium">
-                {t('items.0.title')}
-              </h3>
+              <h3 className="text-base font-medium">{t('items.0.title')}</h3>
             </div>
             <p className="text-sm text-muted-foreground mt-4">
               {t('items.0.description')}
@@ -90,9 +80,7 @@ export default function Features3Section() {
             <div className="flex items-center gap-2">
               <SparklesIcon className="size-4" />
 
-              <h3 className="text-base font-medium">
-                {t('items.1.title')}
-              </h3>
+              <h3 className="text-base font-medium">{t('items.1.title')}</h3>
             </div>
             <p className="text-sm text-muted-foreground mt-4">
               {t('items.1.description')}

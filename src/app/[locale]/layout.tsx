@@ -7,6 +7,7 @@ import {
 } from '@/assets/fonts';
 import AffonsoScript from '@/components/affiliate/affonso';
 import PromotekitScript from '@/components/affiliate/promotekit';
+import { GoogleOneTap } from '@/components/auth/google-one-tap';
 import { TailwindIndicator } from '@/components/layout/tailwind-indicator';
 import { routing } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
@@ -58,6 +59,11 @@ export default async function LocaleLayout({
           src="https://www.googletagmanager.com/gtag/js?id=G-76J2YGEDYY"
           strategy="afterInteractive"
         />
+        <Script
+          id="google-one-tap"
+          src="https://accounts.google.com/gsi/client"
+          strategy="afterInteractive"
+        />
         <Script id="google-analytics-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -86,6 +92,7 @@ export default async function LocaleLayout({
               <Toaster richColors position="top-right" offset={64} />
               <TailwindIndicator />
               <Analytics />
+              <GoogleOneTap />
             </Providers>
           </NextIntlClientProvider>
         </NuqsAdapter>

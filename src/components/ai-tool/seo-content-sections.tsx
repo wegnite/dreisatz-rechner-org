@@ -1,18 +1,24 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import {
+  ArrowRight,
+  Camera,
+  CheckCircle,
+  Clock,
+  Palette,
+  Shield,
+  Sparkles,
+  Star,
+  Users,
   Wand2,
   Zap,
-  Shield,
-  Users,
-  Clock,
-  Star,
-  ArrowRight,
-  CheckCircle,
-  Camera,
-  Palette,
-  Sparkles,
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -116,7 +122,8 @@ export function SeoContentSections() {
             Why Creators Love Our AI Polaroid Editor
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Experience the AI polaroid photo generator built for storytellers, marketers, and event teams who need film-style assets fast.
+            Experience the AI polaroid photo generator built for storytellers,
+            marketers, and event teams who need film-style assets fast.
           </p>
         </div>
 
@@ -151,8 +158,9 @@ export function SeoContentSections() {
               Develop AI Polaroid Photos in Four Steps
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Our intuitive workflow makes creating AI polaroid photos accessible to everyone. 
-              No design experience or film knowledge needed.
+              Our intuitive workflow makes creating AI polaroid photos
+              accessible to everyone. No design experience or film knowledge
+              needed.
             </p>
           </div>
 
@@ -168,13 +176,18 @@ export function SeoContentSections() {
                   )}
                 </div>
                 <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
-                <p className="text-muted-foreground text-sm">{step.description}</p>
+                <p className="text-muted-foreground text-sm">
+                  {step.description}
+                </p>
               </div>
             ))}
           </div>
 
           <div className="text-center mt-12">
-            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+            >
               <Sparkles className="h-4 w-4 mr-2" />
               Start Making AI Polaroid Photos
             </Button>
@@ -240,22 +253,27 @@ export function SeoContentSections() {
                 What is AI Photo Editing?
               </h2>
               <p className="text-lg text-muted-foreground">
-                Understanding the technology that's revolutionizing image creation
+                Understanding the technology that's revolutionizing image
+                creation
               </p>
             </div>
 
             <div className="prose prose-lg max-w-none dark:prose-invert">
               <p className="text-muted-foreground mb-6">
-                AI photo editing represents a groundbreaking shift in how we create and modify images. 
-                Unlike traditional editing software that requires manual adjustments and technical expertise, 
-                AI-powered tools use advanced machine learning models to understand and execute creative 
-                instructions given in natural language.
+                AI photo editing represents a groundbreaking shift in how we
+                create and modify images. Unlike traditional editing software
+                that requires manual adjustments and technical expertise,
+                AI-powered tools use advanced machine learning models to
+                understand and execute creative instructions given in natural
+                language.
               </p>
 
               <div className="grid md:grid-cols-2 gap-8 my-8">
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-xl">Traditional Editing</CardTitle>
+                    <CardTitle className="text-xl">
+                      Traditional Editing
+                    </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-2 text-sm text-muted-foreground">
                     <p>• Requires technical software knowledge</p>
@@ -281,10 +299,12 @@ export function SeoContentSections() {
               </div>
 
               <p className="text-muted-foreground">
-                Our AI model has been trained on millions of images and editing examples, enabling it to 
-                understand complex creative concepts and execute them with precision. Whether you're adding 
-                objects, changing backgrounds, adjusting lighting, or creating entirely new scenes, our AI 
-                handles the technical complexity while you focus on your creative vision.
+                Our AI model has been trained on millions of images and editing
+                examples, enabling it to understand complex creative concepts
+                and execute them with precision. Whether you're adding objects,
+                changing backgrounds, adjusting lighting, or creating entirely
+                new scenes, our AI handles the technical complexity while you
+                focus on your creative vision.
               </p>
             </div>
           </div>

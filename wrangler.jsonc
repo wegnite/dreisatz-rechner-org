@@ -70,7 +70,10 @@
     "NEXT_URL": "https://aipolaroidphoto.org",
     "VERCEL_URL": "aipolaroidphoto.org",
     "DISABLE_IMAGE_OPTIMIZATION": "true",
-    "NEXT_PUBLIC_DEMO_WEBSITE": "false"
+    "NEXT_PUBLIC_DEMO_WEBSITE": "false",
+    "NEXT_PUBLIC_STRIPE_PRICE_PRO_MONTHLY": "price_1S8xfH4TOkObXtRCZ0uPTHyE",
+    "NEXT_PUBLIC_STRIPE_PRICE_PRO_YEARLY": "price_1S8xhm4TOkObXtRC5fpQ2iUH",
+    "NEXT_PUBLIC_STRIPE_PRICE_LIFETIME": "price_1S8xgr4TOkObXtRCEDCyJLIY"
   },
   /**
    * Note: Use secrets to store sensitive data.

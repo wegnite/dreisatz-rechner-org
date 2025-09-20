@@ -41,6 +41,7 @@ import {
 export class StripeProvider implements PaymentProvider {
   private stripe: Stripe;
   private webhookSecret: string;
+  private apiKey: string;
 
   /**
    * Initialize Stripe provider with API key
@@ -56,8 +57,12 @@ export class StripeProvider implements PaymentProvider {
       throw new Error('STRIPE_WEBHOOK_SECRET environment variable is not set.');
     }
 
-    // Initialize Stripe without specifying apiVersion to use default/latest version
-    this.stripe = new Stripe(apiKey);
+    this.apiKey = apiKey;
+    // Initialize Stripe with fetch-based HTTP client for Cloudflare Workers compatibility
+    const fetchClient = Stripe.createFetchHttpClient();
+    this.stripe = new Stripe(apiKey, {
+      httpClient: fetchClient,
+    });
     this.webhookSecret = webhookSecret;
   }
 
@@ -73,10 +78,19 @@ export class StripeProvider implements PaymentProvider {
   ): Promise<string> {
     try {
       // Search for existing customer
-      const customers = await this.stripe.customers.list({
-        email,
-        limit: 1,
-      });
+      let customers;
+      try {
+        customers = await this.stripe.customers.list({
+          email,
+          limit: 1,
+        });
+      } catch (sdkError) {
+        console.error(
+          'Stripe SDK customers.list failed, fallback to fetch API:',
+          sdkError
+        );
+        customers = await this.fetchCustomersByEmail(email);
+      }
 
       // Find existing customer
       if (customers.data && customers.data.length > 0) {
@@ -94,10 +108,19 @@ export class StripeProvider implements PaymentProvider {
       }
 
       // Create new customer
-      const customer = await this.stripe.customers.create({
-        email,
-        name: name || undefined,
-      });
+      let customer;
+      try {
+        customer = await this.stripe.customers.create({
+          email,
+          name: name || undefined,
+        });
+      } catch (sdkError) {
+        console.error(
+          'Stripe SDK customers.create failed, fallback to fetch API:',
+          sdkError
+        );
+        customer = await this.createCustomerViaFetch({ email, name });
+      }
 
       // Update user record in database with the new customer ID
       await this.updateUserWithCustomerId(customer.id, email);
@@ -169,6 +192,62 @@ export class StripeProvider implements PaymentProvider {
       console.error('Find user by customer ID error:', error);
       return undefined;
     }
+  }
+
+  private async fetchCustomersByEmail(email: string) {
+    const params = new URLSearchParams({ email, limit: '1' });
+    return this.stripeRequest<{ data: Array<{ id: string }> }>(
+      `/customers?${params.toString()}`,
+      'GET'
+    );
+  }
+
+  private async createCustomerViaFetch({
+    email,
+    name,
+  }: {
+    email: string;
+    name?: string;
+  }) {
+    const body = new URLSearchParams({ email });
+    if (name) {
+      body.append('name', name);
+    }
+    return this.stripeRequest<{ id: string }>('/customers', 'POST', body);
+  }
+
+  private async stripeRequest<T>(
+    path: string,
+    method: 'GET' | 'POST',
+    body?: URLSearchParams
+  ): Promise<T> {
+    const url = new URL(`https://api.stripe.com/v1${path}`);
+    const headers: Record<string, string> = {
+      Authorization: `Bearer ${this.apiKey}`,
+    };
+
+    const init: RequestInit = {
+      method,
+      headers,
+    };
+
+    if (method === 'POST') {
+      init.body = body?.toString();
+      init.headers = {
+        ...headers,
+        'Content-Type': 'application/x-www-form-urlencoded',
+      };
+    }
+
+    const response = await fetch(url, init);
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(
+        `Stripe fetch error ${response.status}: ${response.statusText} - ${errorText}`
+      );
+    }
+
+    return (await response.json()) as T;
   }
 
   /**
@@ -285,6 +364,7 @@ export class StripeProvider implements PaymentProvider {
       throw new Error('Failed to create checkout session');
     }
   }
+
 
   /**
    * Create a checkout session for a plan

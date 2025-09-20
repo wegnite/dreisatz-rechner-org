@@ -8,9 +8,34 @@ import * as schema from './schema';
 
 let db: ReturnType<typeof drizzle> | null = null;
 
+function getHyperdriveConnectionString(): string | undefined {
+  try {
+    const context = Reflect.get(
+      globalThis,
+      Symbol.for('__cloudflare-context__')
+    ) as { env?: { HYPERDRIVE?: { connectionString?: string } } } | undefined;
+    return context?.env?.HYPERDRIVE?.connectionString;
+  } catch {
+    return undefined;
+  }
+}
+
 export async function getDb() {
   if (db) return db;
-  const connectionString = process.env.DATABASE_URL!;
+
+  const hyperdriveConnection = getHyperdriveConnectionString();
+  const connectionString = hyperdriveConnection ?? process.env.DATABASE_URL;
+
+  if (!connectionString) {
+    throw new Error('DATABASE_URL is not set');
+  }
+
+  if (hyperdriveConnection) {
+    console.log('[db] Using Hyperdrive connection');
+  } else {
+    console.warn('[db] Using DATABASE_URL fallback');
+  }
+
   const client = postgres(connectionString, { prepare: false });
   db = drizzle(client, { schema });
   return db;

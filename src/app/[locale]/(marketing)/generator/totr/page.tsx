@@ -1,8 +1,8 @@
 import { constructMetadata } from '@/lib/metadata';
 import { getUrlWithLocale, shouldAppendLocale } from '@/lib/urls/urls';
-import { redirect } from 'next/navigation';
 import type { Metadata } from 'next';
 import type { Locale } from 'next-intl';
+import { redirect } from 'next/navigation';
 
 const TARGET_PATH = '/ai/polaroid/generator';
 

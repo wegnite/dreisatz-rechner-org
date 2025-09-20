@@ -22,6 +22,9 @@
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "cf:preview": "tsx scripts/sync-cloudflare-env.ts",
+    "cf:push": "tsx scripts/sync-cloudflare-env.ts --push-secrets",
+    "cf:deploy": "tsx scripts/sync-cloudflare-env.ts --push-secrets --deploy",
     "knip": "knip"
   },
   "dependencies": {
@@ -105,6 +108,7 @@
     "fumadocs-core": "^15.6.7",
     "fumadocs-mdx": "^11.7.3",
     "fumadocs-ui": "^15.6.7",
+    "google-one-tap": "^1.0.6",
     "input-otp": "^1.4.2",
     "konva": "^10.0.2",
     "lucide-react": "^0.483.0",

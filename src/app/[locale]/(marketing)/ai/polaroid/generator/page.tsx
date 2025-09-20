@@ -26,7 +26,10 @@ export async function generateMetadata({
   params: Promise<{ locale: Locale }>;
 }): Promise<Metadata | undefined> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'AIPolaroidGeneratorPage' });
+  const t = await getTranslations({
+    locale,
+    namespace: 'AIPolaroidGeneratorPage',
+  });
 
   return constructMetadata({
     title: t('title'),
@@ -41,7 +44,10 @@ interface PageProps {
 
 export default async function AIPolaroidGeneratorPage({ params }: PageProps) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'AIPolaroidGeneratorPage' });
+  const t = await getTranslations({
+    locale,
+    namespace: 'AIPolaroidGeneratorPage',
+  });
 
   const hero = t.raw('hero') as Hero;
   const sections = t.raw('sections') as Section[];

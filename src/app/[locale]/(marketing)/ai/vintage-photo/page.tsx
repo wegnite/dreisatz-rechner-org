@@ -101,7 +101,9 @@ export default async function AIVintagePhotoPage({ params }: PageProps) {
             </Badge>
             <p className="text-muted-foreground">{t('description')}</p>
             <Button size="lg" asChild>
-              <Link href={generatorHref}>{hero.primaryCta ?? t('hero.title')}</Link>
+              <Link href={generatorHref}>
+                {hero.primaryCta ?? t('hero.title')}
+              </Link>
             </Button>
           </div>
         </div>

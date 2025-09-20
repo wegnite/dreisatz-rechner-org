@@ -1,28 +1,34 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Progress } from '@/components/ui/progress';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Textarea } from '@/components/ui/textarea';
+import { cn } from '@/lib/utils';
 import {
-  Upload,
-  Wand2,
-  Image as ImageIcon,
-  Sparkles,
   Camera,
   Clock,
-  Star,
-  Download,
-  Share2,
   Copy,
+  Download,
+  Image as ImageIcon,
   Palette,
+  Share2,
+  Sparkles,
+  Star,
+  Upload,
+  Wand2,
 } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { useEffect, useRef, useState } from 'react';
 
 interface StyleTemplate {
   id: string;
@@ -94,17 +100,23 @@ const SAMPLE_GALLERY: GeneratedImage[] = [
 ];
 
 export function AiPolaroidEditor() {
-  const [selectedTab, setSelectedTab] = useState<'image-to-image' | 'text-to-image'>('image-to-image');
-  const [selectedTemplate, setSelectedTemplate] = useState<string>('vintage-polaroid');
+  const [selectedTab, setSelectedTab] = useState<
+    'image-to-image' | 'text-to-image'
+  >('image-to-image');
+  const [selectedTemplate, setSelectedTemplate] =
+    useState<string>('vintage-polaroid');
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
   const [prompt, setPrompt] = useState(
     'Polaroid photo of a couple laughing under string lights, soft grain, handwritten caption "forever summer"'
   );
   const [isGenerating, setIsGenerating] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [generatedImages, setGeneratedImages] = useState<GeneratedImage[]>(SAMPLE_GALLERY);
+  const [generatedImages, setGeneratedImages] =
+    useState<GeneratedImage[]>(SAMPLE_GALLERY);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const progressIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const progressIntervalRef = useRef<ReturnType<typeof setInterval> | null>(
+    null
+  );
 
   const clearProgressInterval = () => {
     if (progressIntervalRef.current) {
@@ -171,8 +183,9 @@ export function AiPolaroidEditor() {
               Try the AI Polaroid Photo Editor
             </h1>
             <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-              Turn everyday snapshots into AI polaroid photos with authentic film borders,
-              captions, and dreamy lighting. Describe the vibe and let the editor do the rest.
+              Turn everyday snapshots into AI polaroid photos with authentic
+              film borders, captions, and dreamy lighting. Describe the vibe and
+              let the editor do the rest.
             </p>
           </div>
 
@@ -184,24 +197,31 @@ export function AiPolaroidEditor() {
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-2">
                     <Wand2 className="h-5 w-5 text-amber-400" />
-                    <CardTitle className="text-white text-lg">Polaroid Prompt Engine</CardTitle>
+                    <CardTitle className="text-white text-lg">
+                      Polaroid Prompt Engine
+                    </CardTitle>
                   </div>
                   <CardDescription className="text-slate-400">
-                    Describe the scene and we develop the AI polaroid for you instantly
+                    Describe the scene and we develop the AI polaroid for you
+                    instantly
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   {/* Mode Selection */}
-                  <Tabs value={selectedTab} onValueChange={(value) => setSelectedTab(value as any)} className="w-full">
+                  <Tabs
+                    value={selectedTab}
+                    onValueChange={(value) => setSelectedTab(value as any)}
+                    className="w-full"
+                  >
                     <TabsList className="grid w-full grid-cols-2 bg-slate-700/50">
-                      <TabsTrigger 
-                        value="image-to-image" 
+                      <TabsTrigger
+                        value="image-to-image"
                         className="data-[state=active]:bg-amber-500 data-[state=active]:text-slate-900"
                       >
                         <ImageIcon className="h-4 w-4 mr-2" />
                         Image to Image
                       </TabsTrigger>
-                      <TabsTrigger 
+                      <TabsTrigger
                         value="text-to-image"
                         className="data-[state=active]:bg-slate-600 data-[state=active]:text-white"
                       >
@@ -210,21 +230,33 @@ export function AiPolaroidEditor() {
                       </TabsTrigger>
                     </TabsList>
 
-                    <TabsContent value="image-to-image" className="mt-6 space-y-6">
+                    <TabsContent
+                      value="image-to-image"
+                      className="mt-6 space-y-6"
+                    >
                       {/* Batch Processing Banner */}
                       <div className="bg-amber-500/10 border border-amber-500/20 rounded-lg p-4">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2">
-                            <span className="text-white font-medium">Batch Processing</span>
-                            <Badge className="bg-amber-500 text-slate-900 text-xs">Pro</Badge>
+                            <span className="text-white font-medium">
+                              Batch Processing
+                            </span>
+                            <Badge className="bg-amber-500 text-slate-900 text-xs">
+                              Pro
+                            </Badge>
                           </div>
-                          <Button size="sm" variant="outline" className="border-amber-500 text-amber-400 hover:bg-amber-500 hover:text-slate-900">
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="border-amber-500 text-amber-400 hover:bg-amber-500 hover:text-slate-900"
+                          >
                             <Star className="h-3 w-3 mr-1" />
                             Upgrade
                           </Button>
                         </div>
                         <p className="text-slate-400 text-sm mt-2">
-                          Enable batch mode to develop multiple polaroid shots at once
+                          Enable batch mode to develop multiple polaroid shots
+                          at once
                         </p>
                       </div>
 
@@ -232,26 +264,34 @@ export function AiPolaroidEditor() {
                       <div className="space-y-3">
                         <div className="flex items-center gap-2">
                           <ImageIcon className="h-4 w-4 text-slate-400" />
-                          <Label className="text-white font-medium">Reference Photo</Label>
-                          <Badge variant="outline" className="text-xs">0/9</Badge>
+                          <Label className="text-white font-medium">
+                            Reference Photo
+                          </Label>
+                          <Badge variant="outline" className="text-xs">
+                            0/9
+                          </Badge>
                         </div>
-                        
-                        <div 
+
+                        <div
                           className="border-2 border-dashed border-amber-500/30 rounded-lg p-8 text-center hover:border-amber-500/50 transition-colors cursor-pointer"
                           onClick={() => fileInputRef.current?.click()}
                         >
                           {uploadedImage ? (
-                            <img 
-                              src={uploadedImage} 
-                              alt="Uploaded" 
+                            <img
+                              src={uploadedImage}
+                              alt="Uploaded"
                               className="max-h-32 mx-auto rounded-lg object-cover"
                             />
                           ) : (
                             <div className="space-y-3">
                               <Upload className="h-8 w-8 text-amber-400 mx-auto" />
                               <div>
-                                <p className="text-white font-medium">Upload photo to restyle as a polaroid</p>
-                                <p className="text-slate-400 text-sm">JPG or PNG up to 50MB</p>
+                                <p className="text-white font-medium">
+                                  Upload photo to restyle as a polaroid
+                                </p>
+                                <p className="text-slate-400 text-sm">
+                                  JPG or PNG up to 50MB
+                                </p>
                               </div>
                             </div>
                           )}
@@ -269,7 +309,9 @@ export function AiPolaroidEditor() {
                     <TabsContent value="text-to-image" className="mt-6">
                       <div className="text-center py-8 text-slate-400">
                         <Palette className="h-12 w-12 mx-auto mb-4 opacity-50" />
-                        <p>Text to Image mode - Create images from descriptions</p>
+                        <p>
+                          Text to Image mode - Create images from descriptions
+                        </p>
                       </div>
                     </TabsContent>
                   </Tabs>
@@ -278,7 +320,9 @@ export function AiPolaroidEditor() {
                   <div className="space-y-3">
                     <div className="flex items-center gap-2">
                       <Sparkles className="h-4 w-4 text-slate-400" />
-                      <Label className="text-white font-medium">Polaroid Prompt</Label>
+                      <Label className="text-white font-medium">
+                        Polaroid Prompt
+                      </Label>
                     </div>
                     <Textarea
                       value={prompt}
@@ -299,7 +343,7 @@ export function AiPolaroidEditor() {
                   </div>
 
                   {/* Generate Button */}
-                  <Button 
+                  <Button
                     onClick={handleGenerate}
                     disabled={isGenerating}
                     className="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold py-6 text-lg"
@@ -335,10 +379,13 @@ export function AiPolaroidEditor() {
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-2">
                     <Camera className="h-5 w-5 text-blue-400" />
-                    <CardTitle className="text-white text-lg">AI Polaroid Gallery</CardTitle>
+                    <CardTitle className="text-white text-lg">
+                      AI Polaroid Gallery
+                    </CardTitle>
                   </div>
                   <CardDescription className="text-slate-400">
-                    Your finished AI polaroid photos appear here with captions and film borders
+                    Your finished AI polaroid photos appear here with captions
+                    and film borders
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -352,17 +399,29 @@ export function AiPolaroidEditor() {
                             className="w-full aspect-[3/4] object-cover rounded-lg border border-slate-600"
                           />
                           <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center gap-2">
-                            <Button size="sm" variant="ghost" className="text-white hover:bg-white/20">
+                            <Button
+                              size="sm"
+                              variant="ghost"
+                              className="text-white hover:bg-white/20"
+                            >
                               <Download className="h-4 w-4" />
                             </Button>
-                            <Button size="sm" variant="ghost" className="text-white hover:bg-white/20">
+                            <Button
+                              size="sm"
+                              variant="ghost"
+                              className="text-white hover:bg-white/20"
+                            >
                               <Share2 className="h-4 w-4" />
                             </Button>
                           </div>
                           <div className="absolute bottom-2 left-2 right-2">
                             <div className="bg-black/80 rounded px-2 py-1">
-                              <p className="text-white text-xs truncate">{image.prompt}</p>
-                              <p className="text-slate-400 text-xs">{image.style}</p>
+                              <p className="text-white text-xs truncate">
+                                {image.prompt}
+                              </p>
+                              <p className="text-slate-400 text-xs">
+                                {image.style}
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -385,7 +444,9 @@ export function AiPolaroidEditor() {
               {/* Style Templates */}
               <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
                 <CardHeader className="pb-4">
-                  <CardTitle className="text-white text-lg">Polaroid Film Templates</CardTitle>
+                  <CardTitle className="text-white text-lg">
+                    Polaroid Film Templates
+                  </CardTitle>
                   <CardDescription className="text-slate-400">
                     Choose from fan-favorite instant film presets
                   </CardDescription>
@@ -396,10 +457,10 @@ export function AiPolaroidEditor() {
                       <div
                         key={template.id}
                         className={cn(
-                          "border rounded-lg p-3 cursor-pointer transition-all",
+                          'border rounded-lg p-3 cursor-pointer transition-all',
                           selectedTemplate === template.id
-                            ? "border-amber-500 bg-amber-500/10"
-                            : "border-slate-600 hover:border-slate-500"
+                            ? 'border-amber-500 bg-amber-500/10'
+                            : 'border-slate-600 hover:border-slate-500'
                         )}
                         onClick={() => setSelectedTemplate(template.id)}
                       >
@@ -414,7 +475,9 @@ export function AiPolaroidEditor() {
                               {template.name}
                             </h4>
                             {template.isPro && (
-                              <Badge className="bg-blue-600 text-white text-xs px-1">Pro</Badge>
+                              <Badge className="bg-blue-600 text-white text-xs px-1">
+                                Pro
+                              </Badge>
                             )}
                           </div>
                           <p className="text-slate-400 text-xs">

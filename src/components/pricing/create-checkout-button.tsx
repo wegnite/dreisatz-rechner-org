@@ -102,7 +102,18 @@ export function CheckoutButton({
         window.location.href = result.data.data?.url;
       } else {
         console.error('Create checkout session error, result:', result);
-        toast.error(t('checkoutFailed'));
+        const validationErrors =
+          (result?.validationErrors as Record<string, string[] | undefined> | undefined) ??
+          undefined;
+        const validationError = validationErrors?.userId?.[0];
+        const serverErrorRaw =
+          (typeof result?.serverError === 'string'
+            ? result.serverError
+            : undefined) ??
+          (typeof result?.data?.error === 'string'
+            ? result.data.error
+            : undefined);
+        toast.error(serverErrorRaw ?? validationError ?? t('checkoutFailed'));
       }
     } catch (error) {
       console.error('Create checkout session error:', error);

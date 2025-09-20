@@ -48,7 +48,19 @@ export function constructMetadata({
       site: getBaseUrl(),
     },
     icons: {
-      icon: '/favicon.ico',
+      icon: [
+        { url: '/favicon.ico' },
+        {
+          url: '/favicon-32x32.png',
+          type: 'image/png',
+          sizes: '32x32',
+        },
+        {
+          url: '/favicon-16x16.png',
+          type: 'image/png',
+          sizes: '16x16',
+        },
+      ],
       shortcut: '/favicon-32x32.png',
       apple: '/apple-touch-icon.png',
     },

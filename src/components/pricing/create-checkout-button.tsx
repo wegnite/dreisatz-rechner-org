@@ -113,11 +113,49 @@ export function CheckoutButton({
           (typeof result?.data?.error === 'string'
             ? result.data.error
             : undefined);
-        toast.error(serverErrorRaw ?? validationError ?? t('checkoutFailed'));
+        const serialize = (value: unknown) => {
+          if (!value) return undefined;
+          if (typeof value === 'string') return value;
+          try {
+            return JSON.stringify(value);
+          } catch (error) {
+            console.error('Failed to serialize error payload:', error, value);
+            return undefined;
+          }
+        };
+        const fallbackDebug =
+          serverErrorRaw ??
+          validationError ??
+          serialize(result?.data) ??
+          serialize(result);
+        const formattedMessage = fallbackDebug
+          ? `${t('checkoutFailed')} (${fallbackDebug.slice(0, 300)}${
+              fallbackDebug.length > 300 ? '…' : ''
+            })`
+          : t('checkoutFailed');
+        toast.error(formattedMessage);
       }
     } catch (error) {
       console.error('Create checkout session error:', error);
-      toast.error(t('checkoutFailed'));
+      const errorMessage =
+        error instanceof Error
+          ? error.message
+          : typeof error === 'string'
+            ? error
+            : (() => {
+                try {
+                  return JSON.stringify(error);
+                } catch {
+                  return undefined;
+                }
+              })();
+      toast.error(
+        errorMessage
+          ? `${t('checkoutFailed')} (${errorMessage.slice(0, 300)}${
+              errorMessage.length > 300 ? '…' : ''
+            })`
+          : t('checkoutFailed')
+      );
     } finally {
       setIsLoading(false);
     }

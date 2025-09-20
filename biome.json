@@ -27,6 +27,7 @@
       "src/components/tailark/*.tsx",
       "src/components/ai-elements/*.tsx",
       "src/app/[[]locale]/preview/**",
+      "cloudflare-env.d.ts",
       "src/payment/types.ts",
       "src/credits/types.ts",
       "src/types/index.d.ts"
@@ -91,6 +92,7 @@
       "src/components/tailark/*.tsx",
       "src/components/ai-elements/*.tsx",
       "src/app/[[]locale]/preview/**",
+      "cloudflare-env.d.ts",
       "src/payment/types.ts",
       "src/credits/types.ts",
       "src/types/index.d.ts"

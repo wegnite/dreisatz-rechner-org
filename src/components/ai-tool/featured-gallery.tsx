@@ -33,87 +33,87 @@ interface FeaturedImage {
 const FEATURED_CREATIONS: FeaturedImage[] = [
   {
     id: '1',
-    url: '/images/docs/themes/ocean.png',
-    title: 'Sunset Boardwalk Keepsake',
+    url: 'https://images.unsplash.com/photo-1502154882433-a614dba12819?auto=format&fit=crop&w=1200&q=80',
+    title: 'Golden Hour Rooftop',
     prompt:
-      'AI polaroid photo of friends laughing on a beach boardwalk with handwritten caption “golden hour crew”',
+      'AI polaroid photo of friends silhouetted on a rooftop at sunset, handwritten caption “golden glow story”',
     style: 'Vintage Film Polaroid',
     generationTime: '0.8s',
-    views: 12543,
-    likes: 892,
-    downloads: 234,
-    author: 'AlexArt',
+    views: 15432,
+    likes: 1092,
+    downloads: 284,
+    author: 'DreamLab',
     category: 'Lifestyle Polaroid',
   },
   {
     id: '2',
-    url: '/images/docs/themes/dusk.png',
+    url: 'https://images.unsplash.com/photo-1612863217797-5f62b68fba65?auto=format&fit=crop&w=1200&q=80',
     title: 'Neon City Story',
     prompt:
       'AI polaroid photo of a neon Tokyo alley, rain-soaked pavement, neon pink caption “midnight run”',
     style: 'Retro Chrome Polaroid',
-    generationTime: '1.2s',
-    views: 8921,
-    likes: 645,
-    downloads: 178,
-    author: 'NatureGuru',
+    generationTime: '1.1s',
+    views: 11234,
+    likes: 845,
+    downloads: 318,
+    author: 'NeonFox',
     isPremium: true,
     category: 'Travel Polaroid',
   },
   {
     id: '3',
-    url: '/images/docs/themes/catppuccin.png',
+    url: 'https://images.unsplash.com/photo-1554304247-fdb3fdcf9d0c?auto=format&fit=crop&w=1200&q=80',
     title: 'Cozy Cafe Memory',
     prompt:
       'AI polaroid photo of a couple in a candlelit cafe, soft grain, caption “latte love”',
     style: 'Modern Minimal Polaroid',
     generationTime: '0.9s',
-    views: 15672,
-    likes: 1234,
-    downloads: 445,
-    author: 'BeachLover',
+    views: 18652,
+    likes: 1434,
+    downloads: 512,
+    author: 'CafeMuse',
     category: 'Lifestyle Polaroid',
   },
   {
     id: '4',
-    url: '/images/docs/themes/black.png',
+    url: 'https://images.unsplash.com/photo-1607827447604-d9a8c439186e?auto=format&fit=crop&w=1200&q=80',
     title: 'Aurora Night Polaroid',
     prompt:
       'AI polaroid photo of northern lights over a frozen lake with handwritten caption “arctic glow”',
     style: 'Cinematic Polaroid',
-    generationTime: '1.5s',
-    views: 20145,
-    likes: 1567,
-    downloads: 623,
+    generationTime: '1.4s',
+    views: 22451,
+    likes: 1794,
+    downloads: 702,
     author: 'SkyWatcher',
     isPremium: true,
     category: 'Adventure Polaroid',
   },
   {
     id: '5',
-    url: '/images/docs/themes/neutral.png',
-    title: 'Studio Portrait Polaroid',
+    url: 'https://images.unsplash.com/photo-1617643049028-0135c6a2678f?auto=format&fit=crop&w=1200&q=80',
+    title: 'Studio Portrait Keepsake',
     prompt:
       'AI polaroid photo of a model with studio lighting, sharp eyes, caption “campaign day”',
     style: 'Editorial Polaroid',
     generationTime: '0.7s',
-    views: 9834,
-    likes: 743,
-    downloads: 298,
+    views: 13221,
+    likes: 923,
+    downloads: 384,
     author: 'PortraitPro',
     category: 'Campaign Polaroid',
   },
   {
     id: '6',
-    url: '/images/docs/themes/vitepress.png',
+    url: 'https://images.unsplash.com/photo-1602692095685-d571be22806c?auto=format&fit=crop&w=1200&q=80',
     title: 'Neo-Noir Night Run',
     prompt:
       'AI polaroid photo of a cyberpunk street racer, blue neon, caption “02:17 am”',
     style: 'Cyberpunk Polaroid',
     generationTime: '1.1s',
-    views: 18923,
-    likes: 1432,
-    downloads: 567,
+    views: 19873,
+    likes: 1542,
+    downloads: 612,
     author: 'CyberArtist',
     isPremium: true,
     category: 'Fandom Polaroid',
@@ -124,7 +124,8 @@ const TESTIMONIALS = [
   {
     name: 'AIArtistPro',
     role: 'Digital Creator',
-    avatar: '/api/placeholder/40/40',
+    initials: 'AP',
+    gradient: 'from-cyan-400 to-blue-500',
     quote:
       'This AI polaroid editor completely changed my workflow. The character consistency across every frame is incredible.',
     rating: 5,
@@ -132,7 +133,8 @@ const TESTIMONIALS = [
   {
     name: 'ContentCreator',
     role: 'UGC Specialist',
-    avatar: '/api/placeholder/40/40',
+    initials: 'CC',
+    gradient: 'from-amber-400 to-orange-500',
     quote:
       'Creating consistent AI influencers has never been easier. Each polaroid drop keeps faces and styling perfectly aligned.',
     rating: 5,
@@ -140,7 +142,8 @@ const TESTIMONIALS = [
   {
     name: 'PhotoEditor',
     role: 'Professional Editor',
-    avatar: '/api/placeholder/40/40',
+    initials: 'PE',
+    gradient: 'from-fuchsia-400 to-purple-500',
     quote:
       'One-shot polaroid editing is basically solved here. The blending and film grain feel handcrafted every time.',
     rating: 5,
@@ -307,38 +310,39 @@ export function FeaturedGallery() {
             {TESTIMONIALS.map((testimonial, index) => (
               <Card
                 key={index}
-                className="bg-background border-l-4 border-l-yellow-400"
+                className="relative overflow-hidden border border-white/10 bg-[#0b102d]/80 backdrop-blur transition-transform duration-300 hover:-translate-y-1"
               >
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <img
-                      src={testimonial.avatar}
-                      alt={testimonial.name}
-                      className="w-10 h-10 rounded-full object-cover"
-                    />
+                <CardContent className="relative z-10 p-6">
+                  <div className="flex items-center gap-3 mb-5">
+                    <div
+                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${testimonial.gradient} text-sm font-semibold text-white shadow-lg`}
+                    >
+                      {testimonial.initials}
+                    </div>
                     <div>
-                      <h4 className="font-semibold text-sm">
+                      <h4 className="font-semibold text-sm text-white">
                         {testimonial.name}
                       </h4>
-                      <p className="text-xs text-muted-foreground">
+                      <p className="text-xs text-slate-300/80">
                         {testimonial.role}
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-1 mb-3">
+                  <div className="mb-4 flex items-center gap-1">
                     {Array.from({ length: testimonial.rating }).map((_, i) => (
                       <Star
                         key={i}
-                        className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                        className="h-4 w-4 fill-yellow-400 text-yellow-400 drop-shadow-[0_0_8px_rgba(255,214,102,0.35)]"
                       />
                     ))}
                   </div>
 
-                  <blockquote className="text-sm text-muted-foreground">
-                    "{testimonial.quote}"
+                  <blockquote className="text-sm leading-relaxed text-slate-200/90">
+                    “{testimonial.quote}”
                   </blockquote>
                 </CardContent>
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,205,92,0.16),transparent_60%)] opacity-70" />
               </Card>
             ))}
           </div>

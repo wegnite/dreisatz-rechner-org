@@ -103,8 +103,9 @@ export function CheckoutButton({
       } else {
         console.error('Create checkout session error, result:', result);
         const validationErrors =
-          (result?.validationErrors as Record<string, string[] | undefined> | undefined) ??
-          undefined;
+          (result?.validationErrors as
+            | Record<string, string[] | undefined>
+            | undefined) ?? undefined;
         const validationError = validationErrors?.userId?.[0];
         const serverErrorRaw =
           (typeof result?.serverError === 'string'

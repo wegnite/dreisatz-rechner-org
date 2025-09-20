@@ -72,10 +72,10 @@ export function SeedreamToolSection() {
                 className="hidden"
                 onChange={handleFilesSelected}
               />
-              <div
-                className="border-2 border-dashed border-border rounded-lg p-8 text-center hover:border-primary/50 transition-colors cursor-pointer"
+              <button
+                type="button"
+                className="border-2 border-dashed border-border rounded-lg p-8 text-center hover:border-primary/50 transition-colors cursor-pointer w-full"
                 onClick={handlePickFiles}
-                role="button"
                 aria-label="Upload image"
               >
                 <Upload className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
@@ -87,7 +87,7 @@ export function SeedreamToolSection() {
                     {files.length} image(s) selected
                   </p>
                 )}
-              </div>
+              </button>
             </div>
 
             {/* Prompt second */}

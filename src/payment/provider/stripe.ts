@@ -78,7 +78,9 @@ export class StripeProvider implements PaymentProvider {
   ): Promise<string> {
     try {
       // Search for existing customer
-      let customers;
+      let customers:
+        | Stripe.ApiList<Stripe.Customer>
+        | { data?: Array<{ id: string }> };
       try {
         customers = await this.stripe.customers.list({
           email,
@@ -108,7 +110,7 @@ export class StripeProvider implements PaymentProvider {
       }
 
       // Create new customer
-      let customer;
+      let customer: Stripe.Customer | { id: string };
       try {
         customer = await this.stripe.customers.create({
           email,
@@ -389,7 +391,6 @@ export class StripeProvider implements PaymentProvider {
       throw new Error(`Create checkout session failed (v2): ${message}`);
     }
   }
-
 
   /**
    * Create a checkout session for a plan

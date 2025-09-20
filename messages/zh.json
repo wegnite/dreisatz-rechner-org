@@ -1073,5 +1073,148 @@
     ],
     "backLink": "返回生成器 →",
     "termsLink": "查看服务条款 →"
-  }
+  },
+  "AiPolaroidEditor": {
+    "badge": "AI 宝丽来照片",
+    "hero": {
+      "title": "打开编辑器，立即生成你的第一张 AI 宝丽来",
+      "description": "输入想要的氛围、人物或故事，右侧即可实时渲染带有边框的宝丽来成片。",
+      "features": [
+        {
+          "title": "即时生成",
+          "description": "双引擎加速，10 秒内完成一张高分辨率宝丽来照片。"
+        },
+        {
+          "title": "真实质感",
+          "description": "模拟经典胶片、光晕与手写边框，还原即时成像的复古风味。"
+        },
+        {
+          "title": "自定义模版",
+          "description": "从旅行、婚礼到咖啡馆风格，随心切换你想要的故事氛围。"
+        }
+      ],
+      "tip": ""
+    },
+    "promptCard": {
+      "title": "宝丽来提示引擎",
+      "description": "描述你想要的场景，我们会立即为你冲洗出 AI 宝丽来。"
+    },
+    "tabs": {
+      "imageToImage": "图生图",
+      "textToImage": "文生图",
+      "textToImageDescription": "使用文生图模式，直接通过文字生成宝丽来照片。"
+    },
+    "providers": {
+      "title": "生成引擎",
+      "siliconflow": {
+        "name": "SiliconFlow",
+        "description": "品质均衡的模型，细节清晰、层次丰富。",
+        "badge": "质量优先"
+      },
+      "nanoBanana": {
+        "name": "Nano Banana",
+        "description": "基于 Flux 的极速引擎，适合快速预览。",
+        "badge": "极速出图"
+      }
+    },
+    "promptEnhancements": {
+      "vintagePolaroid": "复古宝丽来胶片质感，暖色调、柔焦与自然光晕，底部附带手写文字。",
+      "retroFilm": "复古胶片风格，低饱和度、细腻颗粒与怀旧色彩。",
+      "modernMinimal": "极简棚拍光效，边缘锐利、构图干净、边框内敛。",
+      "artisticSketch": "手绘插画质感，铅笔描线、纸张纹理与手绘边框。"
+    },
+    "batch": {
+      "title": "批量生成",
+      "cta": "升级",
+      "description": "开启批量模式即可一次生成多张宝丽来作品。"
+    },
+    "reference": {
+      "title": "参考照片",
+      "counter": "{current}/{max}",
+      "uploadTitle": "上传照片进行宝丽来风格重绘",
+      "uploadDescription": "支持 JPG 或 PNG，最大 50MB",
+      "uploadedAlt": "已上传的参考照片"
+    },
+    "form": {
+      "defaultPrompt": "Polaroid photo of a couple laughing under string lights, soft grain, handwritten caption \"forever summer\"",
+      "promptLabel": "提示词",
+      "promptPlaceholder": "描述宝丽来的氛围、光线、胶片感以及文字边框...",
+      "copyButton": "复制",
+      "generateButton": {
+        "loading": "冲洗中...",
+        "idle": "生成宝丽来"
+      },
+      "progressMessage": "正在冲洗宝丽来... {progress}%"
+    },
+    "gallery": {
+      "title": "AI 宝丽来图库",
+      "description": "完成的宝丽来作品会显示在这里，包含边框与文字。",
+      "emptyTitle": "准备好冲洗下一张宝丽来了吗",
+      "emptyDescription": "描述你的故事，我们会为你生成一张专属的 AI 宝丽来。"
+    },
+    "templates": {
+      "title": "宝丽来胶片模版",
+      "description": "精选社区热爱的即时成像风格。",
+      "proLabel": "Pro",
+      "fallbackName": "自定义宝丽来",
+      "vintage": {
+        "name": "复古宝丽来",
+        "description": "经典即时成像的暖色胶片质感。"
+      },
+      "retro": {
+        "name": "复古胶卷",
+        "description": "70 年代胶片的颗粒与褪色效果。"
+      },
+      "modern": {
+        "name": "现代极简",
+        "description": "干净利落的现代棚拍风格。"
+      },
+      "artistic": {
+        "name": "艺术手绘",
+        "description": "带有纸张纹理的手绘插画风。"
+      }
+    },
+    "toast": {
+      "validation": {
+        "missingPrompt": {
+          "title": "请输入提示词",
+          "description": "先描述你想要的画面再开始生成。"
+        },
+        "imageToImage": {
+          "title": "图生图功能开发中",
+          "description": "请暂时切换回文生图模式完成生成。"
+        }
+      },
+      "success": {
+        "title": "生成完成",
+        "description": "新的宝丽来照片已经准备好啦。"
+      },
+      "error": {
+        "title": "生成失败",
+        "defaultDescription": "图片生成失败，请稍后再试。",
+        "emptyResult": "生成成功但未返回图片，请稍后重试。"
+      },
+      "copy": {
+        "successTitle": "提示词已复制",
+        "successDescription": "可以去其他地方继续使用这个描述。",
+        "errorTitle": "复制失败",
+        "errorDescription": "浏览器暂时无法复制，请手动复制。"
+      },
+      "share": {
+        "successTitle": "链接已复制",
+        "successDescription": "可以直接把图片链接分享给朋友。",
+        "errorTitle": "分享失败",
+        "errorDescription": "无法自动分享，请手动复制链接。"
+      },
+      "downloadError": {
+        "title": "下载失败",
+        "description": "暂时无法下载图片，请右键另存为。"
+      }
+    },
+    "share": {
+      "title": "AI 宝丽来照片",
+      "text": "快看看我刚冲洗出的 AI 宝丽来。"
+    }
+  },
+  "AiPolaroidVideo": {}
 }

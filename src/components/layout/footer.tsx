@@ -17,8 +17,19 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
   const socialLinks = getSocialLinks();
 
   return (
-    <footer className={cn('border-t', className)}>
-      <Container className="px-4">
+    <footer
+      className={cn(
+        'relative overflow-hidden border-t border-white/10 bg-[#030516] text-slate-300',
+        className
+      )}
+    >
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,_rgba(86,110,255,0.18),transparent_65%)]" />
+        <div className="animate-aurora absolute -top-40 right-[-160px] h-[420px] w-[420px] rounded-full bg-[conic-gradient(from_180deg_at_50%_50%,rgba(76,201,255,0.25),rgba(255,189,145,0.18),rgba(122,230,255,0.25))] blur-3xl" />
+        <div className="animate-blob absolute -bottom-44 left-[-180px] h-[520px] w-[520px] rounded-full bg-fuchsia-500/15 blur-3xl" />
+      </div>
+
+      <Container className="relative z-10 px-4">
         <div className="grid grid-cols-2 gap-8 py-16 md:grid-cols-6">
           <div className="flex flex-col items-start col-span-full md:col-span-2">
             <div className="space-y-4">
@@ -31,7 +42,7 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
               </div>
 
               {/* tagline */}
-              <p className="text-muted-foreground text-base py-2 md:pr-12">
+              <p className="text-base text-slate-300/80 py-2 md:pr-12">
                 {t('Marketing.footer.tagline')}
               </p>
 
@@ -63,7 +74,7 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
               key={section.title}
               className="col-span-1 md:col-span-1 items-start"
             >
-              <span className="text-sm font-semibold uppercase">
+              <span className="text-sm font-semibold uppercase text-white/80">
                 {section.title}
               </span>
               <ul className="mt-4 list-inside space-y-3">
@@ -74,7 +85,7 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
                         <LocaleLink
                           href={item.href || '#'}
                           target={item.external ? '_blank' : undefined}
-                          className="text-sm text-muted-foreground hover:text-primary"
+                          className="text-sm text-slate-300 hover:text-white"
                         >
                           {item.title}
                         </LocaleLink>
@@ -87,10 +98,10 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
         </div>
       </Container>
 
-      <div className="border-t py-8">
-        <Container className="px-4">
+      <div className="relative border-t border-white/10 py-8">
+        <Container className="relative z-10 px-4">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <span className="text-muted-foreground text-sm">
+            <span className="text-sm text-slate-400">
               &copy; {new Date().getFullYear()} {t('Metadata.name')} All Rights
               Reserved.
             </span>
@@ -99,19 +110,19 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
             <div className="flex flex-wrap items-center gap-4 text-sm">
               <LocaleLink
                 href={Routes.PrivacyPolicy}
-                className="text-muted-foreground hover:text-primary"
+                className="text-slate-400 hover:text-white"
               >
                 {t('Marketing.footer.legal.items.privacyPolicy')}
               </LocaleLink>
               <LocaleLink
                 href={Routes.TermsOfService}
-                className="text-muted-foreground hover:text-primary"
+                className="text-slate-400 hover:text-white"
               >
                 {t('Marketing.footer.legal.items.termsOfService')}
               </LocaleLink>
               <LocaleLink
                 href={Routes.CookiePolicy}
-                className="text-muted-foreground hover:text-primary"
+                className="text-slate-400 hover:text-white"
               >
                 {t('Marketing.footer.legal.items.cookiePolicy')}
               </LocaleLink>

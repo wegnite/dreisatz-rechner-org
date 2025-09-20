@@ -5,7 +5,7 @@ import { SeoContentSections } from './seo-content-sections';
 
 export function AiToolHomepage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#020414] text-white">
       {/* Main AI Tool Section */}
       <AiPolaroidEditor />
 

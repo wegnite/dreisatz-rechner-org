@@ -1073,5 +1073,147 @@
     ],
     "backLink": "Back to generator →",
     "termsLink": "Review Terms of Service →"
-  }
+  },
+  "AiPolaroidEditor": {
+    "badge": "AI Polaroid Photo",
+    "hero": {
+      "title": "Launch the editor and generate your first AI polaroid instantly",
+      "description": "Describe the mood, people, or story and the right column renders a border-ready polaroid in real time.",
+      "features": [
+        {
+          "title": "Instant results",
+          "description": "Dual rendering engines deliver a high-resolution polaroid in under ten seconds."
+        },
+        {
+          "title": "Authentic film texture",
+          "description": "Borders, captions, and light leaks recreate the look of true instant cameras."
+        },
+        {
+          "title": "Template presets",
+          "description": "Switch between travel, wedding, and cafe vibes to match your narrative."
+        }
+      ]
+    },
+    "promptCard": {
+      "title": "Polaroid prompt engine",
+      "description": "Describe the scene and we will develop the AI polaroid for you instantly."
+    },
+    "tabs": {
+      "imageToImage": "Image to Image",
+      "textToImage": "Text to Image",
+      "textToImageDescription": "Use Text to Image mode to create polaroids directly from your description."
+    },
+    "providers": {
+      "title": "Generation engines",
+      "siliconflow": {
+        "name": "SiliconFlow",
+        "description": "Balanced quality model for crisp, detailed polaroids.",
+        "badge": "Quality focused"
+      },
+      "nanoBanana": {
+        "name": "Nano Banana",
+        "description": "Flux-based engine tuned for lightning-fast previews.",
+        "badge": "Speed boost"
+      }
+    },
+    "promptEnhancements": {
+      "vintagePolaroid": "Shot on vintage polaroid film with warm tones, soft focus, natural light leaks, and a handwritten caption along the bottom border.",
+      "retroFilm": "Captured like a retro film photo with subtle grain, low saturation, and a nostalgic color palette.",
+      "modernMinimal": "Minimalist studio lighting with crisp edges, clean composition, and a refined instant film border.",
+      "artisticSketch": "Rendered as an artistic sketch with pencil shading, textured paper, and a hand-drawn instant film border."
+    },
+    "batch": {
+      "title": "Batch processing",
+      "cta": "Upgrade",
+      "description": "Enable batch mode to develop multiple polaroid shots at once."
+    },
+    "reference": {
+      "title": "Reference photo",
+      "counter": "{current}/{max}",
+      "uploadTitle": "Upload a photo to restyle as a polaroid",
+      "uploadDescription": "JPG or PNG up to 50MB",
+      "uploadedAlt": "Uploaded reference photo"
+    },
+    "form": {
+      "defaultPrompt": "Polaroid photo of a couple laughing under string lights, soft grain, handwritten caption \"forever summer\"",
+      "promptLabel": "Polaroid prompt",
+      "promptPlaceholder": "Describe the polaroid mood, lighting, film stock, and caption...",
+      "copyButton": "Copy",
+      "generateButton": {
+        "loading": "Developing...",
+        "idle": "Generate polaroid"
+      },
+      "progressMessage": "Developing your polaroid... {progress}%"
+    },
+    "gallery": {
+      "title": "AI polaroid gallery",
+      "description": "Your finished AI polaroid photos appear here with captions and film borders.",
+      "emptyTitle": "Ready to develop your next polaroid",
+      "emptyDescription": "Describe your story and we will craft an AI polaroid for you."
+    },
+    "templates": {
+      "title": "Polaroid film templates",
+      "description": "Choose from fan-favorite instant film presets.",
+      "proLabel": "Pro",
+      "fallbackName": "Custom polaroid",
+      "vintage": {
+        "name": "Vintage Polaroid",
+        "description": "Classic instant camera aesthetic with warm tones."
+      },
+      "retro": {
+        "name": "Retro film",
+        "description": "70s film photography with graceful grain and faded colors."
+      },
+      "modern": {
+        "name": "Modern minimal",
+        "description": "Clean, contemporary style with crisp edges."
+      },
+      "artistic": {
+        "name": "Artistic sketch",
+        "description": "Hand-drawn illustration style with textured paper."
+      }
+    },
+    "toast": {
+      "validation": {
+        "missingPrompt": {
+          "title": "Enter a prompt",
+          "description": "Describe the scene you want before generating."
+        },
+        "imageToImage": {
+          "title": "Image-to-image coming soon",
+          "description": "Switch back to Text to Image mode to create your polaroid."
+        }
+      },
+      "success": {
+        "title": "Generation complete",
+        "description": "Your new polaroid is ready."
+      },
+      "error": {
+        "title": "Generation failed",
+        "defaultDescription": "Failed to generate an image. Try again later.",
+        "emptyResult": "Generation succeeded but no image was returned. Please try again."
+      },
+      "copy": {
+        "successTitle": "Prompt copied",
+        "successDescription": "Use it anywhere you like.",
+        "errorTitle": "Copy failed",
+        "errorDescription": "Clipboard is unavailable. Copy it manually."
+      },
+      "share": {
+        "successTitle": "Link copied",
+        "successDescription": "Share the image link directly with friends.",
+        "errorTitle": "Share failed",
+        "errorDescription": "Cannot share automatically. Copy the link manually."
+      },
+      "downloadError": {
+        "title": "Download failed",
+        "description": "Unable to download the image right now. Try saving it manually."
+      }
+    },
+    "share": {
+      "title": "AI Polaroid Photo",
+      "text": "Check out this AI polaroid I just developed."
+    }
+  },
+  "AiPolaroidVideo": {}
 }

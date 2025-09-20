@@ -318,11 +318,11 @@ if (Object.keys(secrets).length === 0) {
 
 if (!shouldPushSecrets) {
   console.log('\nTo push secrets run:');
-  console.log(`  npx tsx scripts/sync-cloudflare-env.ts --push-secrets`);
+  console.log('  npx tsx scripts/sync-cloudflare-env.ts --push-secrets');
 }
 
 if (!shouldDeploy) {
   console.log('\nTo deploy with updated vars run:');
-  console.log(`  npx tsx scripts/sync-cloudflare-env.ts --deploy`);
+  console.log('  npx tsx scripts/sync-cloudflare-env.ts --deploy');
   console.log('  (Deploy command will rebuild the project before uploading.)');
 }

@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useMemo, useRef } from 'react';
 import googleOneTap, { type OneTapCredentialResponse } from 'google-one-tap';
+import { useEffect, useMemo, useRef } from 'react';
 
 import { authClient } from '@/lib/auth-client';
 

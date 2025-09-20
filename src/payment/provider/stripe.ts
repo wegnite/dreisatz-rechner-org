@@ -128,7 +128,13 @@ export class StripeProvider implements PaymentProvider {
       return customer.id;
     } catch (error) {
       console.error('Create or get customer error:', error);
-      throw new Error('Failed to create or get customer');
+      const message =
+        error instanceof Error
+          ? error.message
+          : typeof error === 'string'
+            ? error
+            : JSON.stringify(error);
+      throw new Error(`Create/get customer failed (v2): ${message}`);
     }
   }
 
@@ -161,7 +167,13 @@ export class StripeProvider implements PaymentProvider {
       }
     } catch (error) {
       console.error('Update user with customer ID error:', error);
-      throw new Error('Failed to update user with customer ID');
+      const message =
+        error instanceof Error
+          ? error.message
+          : typeof error === 'string'
+            ? error
+            : JSON.stringify(error);
+      throw new Error(`Update user with customer ID failed (v2): ${message}`);
     }
   }
 
@@ -190,6 +202,7 @@ export class StripeProvider implements PaymentProvider {
       return undefined;
     } catch (error) {
       console.error('Find user by customer ID error:', error);
+      console.error('Find user by customer ID error detail:', error);
       return undefined;
     }
   }
@@ -316,6 +329,12 @@ export class StripeProvider implements PaymentProvider {
         allow_promotion_codes: price.allowPromotionCode ?? false,
       };
 
+      // Encourage Stripe to show card + Link for subscriptions
+      if (price.type === PaymentTypes.SUBSCRIPTION) {
+        checkoutParams.payment_method_collection = 'always';
+      }
+      checkoutParams.payment_method_types = ['card', 'link'];
+
       // Add customer to checkout session
       checkoutParams.customer = customerId;
 
@@ -361,7 +380,13 @@ export class StripeProvider implements PaymentProvider {
       };
     } catch (error) {
       console.error('Create checkout session error:', error);
-      throw new Error('Failed to create checkout session');
+      const message =
+        error instanceof Error
+          ? error.message
+          : typeof error === 'string'
+            ? error
+            : JSON.stringify(error);
+      throw new Error(`Create checkout session failed (v2): ${message}`);
     }
   }
 
@@ -430,6 +455,8 @@ export class StripeProvider implements PaymentProvider {
         metadata: customMetadata,
         allow_promotion_codes: creditPackage.price.allowPromotionCode ?? false,
       };
+
+      checkoutParams.payment_method_types = ['card', 'link'];
 
       // Add customer to checkout session
       checkoutParams.customer = customerId;

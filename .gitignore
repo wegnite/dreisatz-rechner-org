@@ -112,3 +112,8 @@ bun.lockb
 *.swp
 .DS_Store
 Thumbs.db
+
+# Google Analytics service account credentials
+ga-service-account.json
+*-service-account.json
+aipolaroidphoto-*.json

@@ -1,0 +1,159 @@
+{
+  "defaultSettings": {
+    "timezone": "America/Los_Angeles",
+    "currency": "USD",
+    "enhancedMeasurement": {
+      "scrolls": true,
+      "outboundClicks": true,
+      "siteSearch": true,
+      "videoEngagement": true,
+      "fileDownloads": true,
+      "pageChanges": true,
+      "formInteractions": true
+    },
+    "dataRetention": {
+      "eventDataRetention": "TWO_MONTHS",
+      "userDataRetention": "FOURTEEN_MONTHS"
+    }
+  },
+  "industryCategories": {
+    "AUTOMOTIVE": "汽车",
+    "BUSINESS_AND_INDUSTRIAL_MARKETS": "商业和工业市场",
+    "FINANCE": "金融",
+    "HEALTHCARE": "医疗保健",
+    "TECHNOLOGY": "技术",
+    "TRAVEL": "旅游",
+    "OTHER": "其他",
+    "ARTS_AND_ENTERTAINMENT": "艺术和娱乐",
+    "BEAUTY_AND_FITNESS": "美容和健身",
+    "BOOKS_AND_LITERATURE": "书籍和文学",
+    "FOOD_AND_DRINK": "餐饮",
+    "GAMES": "游戏",
+    "HOBBIES_AND_LEISURE": "爱好和休闲",
+    "HOME_AND_GARDEN": "家居和园艺",
+    "INTERNET_AND_TELECOM": "互联网和电信",
+    "LAW_AND_GOVERNMENT": "法律和政府",
+    "NEWS": "新闻",
+    "ONLINE_COMMUNITIES": "在线社区",
+    "PEOPLE_AND_SOCIETY": "人与社会",
+    "PETS_AND_ANIMALS": "宠物和动物",
+    "REAL_ESTATE": "房地产",
+    "REFERENCE": "参考资料",
+    "SCIENCE": "科学",
+    "SHOPPING": "购物",
+    "SPORTS": "体育",
+    "JOBS_AND_EDUCATION": "工作和教育"
+  },
+  "conversionEvents": [
+    {
+      "name": "purchase",
+      "displayName": "购买",
+      "countingMethod": "ONCE_PER_EVENT"
+    },
+    {
+      "name": "sign_up",
+      "displayName": "注册",
+      "countingMethod": "ONCE_PER_SESSION"
+    },
+    {
+      "name": "generate_lead",
+      "displayName": "潜在客户",
+      "countingMethod": "ONCE_PER_SESSION"
+    },
+    {
+      "name": "file_download",
+      "displayName": "文件下载",
+      "countingMethod": "ONCE_PER_EVENT"
+    }
+  ],
+  "customDimensions": [
+    {
+      "parameterName": "user_type",
+      "displayName": "用户类型",
+      "description": "区分免费用户、付费用户、VIP用户等",
+      "scope": "USER"
+    },
+    {
+      "parameterName": "content_category",
+      "displayName": "内容分类",
+      "description": "内容的分类标签",
+      "scope": "EVENT"
+    },
+    {
+      "parameterName": "subscription_status",
+      "displayName": "订阅状态",
+      "description": "用户的订阅状态",
+      "scope": "USER"
+    }
+  ],
+  "customMetrics": [
+    {
+      "parameterName": "engagement_score",
+      "displayName": "参与度分数",
+      "description": "用户参与度评分",
+      "measurementUnit": "STANDARD",
+      "scope": "EVENT"
+    },
+    {
+      "parameterName": "lifetime_value",
+      "displayName": "生命周期价值",
+      "description": "用户生命周期总价值",
+      "measurementUnit": "CURRENCY",
+      "scope": "USER"
+    }
+  ],
+  "audiences": [
+    {
+      "displayName": "高价值用户",
+      "description": "购买金额超过100美元的用户",
+      "membershipDurationDays": 30,
+      "filterClauses": [
+        {
+          "clauseType": "INCLUDE",
+          "simpleFilter": {
+            "filterExpression": {
+              "andGroup": {
+                "filterExpressions": [
+                  {
+                    "notExpression": false,
+                    "filter": {
+                      "fieldName": "purchaseRevenue",
+                      "comparisonType": "GREATER_THAN",
+                      "value": "100"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "displayName": "活跃用户",
+      "description": "最近7天内访问超过3次的用户",
+      "membershipDurationDays": 7,
+      "filterClauses": [
+        {
+          "clauseType": "INCLUDE",
+          "simpleFilter": {
+            "filterExpression": {
+              "andGroup": {
+                "filterExpressions": [
+                  {
+                    "notExpression": false,
+                    "filter": {
+                      "fieldName": "sessionCount",
+                      "comparisonType": "GREATER_THAN",
+                      "value": "3"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

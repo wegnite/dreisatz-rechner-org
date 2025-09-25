@@ -141,6 +141,19 @@ export function AiPolaroidEditor() {
     title: string;
     description: string;
   }>;
+  const featureLabel = t('hero.featureLabel');
+  const rawHeroTags = t.raw('hero.tags');
+  const heroTags =
+    Array.isArray(rawHeroTags) &&
+    (rawHeroTags as unknown[]).every((tag) => typeof tag === 'string')
+      ? (rawHeroTags as string[])
+      : ['Polaroid generator', 'Vintage vibe', 'Instant sharing'];
+  const featureGradients = [
+    'from-[#4f63ff33] via-[#4f63ff18] to-transparent',
+    'from-[#fbbf2433] via-[#fbbf2418] to-transparent',
+    'from-[#36f0b533] via-[#36f0b51a] to-transparent',
+  ];
+  const heroPreviewImage = generatedImages[0]?.url ?? '/images/docs/themes/ocean.png';
 
   const providerMetaMap = useMemo(() => {
     const map = {} as Record<ImageProvider, ProviderMeta>;

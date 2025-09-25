@@ -25,6 +25,7 @@
     "cf:preview": "tsx scripts/sync-cloudflare-env.ts",
     "cf:push": "tsx scripts/sync-cloudflare-env.ts --push-secrets",
     "cf:deploy": "tsx scripts/sync-cloudflare-env.ts --push-secrets --deploy",
+    "ga:setup": "tsx scripts/setup-google-analytics-auto.ts",
     "knip": "knip",
     "test": "vitest run",
     "test:watch": "vitest"
@@ -154,6 +155,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@google-analytics/admin": "^9.0.0",
     "@tailwindcss/postcss": "^4.0.14",
     "@tanstack/eslint-plugin-query": "^5.83.1",
     "@types/mdx": "^2.0.13",
@@ -162,8 +164,12 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-syntax-highlighter": "^15.5.13",
+    "chalk": "^5.6.2",
+    "commander": "^14.0.1",
     "drizzle-kit": "^0.30.4",
+    "googleapis": "^160.0.0",
     "knip": "^5.61.2",
+    "ora": "^9.0.0",
     "postcss": "^8",
     "react-email": "3.0.7",
     "tailwindcss": "^4.0.14",

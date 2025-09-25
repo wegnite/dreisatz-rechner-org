@@ -29,6 +29,7 @@
     "node_modules",
     "public/ai-tool-homepage",
     "public/ai-tool-homepage/**",
-    "open-next.config.ts"
+    "open-next.config.ts",
+    "scripts/setup-google-analytics*.ts"
   ]
 }

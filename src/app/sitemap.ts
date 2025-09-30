@@ -30,6 +30,7 @@ const staticRoutes = [
   '/about',
   '/contact',
   '/changelog',
+  '/wan-2-2',
 ];
 
 /**
@@ -65,6 +66,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/about': { priority: 0.3, changeFrequency: 'yearly' },
     '/contact': { priority: 0.3, changeFrequency: 'yearly' },
     '/changelog': { priority: 0.3, changeFrequency: 'monthly' },
+    '/wan-2-2': { priority: 0.6, changeFrequency: 'weekly' },
   };
 
   // add static routes

@@ -322,6 +322,10 @@
             "title": "Curated Tools",
             "description": "Prompt packs, integrations, and workflow guides for AI polaroids"
           },
+          "wan22": {
+            "title": "wan 2.2 Playbook",
+            "description": "All-in-one research hub for wan 2.2 traffic tests"
+          },
           "about": {
             "title": "About",
             "description": "Learn more about our team and product vision"
@@ -372,6 +376,7 @@
         "items": {
           "gallery": "Gallery",
           "tutorials": "Tutorials",
+          "wan22": "wan 2.2 Playbook",
           "docs": "Documentation",
           "blog": "Blog"
         }
@@ -1094,11 +1099,7 @@
         }
       ],
       "featureLabel": "Why creators love it",
-      "tags": [
-        "Polaroid generator",
-        "Vintage vibe",
-        "Instant sharing"
-      ]
+      "tags": ["Polaroid generator", "Vintage vibe", "Instant sharing"]
     },
     "promptCard": {
       "title": "Polaroid prompt engine",
@@ -1221,5 +1222,17 @@
       "text": "Check out this AI polaroid I just developed."
     }
   },
-  "AiPolaroidVideo": {}
+  "AiPolaroidVideo": {},
+  "ImageGenerator": {
+    "heading": "Generated images",
+    "errorsTrigger": "{count, plural, one {# error occurred} other {# errors occurred}}",
+    "providerError": "{provider} error",
+    "toggleView": "Toggle provider view"
+  },
+  "UsageLimit": {
+    "title": "Free preview limit reached",
+    "anonymousDescription": "Create a free account to unlock two more complimentary generations.",
+    "authenticatedDescription": "You have used all four complimentary generations. Choose a plan to keep creating.",
+    "cta": "View pricing"
+  }
 }

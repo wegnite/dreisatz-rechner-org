@@ -90,7 +90,33 @@ export function useImageGeneration(): UseImageGenerationReturn {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(request),
           });
-          const data = (await response.json()) as GenerateImageResponse;
+          const data = (await response.json()) as GenerateImageResponse & {
+            reason?: string;
+          };
+
+          if (response.status === 402) {
+            setFailedProviders((prev) => [...prev, provider]);
+            setErrors((prev) => [
+              ...prev,
+              {
+                provider,
+                message:
+                  data.error ||
+                  'You have reached the complimentary image generation limit.',
+                code: 'USAGE_LIMIT',
+                reason: data.reason,
+              },
+            ]);
+            setImages((prevImages) =>
+              prevImages.map((item) =>
+                item.provider === provider
+                  ? { ...item, image: null, modelId }
+                  : item
+              )
+            );
+            return;
+          }
+
           if (!response.ok) {
             throw new Error(data.error || `Server error: ${response.status}`);
           }

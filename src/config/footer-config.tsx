@@ -52,6 +52,11 @@ export function getFooterLinks(): NestedMenuItem[] {
           href: Routes.Tutorials,
           external: false,
         },
+        {
+          title: t('resources.items.wan22'),
+          href: Routes.Wan22,
+          external: false,
+        },
         ...(websiteConfig.blog.enable
           ? [
               {

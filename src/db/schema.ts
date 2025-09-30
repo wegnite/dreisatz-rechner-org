@@ -1,4 +1,11 @@
-import { boolean, integer, pgTable, text, timestamp, index } from "drizzle-orm/pg-core";
+import {
+  boolean,
+  integer,
+  pgTable,
+  text,
+  timestamp,
+  index,
+} from "drizzle-orm/pg-core";
 
 export const user = pgTable("user", {
 	id: text("id").primaryKey(),
@@ -117,3 +124,27 @@ export const creditTransaction = pgTable("credit_transaction", {
 	creditTransactionUserIdIdx: index("credit_transaction_user_id_idx").on(table.userId),
 	creditTransactionTypeIdx: index("credit_transaction_type_idx").on(table.type),
 }));
+
+export const freeUsageQuota = pgTable(
+	"free_usage_quota",
+	{
+		id: text("id").primaryKey(),
+		sessionId: text("session_id").notNull(),
+		feature: text("feature").notNull(),
+		userId: text("user_id"),
+		anonymousUses: integer("anonymous_uses").notNull().default(0),
+		authenticatedUses: integer("authenticated_uses").notNull().default(0),
+		createdAt: timestamp("created_at").notNull().defaultNow(),
+		updatedAt: timestamp("updated_at").notNull().defaultNow(),
+	},
+	(table) => ({
+		sessionFeatureIdx: index("free_usage_quota_session_feature_idx").on(
+			table.sessionId,
+			table.feature,
+		),
+		userFeatureIdx: index("free_usage_quota_user_feature_idx").on(
+			table.userId,
+			table.feature,
+		),
+	}),
+);

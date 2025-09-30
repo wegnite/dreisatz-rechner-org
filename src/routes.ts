@@ -27,6 +27,7 @@ export enum Routes {
   AiVintagePhoto = '/ai/vintage-photo',
   Gallery = '/gallery',
   Tutorials = '/tutorials',
+  Wan22 = '/wan-2-2',
 
   // auth routes
   Login = '/auth/login',

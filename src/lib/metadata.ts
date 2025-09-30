@@ -11,12 +11,16 @@ export function constructMetadata({
   description,
   canonicalUrl,
   image,
+  keywords,
+  languageAlternates,
   noIndex = false,
 }: {
   title?: string;
   description?: string;
   canonicalUrl?: string;
   image?: string;
+  keywords?: string[];
+  languageAlternates?: Record<string, string>;
   noIndex?: boolean;
 } = {}): Metadata {
   title = title || defaultMessages.Metadata.title;
@@ -26,11 +30,13 @@ export function constructMetadata({
   return {
     title,
     description,
-    alternates: canonicalUrl
-      ? {
-          canonical: canonicalUrl,
-        }
-      : undefined,
+    alternates:
+      canonicalUrl || languageAlternates
+        ? {
+            ...(canonicalUrl ? { canonical: canonicalUrl } : {}),
+            ...(languageAlternates ? { languages: languageAlternates } : {}),
+          }
+        : undefined,
     openGraph: {
       type: 'website',
       locale: 'en_US',
@@ -47,6 +53,7 @@ export function constructMetadata({
       images: [ogImageUrl.toString()],
       site: getBaseUrl(),
     },
+    ...(keywords && { keywords }),
     icons: {
       icon: [
         { url: '/favicon.ico' },

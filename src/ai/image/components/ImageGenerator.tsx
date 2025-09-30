@@ -1,3 +1,5 @@
+'use client';
+
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import {
@@ -5,7 +7,10 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
+import { LocaleLink } from '@/i18n/navigation';
+import { Routes } from '@/routes';
 import { AlertCircle, ChevronDown, Settings } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import type {
   GeneratedImage,
   ImageError,
@@ -36,6 +41,8 @@ export function ImageGenerator({
   enabledProviders,
   toggleView,
 }: ImageGeneratorProps) {
+  const usageLimitT = useTranslations('UsageLimit');
+  const generatorT = useTranslations('ImageGenerator');
   return (
     <div className="space-y-6">
       {/* If there are errors, render a collapsible alert */}
@@ -47,8 +54,7 @@ export function ImageGenerator({
               className="flex items-center gap-2 text-destructive"
             >
               <AlertCircle className="h-4 w-4" />
-              {errors.length} {errors.length === 1 ? 'error' : 'errors'}{' '}
-              occurred
+              {generatorT('errorsTrigger', { count: errors.length })}
               <ChevronDown className="h-4 w-4 transition-transform duration-200 data-[state=open]:rotate-180" />
             </Button>
           </CollapsibleTrigger>
@@ -59,10 +65,23 @@ export function ImageGenerator({
                   <AlertCircle className="h-4 w-4" />
                   <div className="ml-3">
                     <AlertTitle className="capitalize">
-                      {err.provider} Error
+                      {generatorT('providerError', { provider: err.provider })}
                     </AlertTitle>
-                    <AlertDescription className="mt-1 text-sm">
-                      {err.message}
+                    <AlertDescription className="mt-1 text-sm space-y-3">
+                      <p>
+                        {err.code === 'USAGE_LIMIT'
+                          ? err.reason === 'ANONYMOUS_LIMIT_REACHED'
+                            ? usageLimitT('anonymousDescription')
+                            : usageLimitT('authenticatedDescription')
+                          : err.message}
+                      </p>
+                      {err.code === 'USAGE_LIMIT' && (
+                        <Button asChild size="sm" variant="default">
+                          <LocaleLink href={Routes.Pricing}>
+                            {usageLimitT('cta')}
+                          </LocaleLink>
+                        </Button>
+                      )}
                     </AlertDescription>
                   </div>
                 </Alert>
@@ -73,14 +92,16 @@ export function ImageGenerator({
       )}
 
       <div className="flex items-center justify-between">
-        <h3 className="text-xl font-semibold">Generated Images</h3>
+        <h3 className="text-xl font-semibold">{generatorT('heading')}</h3>
         <Button
           variant="outline"
           className=""
           onClick={() => toggleView()}
           size="icon"
+          aria-label={generatorT('toggleView')}
         >
           <Settings className="h-4 w-4" />
+          <span className="sr-only">{generatorT('toggleView')}</span>
         </Button>
       </div>
 

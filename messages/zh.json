@@ -322,6 +322,10 @@
             "title": "精选工具",
             "description": "AI 宝丽来提示词、集成与工作流指南"
           },
+          "wan22": {
+            "title": "wan 2.2 专题",
+            "description": "调研与流量验证一站式方案"
+          },
           "about": {
             "title": "关于我们",
             "description": "了解团队与产品愿景"
@@ -372,6 +376,7 @@
         "items": {
           "gallery": "作品集",
           "tutorials": "教程",
+          "wan22": "wan 2.2 专题",
           "docs": "文档",
           "blog": "博客"
         }
@@ -1094,11 +1099,7 @@
         }
       ],
       "featureLabel": "核心亮点",
-      "tags": [
-        "宝丽来生成器",
-        "复古质感",
-        "即时分享"
-      ],
+      "tags": ["宝丽来生成器", "复古质感", "即时分享"],
       "tip": ""
     },
     "promptCard": {
@@ -1222,5 +1223,17 @@
       "text": "快看看我刚冲洗出的 AI 宝丽来。"
     }
   },
-  "AiPolaroidVideo": {}
+  "AiPolaroidVideo": {},
+  "ImageGenerator": {
+    "heading": "生成的图片",
+    "errorsTrigger": "发生 {count, plural, one {# 次错误} other {# 次错误}}",
+    "providerError": "{provider} 错误",
+    "toggleView": "切换提供商视图"
+  },
+  "UsageLimit": {
+    "title": "已达免费体验上限",
+    "anonymousDescription": "注册账号即可再获得 2 次免费体验。",
+    "authenticatedDescription": "4 次免费体验已用完，请查看付费方案继续使用。",
+    "cta": "查看价格方案"
+  }
 }

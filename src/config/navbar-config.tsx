@@ -78,6 +78,13 @@ export function getNavbarLinks(): NestedMenuItem[] {
           external: false,
         },
         {
+          title: t('pages.items.wan22.title'),
+          description: t('pages.items.wan22.description'),
+          icon: <RocketIcon className="size-4 shrink-0" />,
+          href: Routes.Wan22,
+          external: false,
+        },
+        {
           title: t('pages.items.about.title'),
           description: t('pages.items.about.description'),
           icon: <BuildingIcon className="size-4 shrink-0" />,

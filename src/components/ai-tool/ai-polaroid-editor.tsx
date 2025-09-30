@@ -21,7 +21,9 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/hooks/use-toast';
+import { routing } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
+import { Routes } from '@/routes';
 import {
   Camera,
   Clock,
@@ -35,7 +37,8 @@ import {
   Upload,
   Wand2,
 } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import { useRouter } from 'next/navigation';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 type ImageProvider = 'siliconflow' | 'nano-banana';
@@ -69,6 +72,8 @@ interface GeneratePolaroidResponse {
   provider?: string;
   requestId?: string;
   error?: string;
+  remaining?: number;
+  reason?: string;
 }
 
 const STYLE_TEMPLATES: StyleTemplate[] = [
@@ -153,7 +158,15 @@ export function AiPolaroidEditor() {
     'from-[#fbbf2433] via-[#fbbf2418] to-transparent',
     'from-[#36f0b533] via-[#36f0b51a] to-transparent',
   ];
-  const heroPreviewImage = generatedImages[0]?.url ?? '/images/docs/themes/ocean.png';
+  const heroPreviewImage =
+    generatedImages[0]?.url ?? '/images/docs/themes/ocean.png';
+  const router = useRouter();
+  const locale = useLocale();
+  const localizedPricingPath =
+    locale === routing.defaultLocale
+      ? Routes.Pricing
+      : `/${locale}${Routes.Pricing}`;
+  const usageLimitT = useTranslations('UsageLimit');
 
   const providerMetaMap = useMemo(() => {
     const map = {} as Record<ImageProvider, ProviderMeta>;
@@ -291,16 +304,34 @@ export function AiPolaroidEditor() {
       quality: 'standard' as const,
     };
 
-    fetch('/api/polaroid/generate', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    })
-      .then(async (response) => {
+    (async () => {
+      try {
+        const response = await fetch('/api/polaroid/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
         const data = (await response
           .json()
-          .catch(() => ({}))) as GeneratePolaroidResponse;
+          .catch(() => ({}))) as GeneratePolaroidResponse & {
+          reason?: string;
+        };
+
         if (!response.ok) {
+          if (response.status === 402) {
+            const limitDescription =
+              data.reason === 'ANONYMOUS_LIMIT_REACHED'
+                ? usageLimitT('anonymousDescription')
+                : usageLimitT('authenticatedDescription');
+            toast({
+              title: usageLimitT('title'),
+              description: limitDescription,
+              variant: 'destructive',
+            });
+            setProgress(0);
+            router.push(localizedPricingPath);
+            return;
+          }
           throw new Error(data?.error || t('toast.error.defaultDescription'));
         }
 
@@ -327,20 +358,22 @@ export function AiPolaroidEditor() {
           title: t('toast.success.title'),
           description: t('toast.success.description'),
         });
-      })
-      .catch((error: Error) => {
+      } catch (error) {
         console.error('Failed to generate polaroid image', error);
         toast({
           title: t('toast.error.title'),
-          description: error.message ?? t('toast.error.defaultDescription'),
+          description:
+            error instanceof Error
+              ? (error.message ?? t('toast.error.defaultDescription'))
+              : t('toast.error.defaultDescription'),
           variant: 'destructive',
         });
         setProgress(0);
-      })
-      .finally(() => {
+      } finally {
         clearProgressInterval();
         setIsGenerating(false);
-      });
+      }
+    })();
   };
 
   const handleCopyPrompt = async () => {

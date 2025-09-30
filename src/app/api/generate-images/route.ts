@@ -1,5 +1,7 @@
 import type { GenerateImageRequest } from '@/ai/image/lib/api-types';
 import type { ProviderKey } from '@/ai/image/lib/provider-config';
+import { auth } from '@/lib/auth';
+import { enforceUsageLimit } from '@/lib/usage/quota';
 import { createFal } from '@ai-sdk/fal';
 import { fireworks } from '@ai-sdk/fireworks';
 import { openai } from '@ai-sdk/openai';
@@ -65,6 +67,40 @@ export async function POST(req: NextRequest) {
     (await req.json()) as GenerateImageRequest;
 
   try {
+    const session = await auth.api.getSession({
+      headers: req.headers,
+    });
+    const usage = await enforceUsageLimit({
+      request: req,
+      feature: 'image-generation',
+      userId: session?.user?.id,
+    });
+
+    if (!usage.allowed) {
+      const message =
+        usage.reason === 'ANONYMOUS_LIMIT_REACHED'
+          ? 'Free preview limit reached. Sign in to unlock two more attempts.'
+          : 'You have used all complimentary generations. Upgrade to continue.';
+      const response = NextResponse.json(
+        {
+          error: message,
+          reason: usage.reason,
+          remaining: usage.remaining ?? 0,
+        },
+        { status: 402 }
+      );
+      if (usage.cookie) {
+        response.cookies.set(usage.cookie.name, usage.cookie.value, {
+          httpOnly: usage.cookie.httpOnly,
+          secure: usage.cookie.secure,
+          sameSite: usage.cookie.sameSite,
+          path: usage.cookie.path,
+          maxAge: usage.cookie.maxAge,
+        });
+      }
+      return response;
+    }
+
     if (!prompt || !provider || !modelId || !providerConfig[provider]) {
       const error = 'Invalid request parameters';
       console.error(`${error} [requestId=${requestId}]`);
@@ -104,9 +140,25 @@ export async function POST(req: NextRequest) {
     });
 
     const result = await withTimeout(generatePromise, TIMEOUT_MILLIS);
-    return NextResponse.json(result, {
-      status: 'image' in result ? 200 : 500,
-    });
+    const response = NextResponse.json(
+      {
+        ...result,
+        remaining: usage.remaining ?? 0,
+      },
+      {
+        status: 'image' in result ? 200 : 500,
+      }
+    );
+    if (usage.cookie) {
+      response.cookies.set(usage.cookie.name, usage.cookie.value, {
+        httpOnly: usage.cookie.httpOnly,
+        secure: usage.cookie.secure,
+        sameSite: usage.cookie.sameSite,
+        path: usage.cookie.path,
+        maxAge: usage.cookie.maxAge,
+      });
+    }
+    return response;
   } catch (error) {
     // Log full error detail on the server, but return a generic error message
     // to avoid leaking any sensitive information to the client.

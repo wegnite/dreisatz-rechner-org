@@ -1,5 +1,7 @@
 import { getSiliconflowImageGenerator } from '@/ai/image/lib/siliconflow';
 import { generateNanoBananaImages } from '@/lib/ai/nano-banana';
+import { auth } from '@/lib/auth';
+import { enforceUsageLimit } from '@/lib/usage/quota';
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
@@ -13,6 +15,40 @@ export async function POST(request: NextRequest) {
         { error: 'Image generation service is not configured.' },
         { status: 500 }
       );
+    }
+
+    const session = await auth.api.getSession({
+      headers: request.headers,
+    });
+    const usage = await enforceUsageLimit({
+      request,
+      feature: 'polaroid-image',
+      userId: session?.user?.id,
+    });
+
+    if (!usage.allowed) {
+      const message =
+        usage.reason === 'ANONYMOUS_LIMIT_REACHED'
+          ? 'You have used the 2 free previews. Sign in to unlock 2 more turns.'
+          : 'You have reached the free usage quota. Upgrade to keep generating images.';
+      const response = NextResponse.json(
+        {
+          error: message,
+          reason: usage.reason,
+          remaining: usage.remaining ?? 0,
+        },
+        { status: 402 }
+      );
+      if (usage.cookie) {
+        response.cookies.set(usage.cookie.name, usage.cookie.value, {
+          httpOnly: usage.cookie.httpOnly,
+          secure: usage.cookie.secure,
+          sameSite: usage.cookie.sameSite,
+          path: usage.cookie.path,
+          maxAge: usage.cookie.maxAge,
+        });
+      }
+      return response;
     }
 
     const body = await request.json().catch(() => null);
@@ -63,11 +99,22 @@ export async function POST(request: NextRequest) {
         seed,
       });
 
-      return NextResponse.json({
+      const response = NextResponse.json({
         provider,
         images,
         requestId,
+        remaining: usage.remaining ?? 0,
       });
+      if (usage.cookie) {
+        response.cookies.set(usage.cookie.name, usage.cookie.value, {
+          httpOnly: usage.cookie.httpOnly,
+          secure: usage.cookie.secure,
+          sameSite: usage.cookie.sameSite,
+          path: usage.cookie.path,
+          maxAge: usage.cookie.maxAge,
+        });
+      }
+      return response;
     }
 
     if (provider === 'nano-banana') {
@@ -79,11 +126,22 @@ export async function POST(request: NextRequest) {
         seed,
       });
 
-      return NextResponse.json({
+      const response = NextResponse.json({
         provider,
         images,
         requestId,
+        remaining: usage.remaining ?? 0,
       });
+      if (usage.cookie) {
+        response.cookies.set(usage.cookie.name, usage.cookie.value, {
+          httpOnly: usage.cookie.httpOnly,
+          secure: usage.cookie.secure,
+          sameSite: usage.cookie.sameSite,
+          path: usage.cookie.path,
+          maxAge: usage.cookie.maxAge,
+        });
+      }
+      return response;
     }
 
     return NextResponse.json(

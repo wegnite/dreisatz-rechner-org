@@ -39,6 +39,7 @@ export async function generateMetadata({
     title: t('title'),
     description: t('description'),
     canonicalUrl: getUrlWithLocale('/ai/polaroid', locale),
+    keywords: ['wan 2.2', 'animate free', 'wan animate 2.2', 'wan2.2'],
   });
 }
 

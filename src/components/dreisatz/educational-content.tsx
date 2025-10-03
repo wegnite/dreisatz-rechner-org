@@ -1,149 +1,101 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { TrendingUp, TrendingDown, Lightbulb } from 'lucide-react';
-
 export function EducationalContent() {
   return (
-    <div className="mx-auto w-full max-w-5xl">
-      <div className="mb-8 text-center">
-        <h2 className="mb-2 text-3xl font-bold">
-          Wie funktioniert der Dreisatz?
+    <div className="w-full">
+      <div className="mb-6">
+        <h2 className="mb-3 text-2xl font-semibold text-gray-900">
+          Wie funktioniert der Dreisatz Rechner?
         </h2>
-        <p className="text-muted-foreground">
-          Verstehen Sie die Grundlagen in wenigen Minuten
+        <p className="text-gray-700 leading-relaxed mb-3">
+          Der Dreisatz ist eine grundlegende Rechenmethode zur Lösung von Proportionalitätsaufgaben.
+          Mit drei bekannten Werten kann ein vierter Wert berechnet werden. Unser Dreisatz Rechner
+          automatisiert diese Berechnung und zeigt Ihnen jeden Rechenschritt im Detail.
+        </p>
+        <p className="text-gray-700 leading-relaxed">
+          Dieser Online Dreisatz Rechner eignet sich perfekt für Schüler, Studenten und alle, die
+          schnell und zuverlässig Dreisatzaufgaben lösen möchten. Egal ob proportionaler oder
+          antiproportionaler Dreisatz – der Rechner führt Sie Schritt für Schritt zur Lösung.
         </p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
-        {/* Proportional */}
-        <Card className="border-2">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <div className="rounded-lg bg-green-500/10 p-2">
-                <TrendingUp className="h-5 w-5 text-green-500" />
-              </div>
-              Proportional
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div>
-              <p className="mb-2 font-medium">Je mehr A → mehr B</p>
-              <p className="mb-2 font-medium">Je weniger A → weniger B</p>
-            </div>
+      <div className="grid gap-6 md:grid-cols-2 mb-6">
+        {/* Proportionaler Dreisatz */}
+        <div className="rounded-lg border border-gray-200 bg-white p-6">
+          <h3 className="mb-3 text-lg font-semibold text-gray-900">
+            Proportionaler Dreisatz
+          </h3>
+          <p className="mb-4 text-sm text-gray-700">
+            <strong>Regel:</strong> Je mehr/weniger A → desto mehr/weniger B
+          </p>
+          <div className="mb-4 rounded-md bg-gray-50 p-4">
+            <p className="mb-2 text-sm font-medium text-gray-900">Beispiele:</p>
+            <ul className="space-y-1 text-sm text-gray-600">
+              <li>• Einkaufspreise (mehr Menge = mehr Kosten)</li>
+              <li>• Fahrstrecken (mehr Zeit = mehr Kilometer)</li>
+              <li>• Rezepte (mehr Personen = mehr Zutaten)</li>
+            </ul>
+          </div>
+          <div className="rounded-md bg-green-50 p-4">
+            <p className="mb-2 text-sm font-medium text-green-900">Rechenweg:</p>
+            <ol className="space-y-1 text-sm text-green-700">
+              <li>1. Auf 1 Einheit zurückrechnen (÷)</li>
+              <li>2. Auf gesuchte Menge hochrechnen (×)</li>
+            </ol>
+          </div>
+        </div>
 
-            <div className="rounded-lg bg-muted p-4">
-              <p className="mb-2 text-sm font-medium">Beispiele:</p>
-              <ul className="space-y-1 text-sm text-muted-foreground">
-                <li>• Einkaufspreise (mehr kaufen = mehr zahlen)</li>
-                <li>• Entfernungen (mehr Zeit = mehr Strecke)</li>
-                <li>• Mengenumrechnung (mehr Gramm = mehr Kilogramm)</li>
-                <li>• Rezepte (mehr Personen = mehr Zutaten)</li>
-              </ul>
-            </div>
-
-            <div className="rounded-lg border-2 border-green-500/20 bg-green-500/5 p-4">
-              <p className="mb-2 text-sm font-medium text-green-600 dark:text-green-400">
-                Rechenregel:
-              </p>
-              <ol className="space-y-2 text-sm">
-                <li>1. Auf 1 Einheit zurückrechnen (÷)</li>
-                <li>2. Auf gesuchte Menge hochrechnen (×)</li>
-              </ol>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Antiproportional */}
-        <Card className="border-2">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <div className="rounded-lg bg-orange-500/10 p-2">
-                <TrendingDown className="h-5 w-5 text-orange-500" />
-              </div>
-              Antiproportional
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div>
-              <p className="mb-2 font-medium">Je mehr A → weniger B</p>
-              <p className="mb-2 font-medium">Je weniger A → mehr B</p>
-            </div>
-
-            <div className="rounded-lg bg-muted p-4">
-              <p className="mb-2 text-sm font-medium">Beispiele:</p>
-              <ul className="space-y-1 text-sm text-muted-foreground">
-                <li>• Arbeitszeit (mehr Arbeiter = weniger Zeit)</li>
-                <li>
-                  • Geschwindigkeit (schneller fahren = weniger Fahrzeit)
-                </li>
-                <li>• Personenanzahl (mehr Teilung = weniger pro Person)</li>
-                <li>• Hundefutter (mehr Hunde = weniger Tage)</li>
-              </ul>
-            </div>
-
-            <div className="rounded-lg border-2 border-orange-500/20 bg-orange-500/5 p-4">
-              <p className="mb-2 text-sm font-medium text-orange-600 dark:text-orange-400">
-                Rechenregel:
-              </p>
-              <ol className="space-y-2 text-sm">
-                <li>1. Gesamtwert berechnen (×)</li>
-                <li>2. Durch neue Menge teilen (÷)</li>
-              </ol>
-            </div>
-          </CardContent>
-        </Card>
+        {/* Antiproportionaler Dreisatz */}
+        <div className="rounded-lg border border-gray-200 bg-white p-6">
+          <h3 className="mb-3 text-lg font-semibold text-gray-900">
+            Antiproportionaler Dreisatz
+          </h3>
+          <p className="mb-4 text-sm text-gray-700">
+            <strong>Regel:</strong> Je mehr A → desto weniger B
+          </p>
+          <div className="mb-4 rounded-md bg-gray-50 p-4">
+            <p className="mb-2 text-sm font-medium text-gray-900">Beispiele:</p>
+            <ul className="space-y-1 text-sm text-gray-600">
+              <li>• Arbeitszeit (mehr Arbeiter = weniger Zeit)</li>
+              <li>• Geschwindigkeit (schneller = kürzere Zeit)</li>
+              <li>• Vorräte (mehr Personen = kürzer haltbar)</li>
+            </ul>
+          </div>
+          <div className="rounded-md bg-orange-50 p-4">
+            <p className="mb-2 text-sm font-medium text-orange-900">Rechenweg:</p>
+            <ol className="space-y-1 text-sm text-orange-700">
+              <li>1. Gesamtwert berechnen (×)</li>
+              <li>2. Durch neue Menge teilen (÷)</li>
+            </ol>
+          </div>
+        </div>
       </div>
 
       {/* Merkhilfe */}
-      <Card className="mt-6 border-2 border-primary">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Lightbulb className="h-5 w-5 text-yellow-500" />
-            Merkhilfe
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3">
-          <div className="flex items-start gap-3">
-            <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs text-primary-foreground">
-              1
-            </div>
-            <div>
-              <p className="font-medium">
-                Beide Werte steigen/fallen zusammen?
-              </p>
-              <p className="text-sm text-muted-foreground">
-                → Verwenden Sie den <strong>proportionalen</strong> Dreisatz
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-3">
-            <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs text-primary-foreground">
-              2
-            </div>
-            <div>
-              <p className="font-medium">
-                Ein Wert steigt, der andere fällt?
-              </p>
-              <p className="text-sm text-muted-foreground">
-                → Verwenden Sie den <strong>antiproportionalen</strong>{' '}
-                Dreisatz
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-3">
-            <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs text-primary-foreground">
-              3
-            </div>
-            <div>
-              <p className="font-medium">Einheiten immer gleich halten!</p>
-              <p className="text-sm text-muted-foreground">
-                Gramm bleibt Gramm, Euro bleibt Euro – niemals mischen
-              </p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+      <div className="rounded-lg border border-blue-200 bg-blue-50 p-6">
+        <h3 className="mb-4 text-lg font-semibold text-gray-900">
+          💡 Wichtige Hinweise für die Nutzung des Dreisatz Rechners
+        </h3>
+        <div className="space-y-3 text-sm text-gray-700">
+          <p>
+            <strong>1. Einheiten beachten:</strong> Alle Werte müssen in denselben Einheiten angegeben werden
+            (z.B. nur Gramm oder nur Kilogramm, nicht gemischt). Der Dreisatz Rechner zeigt Ihnen,
+            wenn Einheiten nicht übereinstimmen.
+          </p>
+          <p>
+            <strong>2. Proportionalität prüfen:</strong> Überlegen Sie, ob mehr von A zu mehr oder weniger von B führt.
+            Unser Rechner unterstützt beide Varianten – proportionalen und antiproportionalen Dreisatz.
+          </p>
+          <p>
+            <strong>3. Formel verstehen:</strong> Der Dreisatz Rechner wendet die Formel X = C × B ÷ A an
+            (wobei A und B das bekannte Verhältnis sind, C der neue Wert und X das Ergebnis).
+            Jeder Rechenschritt wird transparent dargestellt.
+          </p>
+          <p>
+            <strong>4. Lernen durch Beispiele:</strong> Nutzen Sie die vorgegebenen Beispiele im Dreisatz Rechner,
+            um die Methode besser zu verstehen. Klicken Sie einfach auf ein Beispiel, und der Rechner
+            zeigt Ihnen die komplette Lösung mit allen Zwischenschritten.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

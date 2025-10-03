@@ -9,35 +9,9 @@ import { getBaseUrl } from '../lib/urls/urls';
 type Href = Parameters<typeof getLocalePathname>[0]['href'];
 
 /**
- * Static routes prioritized for AI Polaroid Photo
+ * Static routes for Dreisatz Rechner Landing Pages
  */
-const staticRoutes = [
-  '/',
-  '/ai/image',
-  '/ai/polaroid',
-  '/ai/polaroid/generator',
-  '/ai/polaroid/templates',
-  '/ai/vintage-photo',
-  '/tools',
-  '/gallery',
-  '/tutorials',
-  '/policy/ugc',
-  // legal/basic pages
-  '/privacy',
-  '/terms',
-  '/cookie',
-  // optional
-  '/about',
-  '/contact',
-  '/changelog',
-  '/wan-2-2',
-  '/wan-2-2/models',
-  '/wan-2-2/workflows',
-  '/wan-2-2/animate-free',
-  '/sora2-openai',
-  '/sora2-openai/workflows',
-  '/sora2-openai/launchpads',
-];
+const staticRoutes = ['/', '/about', '/contact', '/privacy', '/terms', '/cookie'];
 
 /**
  * Generate a sitemap for the website
@@ -57,28 +31,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   > = {
     '/': { priority: 1.0, changeFrequency: 'weekly' },
-    '/ai/image': { priority: 1.0, changeFrequency: 'weekly' },
-    '/ai/polaroid': { priority: 1.0, changeFrequency: 'weekly' },
-    '/ai/polaroid/generator': { priority: 0.95, changeFrequency: 'weekly' },
-    '/ai/polaroid/templates': { priority: 0.9, changeFrequency: 'weekly' },
-    '/ai/vintage-photo': { priority: 0.9, changeFrequency: 'weekly' },
-    '/tools': { priority: 0.8, changeFrequency: 'monthly' },
-    '/gallery': { priority: 0.8, changeFrequency: 'daily' },
-    '/tutorials': { priority: 0.7, changeFrequency: 'weekly' },
-    '/policy/ugc': { priority: 0.6, changeFrequency: 'yearly' },
     '/privacy': { priority: 0.5, changeFrequency: 'yearly' },
     '/terms': { priority: 0.5, changeFrequency: 'yearly' },
     '/cookie': { priority: 0.5, changeFrequency: 'yearly' },
     '/about': { priority: 0.3, changeFrequency: 'yearly' },
     '/contact': { priority: 0.3, changeFrequency: 'yearly' },
-    '/changelog': { priority: 0.3, changeFrequency: 'monthly' },
-    '/wan-2-2': { priority: 0.6, changeFrequency: 'weekly' },
-    '/wan-2-2/models': { priority: 0.55, changeFrequency: 'weekly' },
-    '/wan-2-2/workflows': { priority: 0.55, changeFrequency: 'weekly' },
-    '/wan-2-2/animate-free': { priority: 0.55, changeFrequency: 'weekly' },
-    '/sora2-openai': { priority: 0.6, changeFrequency: 'weekly' },
-    '/sora2-openai/workflows': { priority: 0.55, changeFrequency: 'weekly' },
-    '/sora2-openai/launchpads': { priority: 0.55, changeFrequency: 'weekly' },
   };
 
   // add static routes

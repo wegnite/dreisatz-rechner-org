@@ -36,7 +36,7 @@ export function useImageExport() {
         scale: options.scale || exportSettings.scale,
         includeWatermark:
           options.includeWatermark ?? exportSettings.includeWatermark,
-        watermarkText: options.watermarkText || 'aipolaroidphoto.org',
+        watermarkText: options.watermarkText || 'dreisatzrechner.org',
         watermarkPosition: options.watermarkPosition || 'bottom-right',
       };
 
@@ -80,7 +80,7 @@ export function useImageExport() {
 
       const link = document.createElement('a');
       link.download =
-        filename || `ai-polaroid-photo-${Date.now()}.${finalOptions.format}`;
+        filename || `dreisatz-rechner-${Date.now()}.${finalOptions.format}`;
       link.href = dataURL;
       document.body.appendChild(link);
       link.click();

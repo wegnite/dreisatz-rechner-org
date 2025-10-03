@@ -23,7 +23,7 @@ dotenv.config();
 // 从环境变量或默认值获取配置
 const CONFIG = {
   siteName: 'AI Polaroid Photo',
-  url: process.env.NEXT_PUBLIC_BASE_URL || 'https://aipolaroidphoto.org',
+  url: process.env.NEXT_PUBLIC_BASE_URL || 'https://dreisatzrechner.org',
   timezone: 'Asia/Shanghai',
   currency: 'USD',
   industry: 'TECHNOLOGY',

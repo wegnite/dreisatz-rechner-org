@@ -16,7 +16,7 @@ export enum Routes {
   Contact = '/contact',
   Waitlist = '/waitlist',
   Changelog = '/changelog',
-  Roadmap = 'https://aipolaroidphoto.org/roadmap',
+  Roadmap = 'https://dreisatzrechner.org/roadmap',
   CookiePolicy = '/cookie',
   PrivacyPolicy = '/privacy',
   TermsOfService = '/terms',

@@ -1,263 +1,308 @@
 'use client';
 
-import { useState } from 'react';
-import { Calculator, ArrowRight, Info } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { CalculationSteps } from './calculation-steps';
+import { useEffect, useState } from 'react';
+import type { DreisatzExample } from './quick-examples';
 
 type CalculationType = 'proportional' | 'antiproportional';
 
-interface CalculationResult {
-  result: number;
-  steps: {
-    step1: { description: string; calculation: string; value: number };
-    step2: { description: string; calculation: string; value: number };
-  };
-  formula: string;
+interface DreisatzCalculatorProps {
+  example?: DreisatzExample;
 }
 
-export function DreisatzCalculator() {
-  const [type, setType] = useState<CalculationType>('proportional');
-  const [a1, setA1] = useState('500');
-  const [b1, setB1] = useState('3.85');
-  const [a2, setA2] = useState('200');
-  const [result, setResult] = useState<CalculationResult | null>(null);
-  const [unitA, setUnitA] = useState('Gramm');
-  const [unitB, setUnitB] = useState('Euro');
+export function DreisatzCalculator({ example }: DreisatzCalculatorProps) {
+  const [a1, setA1] = useState('');
+  const [b1, setB1] = useState('');
+  const [a2, setA2] = useState('');
+  const [result, setResult] = useState<number | null>(null);
+  const [calculationType, setCalculationType] = useState<CalculationType>('proportional');
 
-  const calculate = () => {
+  useEffect(() => {
+    if (!example) return;
+    setA1(example.a1.toString());
+    setB1(example.b1.toString());
+    setA2(example.a2.toString());
+    setCalculationType(example.type);
+    setResult(null);
+  }, [example]);
+
+  useEffect(() => {
     const numA1 = parseFloat(a1);
     const numB1 = parseFloat(b1);
     const numA2 = parseFloat(a2);
 
-    if (isNaN(numA1) || isNaN(numB1) || isNaN(numA2)) {
-      return;
-    }
-
-    let finalResult: number;
-    let step1Value: number;
-    let step1Calc: string;
-    let step2Calc: string;
-
-    if (type === 'proportional') {
-      // Step 1: Calculate value for 1 unit of A
-      step1Value = numB1 / numA1;
-      step1Calc = `${numB1} ÷ ${numA1} = ${step1Value.toFixed(4)}`;
-
-      // Step 2: Calculate for A2
-      finalResult = step1Value * numA2;
-      step2Calc = `${step1Value.toFixed(4)} × ${numA2} = ${finalResult.toFixed(2)}`;
+    if (!isNaN(numA1) && !isNaN(numB1) && !isNaN(numA2) && numA1 !== 0) {
+      let calculated: number;
+      if (calculationType === 'proportional') {
+        // Proportional: X = (A2 × B1) / A1
+        calculated = (numA2 * numB1) / numA1;
+      } else {
+        // Antiproportional: X = (A1 × B1) / A2
+        calculated = (numA1 * numB1) / numA2;
+      }
+      setResult(calculated);
     } else {
-      // Antiproportional
-      // Step 1: Calculate total (product)
-      step1Value = numA1 * numB1;
-      step1Calc = `${numA1} × ${numB1} = ${step1Value.toFixed(4)}`;
-
-      // Step 2: Divide by new A value
-      finalResult = step1Value / numA2;
-      step2Calc = `${step1Value.toFixed(4)} ÷ ${numA2} = ${finalResult.toFixed(2)}`;
+      setResult(null);
     }
+  }, [a1, b1, a2, calculationType]);
 
-    const calculationResult: CalculationResult = {
-      result: finalResult,
-      steps: {
-        step1: {
-          description:
-            type === 'proportional'
-              ? 'Auf 1 Einheit zurückrechnen'
-              : 'Gesamtwert berechnen',
-          calculation: step1Calc,
-          value: step1Value,
-        },
-        step2: {
-          description:
-            type === 'proportional'
-              ? 'Auf gesuchte Menge hochrechnen'
-              : 'Durch neue Menge teilen',
-          calculation: step2Calc,
-          value: finalResult,
-        },
-      },
-      formula:
-        type === 'proportional'
-          ? `B₂ = B₁ × (A₂ / A₁) = ${numB1} × (${numA2} / ${numA1})`
-          : `B₂ = (A₁ × B₁) / A₂ = (${numA1} × ${numB1}) / ${numA2}`,
-    };
-
-    setResult(calculationResult);
-  };
+  // Calculate intermediate step (per unit)
+  const numA1 = parseFloat(a1);
+  const numB1 = parseFloat(b1);
+  const numA2 = parseFloat(a2);
+  const perUnit = !isNaN(numA1) && !isNaN(numB1) && numA1 !== 0 ? numB1 / numA1 : null;
 
   return (
-    <div className="mx-auto w-full max-w-5xl space-y-8">
-      {/* Calculator Type Selection */}
-      <div className="grid gap-4 md:grid-cols-2">
-        <Card
-          className={`cursor-pointer border-2 transition-all ${
-            type === 'proportional'
-              ? 'border-primary bg-primary/5'
-              : 'border-border hover:border-primary/50'
-          }`}
-          onClick={() => setType('proportional')}
-        >
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-lg">
-              <Calculator className="h-5 w-5" />
-              Proportional
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Je mehr A, desto mehr B
-            </p>
-            <p className="mt-2 text-xs text-muted-foreground">
-              Beispiel: Mehr Gramm → Mehr Euro
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card
-          className={`cursor-pointer border-2 transition-all ${
-            type === 'antiproportional'
-              ? 'border-primary bg-primary/5'
-              : 'border-border hover:border-primary/50'
-          }`}
-          onClick={() => setType('antiproportional')}
-        >
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-lg">
-              <Calculator className="h-5 w-5" />
-              Antiproportional
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Je mehr A, desto weniger B
-            </p>
-            <p className="mt-2 text-xs text-muted-foreground">
-              Beispiel: Mehr Arbeiter → Weniger Zeit
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Input Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            Bekanntes Verhältnis
-            <Info className="h-4 w-4 text-muted-foreground" />
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="space-y-2">
-              <Label htmlFor="a1">Größe A₁</Label>
-              <div className="flex gap-2">
-                <Input
-                  id="a1"
-                  type="number"
-                  value={a1}
-                  onChange={(e) => setA1(e.target.value)}
-                  placeholder="500"
-                  className="text-lg"
-                />
-                <Input
-                  value={unitA}
-                  onChange={(e) => setUnitA(e.target.value)}
-                  placeholder="Einheit"
-                  className="w-32"
-                />
+    <div className="w-full">
+      <div className="grid gap-8 md:grid-cols-3">
+        {/* Left Column - Calculator */}
+        <div className="md:col-span-2">
+          <form className="space-y-8">
+            {/* Calculation Type Selector */}
+            <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+              <label className="mb-3 block text-sm font-semibold text-gray-900">
+                Art der Berechnung
+              </label>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <button
+                  type="button"
+                  onClick={() => setCalculationType('proportional')}
+                  className={`rounded-lg border-2 px-4 py-3 text-left transition-all ${
+                    calculationType === 'proportional'
+                      ? 'border-green-500 bg-green-50 shadow-sm'
+                      : 'border-gray-200 bg-white hover:border-gray-300'
+                  }`}
+                >
+                  <div className="font-semibold text-gray-900">Proportional</div>
+                  <div className="mt-1 text-xs text-gray-600">
+                    Je mehr A, desto mehr B
+                  </div>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setCalculationType('antiproportional')}
+                  className={`rounded-lg border-2 px-4 py-3 text-left transition-all ${
+                    calculationType === 'antiproportional'
+                      ? 'border-orange-500 bg-orange-50 shadow-sm'
+                      : 'border-gray-200 bg-white hover:border-gray-300'
+                  }`}
+                >
+                  <div className="font-semibold text-gray-900">Antiproportional</div>
+                  <div className="mt-1 text-xs text-gray-600">
+                    Je mehr A, desto weniger B
+                  </div>
+                </button>
               </div>
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="b1">Größe B₁</Label>
-              <div className="flex gap-2">
-                <Input
-                  id="b1"
-                  type="number"
-                  value={b1}
-                  onChange={(e) => setB1(e.target.value)}
-                  placeholder="3.85"
-                  className="text-lg"
-                />
-                <Input
-                  value={unitB}
-                  onChange={(e) => setUnitB(e.target.value)}
-                  placeholder="Einheit"
-                  className="w-32"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="my-4 flex justify-center">
-            <ArrowRight className="h-6 w-6 rotate-90 text-muted-foreground" />
-          </div>
-
-          <div className="space-y-4">
-            <CardTitle className="text-base">Gesuchtes Verhältnis</CardTitle>
-            <div className="grid gap-6 md:grid-cols-2">
-              <div className="space-y-2">
-                <Label htmlFor="a2">Größe A₂</Label>
-                <div className="flex gap-2">
-                  <Input
-                    id="a2"
+            {/* Input Section */}
+            <div>
+              <h2 className="mb-4 text-xl font-semibold text-gray-900">
+                Zugrundeliegendes Verhältnis
+              </h2>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="valueA" className="mb-2 block text-sm font-medium text-gray-700">
+                    Wert A
+                  </label>
+                  <input
                     type="number"
+                    id="valueA"
+                    value={a1}
+                    onChange={(e) => setA1(e.target.value)}
+                    className="w-full rounded-md border border-gray-300 px-4 py-2.5 text-base focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    autoComplete="off"
+                    tabIndex={1}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="valueB" className="mb-2 block text-sm font-medium text-gray-700">
+                    Wert B
+                  </label>
+                  <input
+                    type="number"
+                    id="valueB"
+                    value={b1}
+                    onChange={(e) => setB1(e.target.value)}
+                    className="w-full rounded-md border border-gray-300 px-4 py-2.5 text-base focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    autoComplete="off"
+                    tabIndex={2}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Output Section */}
+            <div>
+              <h2 className="mb-4 text-xl font-semibold text-gray-900">
+                Zu errechnendes Verhältnis
+              </h2>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="valueC" className="mb-2 block text-sm font-medium text-gray-700">
+                    Wert C
+                  </label>
+                  <input
+                    type="number"
+                    id="valueC"
                     value={a2}
                     onChange={(e) => setA2(e.target.value)}
-                    placeholder="200"
-                    className="text-lg"
-                  />
-                  <Input
-                    value={unitA}
-                    disabled
-                    placeholder="Einheit"
-                    className="w-32"
+                    className="w-full rounded-md border border-gray-300 px-4 py-2.5 text-base focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    autoComplete="off"
+                    tabIndex={3}
                   />
                 </div>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="result">Größe B₂ (Ergebnis)</Label>
-                <div className="flex gap-2">
-                  <div className="flex h-10 w-full items-center rounded-md border border-input bg-muted px-3 text-lg">
-                    {result ? result.result.toFixed(2) : '?'}
+                <div>
+                  <label htmlFor="result" className="mb-2 block text-sm font-medium text-gray-700">
+                    Ergebnis X
+                  </label>
+                  <div className="w-full rounded-md border-0 px-4 py-2.5 text-base font-bold text-red-600">
+                    {result !== null ? result.toFixed(4) : ''}
                   </div>
-                  <Input
-                    value={unitB}
-                    disabled
-                    placeholder="Einheit"
-                    className="w-32"
-                  />
                 </div>
               </div>
             </div>
+
+            {/* Dreisatz-Tabelle (Calculation Steps) */}
+            {result !== null && (
+              <div className="space-y-4">
+                <h2 className="text-xl font-semibold text-gray-900">Dreisatz-Tabelle</h2>
+                <div className="overflow-hidden rounded-lg border border-gray-200 bg-white">
+                  <table className="w-full">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">
+                          Schritt
+                        </th>
+                        <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">
+                          Wert A
+                        </th>
+                        <th className="px-6 py-3 text-center text-sm font-semibold text-gray-900">
+                          →
+                        </th>
+                        <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">
+                          Wert B
+                        </th>
+                        <th className="hidden px-6 py-3 text-left text-sm font-semibold text-gray-900 md:table-cell">
+                          Rechenweg
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-200">
+                      {/* Step 1: Known relationship */}
+                      <tr>
+                        <td className="px-6 py-4 text-sm text-gray-700">
+                          Bekanntes Verhältnis
+                        </td>
+                        <td className="px-6 py-4 text-sm font-medium text-gray-900">{a1}</td>
+                        <td className="px-6 py-4 text-center text-sm text-gray-500">→</td>
+                        <td className="px-6 py-4 text-sm font-medium text-gray-900">{b1}</td>
+                        <td className="hidden px-6 py-4 text-sm text-gray-500 md:table-cell">
+                          Ausgangswerte
+                        </td>
+                      </tr>
+
+                      {/* Step 2: Calculate per unit */}
+                      <tr className="bg-blue-50">
+                        <td className="px-6 py-4 text-sm text-gray-700">
+                          Rückrechnung auf 1
+                        </td>
+                        <td className="px-6 py-4 text-sm font-medium text-gray-900">1</td>
+                        <td className="px-6 py-4 text-center text-sm text-gray-500">→</td>
+                        <td className="px-6 py-4 text-sm font-medium text-gray-900">
+                          {perUnit?.toFixed(4)}
+                        </td>
+                        <td className="hidden px-6 py-4 text-sm text-gray-500 md:table-cell">
+                          {calculationType === 'proportional'
+                            ? `÷ ${a1} (beide Seiten)`
+                            : `× ${a1} (linke Seite ÷, rechte Seite ×)`
+                          }
+                        </td>
+                      </tr>
+
+                      {/* Step 3: Calculate result */}
+                      <tr className="bg-green-50">
+                        <td className="px-6 py-4 text-sm text-gray-700">
+                          Berechnetes Verhältnis
+                        </td>
+                        <td className="px-6 py-4 text-sm font-medium text-gray-900">{a2}</td>
+                        <td className="px-6 py-4 text-center text-sm text-gray-500">→</td>
+                        <td className="px-6 py-4 text-sm font-bold text-red-600">
+                          {result.toFixed(4)}
+                        </td>
+                        <td className="hidden px-6 py-4 text-sm text-gray-500 md:table-cell">
+                          {calculationType === 'proportional'
+                            ? `× ${a2} (beide Seiten)`
+                            : `× ${a2} auf linker Seite, ÷ ${a2} auf rechter Seite`
+                          }
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* Formula Display */}
+                <div className="rounded-lg border border-gray-200 bg-gradient-to-r from-purple-50 to-blue-50 p-6">
+                  <h3 className="mb-3 text-lg font-semibold text-gray-900">Dreisatz-Formel</h3>
+                  <div className="space-y-3">
+                    <div className="rounded-md bg-white p-4 font-mono text-base">
+                      {calculationType === 'proportional' ? (
+                        <div className="text-center">
+                          X = (A2 × B1) ÷ A1 = ({a2} × {b1}) ÷ {a1} = <span className="font-bold text-red-600">{result.toFixed(4)}</span>
+                        </div>
+                      ) : (
+                        <div className="text-center">
+                          X = (A1 × B1) ÷ A2 = ({a1} × {b1}) ÷ {a2} = <span className="font-bold text-red-600">{result.toFixed(4)}</span>
+                        </div>
+                      )}
+                    </div>
+                    <p className="text-sm text-gray-700">
+                      <strong className="font-semibold">Zusammenhang:</strong>{' '}
+                      {calculationType === 'proportional'
+                        ? 'Bei proportionalen Verhältnissen wachsen beide Werte gleichmäßig. Verdoppelt sich A, verdoppelt sich auch B.'
+                        : 'Bei antiproportionalen Verhältnissen verhalten sich die Werte umgekehrt. Verdoppelt sich A, halbiert sich B.'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </form>
+        </div>
+
+        {/* Right Column - Information */}
+        <div className="space-y-6 rounded-lg bg-gray-50 p-6">
+          <div>
+            <p className="mb-4 text-sm leading-relaxed text-gray-700">
+              <strong className="font-semibold">Tja, der liebe Dreisatz.</strong> Eigentlich ein recht einfacher Mathematischer Satz, den man aber gerne mal vergisst. Kein Problem, denn hier hat man die Möglichkeit, diesen schnell ausrechnen zu lassen.
+            </p>
           </div>
 
-          <Button onClick={calculate} className="mt-6 w-full" size="lg">
-            <Calculator className="mr-2 h-4 w-4" />
-            Dreisatz Berechnen
-          </Button>
-        </CardContent>
-      </Card>
+          <div>
+            <p className="mb-2 text-sm font-semibold text-gray-900">
+              Formel: <span className="font-mono">X = C × B ÷ A</span>
+            </p>
+          </div>
 
-      {/* Results Section */}
-      {result && (
-        <CalculationSteps
-          result={result}
-          type={type}
-          unitA={unitA}
-          unitB={unitB}
-          a1={parseFloat(a1)}
-          b1={parseFloat(b1)}
-          a2={parseFloat(a2)}
-        />
-      )}
+          <div className="border-t border-gray-200 pt-4">
+            <p className="mb-2 text-sm font-semibold text-gray-900">
+              Kleine Beispielrechnung:
+            </p>
+            <p className="text-sm leading-relaxed text-gray-700">
+              Mein Auto kommt mit 60 l Benzin insgesamt 750 km weit. Wie weit kommt es mit nur 5 l aus dem Reservekanister?
+            </p>
+            <button
+              type="button"
+              onClick={() => {
+                setA1('60');
+                setB1('750');
+                setA2('5');
+              }}
+              className="mt-3 text-sm font-medium text-blue-600 hover:text-blue-700 hover:underline"
+            >
+              &gt; Beispiel laden
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

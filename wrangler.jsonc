@@ -66,9 +66,9 @@
    * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
    */
   "vars": {
-    "NEXT_PUBLIC_BASE_URL": "https://aipolaroidphoto.org",
-    "NEXT_URL": "https://aipolaroidphoto.org",
-    "VERCEL_URL": "aipolaroidphoto.org",
+    "NEXT_PUBLIC_BASE_URL": "https://dreisatzrechner.org",
+    "NEXT_URL": "https://dreisatzrechner.org",
+    "VERCEL_URL": "dreisatzrechner.org",
     "DISABLE_IMAGE_OPTIMIZATION": "true",
     "NEXT_PUBLIC_DEMO_WEBSITE": "false",
     "NEXT_PUBLIC_STRIPE_PRICE_PRO_MONTHLY": "price_1S8xfH4TOkObXtRCZ0uPTHyE",

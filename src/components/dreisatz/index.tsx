@@ -1,83 +1,82 @@
+
 'use client';
 
-import { useState } from 'react';
-import { DreisatzHero } from './hero';
+import { useCallback, useState } from 'react';
 import { DreisatzCalculator } from './calculator';
-import { QuickExamples } from './quick-examples';
+import { QuickExamples, type DreisatzExample } from './quick-examples';
 import { EducationalContent } from './educational-content';
 import { DreisatzFAQ } from './faq';
+import { TypeGuide } from './type-guide';
 
 export function DreisatzHomepage() {
-  const [calculatorKey, setCalculatorKey] = useState(0);
+  const [selectedExample, setSelectedExample] = useState<DreisatzExample | null>(null);
 
-  const handleExampleClick = (example: any) => {
-    // Scroll to calculator
-    const calculatorElement = document.getElementById('calculator');
-    if (calculatorElement) {
-      calculatorElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    // Reload calculator with example data
-    // This would be handled by passing props to DreisatzCalculator
-    setCalculatorKey((prev) => prev + 1);
-  };
+  const handleExampleClick = useCallback((example: DreisatzExample) => {
+    setSelectedExample(example);
+    requestAnimationFrame(() => {
+      const calculatorElement = document.getElementById('rechner');
+      calculatorElement?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <DreisatzHero />
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <header className="border-b bg-white py-8">
+        <div className="container mx-auto max-w-5xl px-4">
+          <h1 className="text-4xl font-bold text-gray-900">
+            Dreisatz Rechner
+            <small className="ml-3 text-lg font-normal text-gray-500">Online & Kostenlos</small>
+          </h1>
+          <p className="mt-2 text-sm text-gray-600">
+            Der beste Online Dreisatz Rechner für proportionale und antiproportionale Berechnungen
+          </p>
+        </div>
+      </header>
 
       {/* Main Calculator */}
-      <section id="calculator" className="py-16">
-        <div className="container px-4">
-          <DreisatzCalculator key={calculatorKey} />
+      <section id="rechner" className="py-12">
+        <div className="container mx-auto max-w-5xl px-4">
+          <DreisatzCalculator example={selectedExample ?? undefined} />
         </div>
       </section>
 
       {/* Quick Examples */}
-      <section className="bg-muted/30 py-16">
-        <div className="container px-4">
+      <section className="border-t bg-gray-50 py-12">
+        <div className="container mx-auto max-w-5xl px-4">
           <QuickExamples onExampleClick={handleExampleClick} />
         </div>
       </section>
 
+      {/* Type Guide */}
+      <section className="border-t py-12">
+        <div className="container mx-auto max-w-5xl px-4">
+          <TypeGuide />
+        </div>
+      </section>
+
       {/* Educational Content */}
-      <section className="py-16">
-        <div className="container px-4">
+      <section id="leitfaden" className="border-t bg-gray-50 py-12">
+        <div className="container mx-auto max-w-5xl px-4">
           <EducationalContent />
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="bg-muted/30 py-16">
-        <div className="container px-4">
+      <section className="border-t bg-gray-50 py-12">
+        <div className="container mx-auto max-w-5xl px-4">
           <DreisatzFAQ />
         </div>
       </section>
 
-      {/* Footer CTA */}
-      <section className="border-t py-12">
-        <div className="container px-4 text-center">
-          <h2 className="mb-4 text-2xl font-bold">
-            Bereit für Ihre nächste Berechnung?
-          </h2>
-          <p className="mb-6 text-muted-foreground">
-            Nutzen Sie unseren kostenlosen Dreisatz-Rechner jederzeit
+      {/* Footer */}
+      <footer className="border-t py-8">
+        <div className="container mx-auto max-w-5xl px-4">
+          <p className="text-center text-sm text-gray-600">
+            © 2025 Dreisatz Rechner - Kostenloser Online Dreisatz Rechner für alle Dreisatz-Aufgaben
           </p>
-          <button
-            onClick={() => {
-              const calculatorElement = document.getElementById('calculator');
-              calculatorElement?.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
-              });
-            }}
-            className="inline-flex items-center rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Jetzt berechnen →
-          </button>
         </div>
-      </section>
+      </footer>
     </div>
   );
 }
@@ -85,7 +84,7 @@ export function DreisatzHomepage() {
 // Export all components
 export { DreisatzHero } from './hero';
 export { DreisatzCalculator } from './calculator';
-export { CalculationSteps } from './calculation-steps';
 export { QuickExamples } from './quick-examples';
 export { EducationalContent } from './educational-content';
 export { DreisatzFAQ } from './faq';
+export { TypeGuide } from './type-guide';

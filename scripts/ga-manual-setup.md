@@ -33,7 +33,7 @@
 - 点击 **下一步**
 
 ### 6. 设置网站数据流
-- **网站网址**: `https://aipolaroidphoto.org`
+- **网站网址**: `https://dreisatzrechner.org`
 - **数据流名称**: `AI Polaroid Photo - Web Stream`
 - 点击 **创建数据流**
 

@@ -5,7 +5,7 @@ import type { WebsiteConfig } from '@/types';
  * website config, without translations
  *
  * docs:
- * https://aipolaroidphoto.org/docs/config/website
+ * https://dreisatzrechner.org/docs/config/website
  */
 export const websiteConfig: WebsiteConfig = {
   ui: {
@@ -20,18 +20,18 @@ export const websiteConfig: WebsiteConfig = {
   },
   metadata: {
     images: {
-      ogImage: '/og.png',
-      logoLight: '/logo.png',
-      logoDark: '/logo-dark.png',
+      ogImage: '/calculator/calculator.png',
+      logoLight: '/calculator/calculator.svg',
+      logoDark: '/calculator/calculator.svg',
     },
     social: {
-      github: 'https://github.com/aipolaroidphoto',
-      twitter: 'https://twitter.com/aipolaroidphoto',
-      blueSky: 'https://bsky.app/profile/aipolaroidphoto.org',
-      discord: 'https://discord.gg/aipolaroidphoto',
-      mastodon: 'https://mastodon.social/@aipolaroidphoto',
-      linkedin: 'https://linkedin.com/company/aipolaroidphoto',
-      youtube: 'https://youtube.com/@aipolaroidphoto',
+      github: 'https://github.com/dreisatzrechner',
+      twitter: 'https://twitter.com/dreisatzrechner',
+      blueSky: 'https://bsky.app/profile/dreisatzrechner.org',
+      discord: '',
+      mastodon: '',
+      linkedin: '',
+      youtube: '',
     },
   },
   features: {
@@ -51,7 +51,7 @@ export const websiteConfig: WebsiteConfig = {
     enableSpeedInsights: false,
   },
   auth: {
-    enableGoogleLogin: true,
+    enableGoogleLogin: false,
     enableGithubLogin: true,
     enableCredentialLogin: true,
   },
@@ -82,8 +82,8 @@ export const websiteConfig: WebsiteConfig = {
   },
   mail: {
     provider: 'resend',
-    fromEmail: 'AI Polaroid Photo <support@aipolaroidphoto.org>',
-    supportEmail: 'AI Polaroid Photo <support@aipolaroidphoto.org>',
+    fromEmail: 'Dreisatz Rechner <support@dreisatzrechner.org>',
+    supportEmail: 'Dreisatz Rechner <support@dreisatzrechner.org>',
   },
   newsletter: {
     enable: true,

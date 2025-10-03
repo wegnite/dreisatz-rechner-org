@@ -3,7 +3,6 @@
 import { Routes } from '@/routes';
 import type { NestedMenuItem } from '@/types';
 import { useTranslations } from 'next-intl';
-import { websiteConfig } from './website';
 
 /**
  * Get footer config with translations
@@ -11,7 +10,7 @@ import { websiteConfig } from './website';
  * NOTICE: used in client components only
  *
  * docs:
- * https://aipolaroidphoto.org/docs/config/footer
+ * https://dreisatzrechner.org/docs/config/footer
  *
  * @returns The footer config with translated titles
  */
@@ -20,89 +19,71 @@ export function getFooterLinks(): NestedMenuItem[] {
 
   return [
     {
-      title: t('product.title'),
+      title: t('calculator.title'),
       items: [
         {
-          title: t('product.items.generator'),
-          href: Routes.AiPolaroidGenerator,
+          title: t('calculator.items.start'),
+          href: '/#rechner',
           external: false,
         },
         {
-          title: t('product.items.templates'),
-          href: Routes.AiPolaroidTemplates,
+          title: t('calculator.items.stepGuide'),
+          href: '/#leitfaden',
           external: false,
         },
         {
-          title: t('product.items.vintage'),
-          href: Routes.AiVintagePhoto,
+          title: t('calculator.items.formulas'),
+          href: '/#formeln',
+          external: false,
+        },
+        {
+          title: t('calculator.items.tables'),
+          href: '/#tabellen',
           external: false,
         },
       ],
     },
     {
-      title: t('resources.title'),
+      title: t('learn.title'),
       items: [
         {
-          title: t('resources.items.gallery'),
-          href: Routes.Gallery,
+          title: t('learn.items.useCases'),
+          href: '/#anwendungsfaelle',
           external: false,
         },
         {
-          title: t('resources.items.tutorials'),
-          href: Routes.Tutorials,
+          title: t('learn.items.practice'),
+          href: '/#uebungen',
           external: false,
         },
         {
-          title: t('resources.items.wan22'),
-          href: Routes.Wan22,
+          title: t('learn.items.glossary'),
+          href: '/#glossar',
           external: false,
         },
         {
-          title: t('resources.items.sora2'),
-          href: Routes.Sora2OpenAI,
+          title: t('learn.items.checklist'),
+          href: '/#fehlervermeidung',
           external: false,
         },
-        ...(websiteConfig.blog.enable
-          ? [
-              {
-                title: t('resources.items.blog'),
-                href: Routes.Blog,
-                external: false,
-              },
-            ]
-          : []),
-        ...(websiteConfig.docs.enable
-          ? [
-              {
-                title: t('resources.items.docs'),
-                href: Routes.Docs,
-                external: false,
-              },
-            ]
-          : []),
       ],
     },
     {
-      title: t('company.title'),
+      title: t('service.title'),
       items: [
         {
-          title: t('company.items.about'),
-          href: Routes.About,
-          external: false,
-        },
-        {
-          title: t('company.items.contact'),
+          title: t('service.items.contact'),
           href: Routes.Contact,
           external: false,
         },
         {
-          title: t('company.items.changelog'),
-          href: Routes.Changelog,
+          title: t('service.items.newsletter'),
+          href: '/#newsletter',
           external: false,
         },
         {
-          title: t('company.items.waitlist'),
-          href: Routes.Waitlist,
+          title: t('service.items.school'),
+          href: '/#schule',
           external: false,
         },
       ],

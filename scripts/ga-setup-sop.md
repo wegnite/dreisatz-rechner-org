@@ -2,7 +2,7 @@
 
 ## 当前项目信息
 - **项目名称**: AI Polaroid Photo  
-- **网站 URL**: https://aipolaroidphoto.org
+- **网站 URL**: https://dreisatzrechner.org
 - **Google Cloud 项目**: aipolariodphoto (ID: 415148337851)
 - **时区**: Asia/Shanghai
 - **货币**: USD

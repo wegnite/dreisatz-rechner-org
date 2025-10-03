@@ -1,8 +1,8 @@
 {
   "Metadata": {
-    "name": "AI Polaroid Photo",
-    "title": "AI Polaroid Photo Generator — Create Nostalgic AI-Generated Polaroid Style Photos",
-    "description": "Create stunning AI-generated polaroid-style photos with vintage filters, instant effects, and nostalgic aesthetics. Transform your images into beautiful polaroid memories."
+    "name": "Dreisatz Rechner",
+    "title": "Dreisatz Rechner — Verhältnisrechner",
+    "description": "Lösen Sie proportionale und antiproportionale Aufgaben mit dem Dreisatz Rechner."
   },
   "Common": {
     "login": "Log in",
@@ -142,13 +142,13 @@
     "backToHome": "Back to home"
   },
   "AboutPage": {
-    "title": "About",
-    "description": "Thwordle is a daily word puzzle game that challenges your vocabulary and deduction skills.",
-    "authorName": "Thwordle",
-    "authorBio": "Word Puzzle Game",
-    "introduction": "👋 Welcome to Thwordle! Challenge yourself with our daily word puzzle game that tests your vocabulary and problem-solving skills. If you have any questions or feedback, feel free to contact us.",
-    "talkWithMe": "Talk with me",
-    "followMe": "Follow me on X"
+    "title": "Über den Dreisatz Rechner",
+    "description": "Hintergrundinformationen zum Dreisatz Rechner Projekt",
+    "authorName": "Dreisatz Rechner Team",
+    "authorBio": "Digitale Mathewerkzeuge",
+    "introduction": "Der Dreisatz Rechner verbindet klassische Mathematik mit moderner Webtechnologie. Wir entwickeln Lernmaterialien, Schritt-für-Schritt-Erklärungen und einen zuverlässigen Rechner für Schule, Ausbildung und Beruf.",
+    "talkWithMe": "Kontakt aufnehmen",
+    "followMe": "Neuigkeiten ansehen"
   },
   "ChangelogPage": {
     "title": "Changelog",
@@ -294,122 +294,6 @@
     "title": "Thwordle Docs",
     "homepage": "Homepage",
     "blog": "Blog"
-  },
-  "Marketing": {
-    "navbar": {
-      "generator": {
-        "title": "Generator"
-      },
-      "templates": {
-        "title": "Templates"
-      },
-      "vintage": {
-        "title": "Vintage Mode"
-      },
-      "gallery": {
-        "title": "Gallery"
-      },
-      "tutorials": {
-        "title": "Tutorials"
-      },
-      "blog": {
-        "title": "Blog"
-      },
-      "pages": {
-        "title": "Pages",
-        "items": {
-          "tools": {
-            "title": "Curated Tools",
-            "description": "Prompt packs, integrations, and workflow guides for AI polaroids"
-          },
-          "wan22": {
-            "title": "wan 2.2 Playbook",
-            "description": "All-in-one research hub for wan 2.2 traffic tests"
-          },
-          "sora2": {
-            "title": "Sora 2 OpenAI Center",
-            "description": "Playbooks for shipping Sora 2 video experiences"
-          },
-          "about": {
-            "title": "About",
-            "description": "Learn more about our team and product vision"
-          },
-          "contact": {
-            "title": "Contact",
-            "description": "Partner with us or get support"
-          },
-          "waitlist": {
-            "title": "Waitlist",
-            "description": "Join the feature preview waitlist"
-          },
-          "roadmap": {
-            "title": "Roadmap",
-            "description": "See upcoming generator releases"
-          },
-          "changelog": {
-            "title": "Changelog",
-            "description": "Review the latest improvements"
-          },
-          "cookiePolicy": {
-            "title": "Cookie Policy",
-            "description": "Understand how we use cookies"
-          },
-          "privacyPolicy": {
-            "title": "Privacy Policy",
-            "description": "How we protect your data"
-          },
-          "termsOfService": {
-            "title": "Terms of Service",
-            "description": "Read our platform terms"
-          }
-        }
-      }
-    },
-    "footer": {
-      "tagline": "Create nostalgic AI polaroid photos in minutes",
-      "product": {
-        "title": "Product",
-        "items": {
-          "generator": "Generator",
-          "templates": "Templates",
-          "vintage": "Vintage Mode"
-        }
-      },
-      "resources": {
-        "title": "Resources",
-        "items": {
-          "gallery": "Gallery",
-          "tutorials": "Tutorials",
-          "wan22": "wan 2.2 Playbook",
-          "sora2": "Sora 2 OpenAI Center",
-          "docs": "Documentation",
-          "blog": "Blog"
-        }
-      },
-      "company": {
-        "title": "Company",
-        "items": {
-          "about": "About",
-          "contact": "Contact",
-          "changelog": "Changelog",
-          "waitlist": "Waitlist"
-        }
-      },
-      "legal": {
-        "title": "Legal",
-        "items": {
-          "cookiePolicy": "Cookie Policy",
-          "privacyPolicy": "Privacy Policy",
-          "termsOfService": "Terms of Service"
-        }
-      }
-    },
-    "avatar": {
-      "dashboard": "Dashboard",
-      "billing": "Billing",
-      "credits": "Credits",
-      "settings": "Settings"
-    }
   },
   "Dashboard": {
     "dashboard": {
@@ -685,140 +569,53 @@
     }
   },
   "HomePage": {
-    "title": "Dreisatz-Rechner — Dreisatz online berechnen",
-    "description": "Dreisatz einfach und schnell online berechnen. Mit ausführlichem Rechenweg, Formel und Beispielen für proportionalen und antiproportionalen Dreisatz.",
+    "title": "Dreisatz Rechner – Verhältnisrechnung meistern",
+    "description": "Dreisatz Rechner löst proportionale und antiproportionale Aufgaben mit erklärten Schritten. Ideal für Schule, Berufsausbildung und kaufmännische Kalkulationen.",
     "hero": {
-      "badge": "Instant nostalgia, powered by AI",
-      "title": "Capture memories in classic polaroid style",
-      "description": "Transform any photo into a warm, retro instant print with authentic white borders, film grain, and cinematic lighting. No prompt skills required.",
-      "primaryCta": "Launch Generator",
-      "secondaryCta": "Browse Templates"
+      "badge": "Lernen mit System",
+      "title": "Dreisatz Rechner erklärt jeden Rechenschritt",
+      "description": "Geben Sie komplette Textaufgaben ein, bestimmen Sie mit dem Dreisatz Rechner das Verhältnis und erhalten Sie einen sorgfältigen Antwortsatz.",
+      "primaryCta": "Dreisatz Rechner starten",
+      "secondaryCta": "Formel-Überblick öffnen"
     },
     "stats": {
-      "title": "Why creators choose AI Polaroid Photo",
+      "title": "Warum der Dreisatz Rechner überzeugt",
       "items": [
         {
-          "value": "2.3M+",
-          "label": "AI polaroid photos generated"
+          "value": "100%",
+          "label": "Deutschsprachige Erklärungen"
         },
         {
-          "value": "140K",
-          "label": "Daily active storytellers"
+          "value": "<3s",
+          "label": "Durchschnittliche Rechenzeit"
         },
         {
-          "value": "92%",
-          "label": "Users share within 10 minutes"
+          "value": "50k",
+          "label": "Übungsaufgaben gelöst"
         }
       ]
     },
     "features": {
-      "title": "Crafted for social storytelling",
-      "description": "Everything you need to turn everyday moments into shareable, emotional keepsakes.",
+      "title": "Dreisatz Rechner Funktionen",
+      "description": "Alle Werkzeuge, um Textaufgaben sicher zu bearbeiten.",
       "items": [
         {
-          "title": "Authentic film finishes",
-          "description": "Choose from calibrated looks inspired by Kodak Portra, Fujifilm FP-100C, SX-70 and custom Nano Banana presets."
+          "title": "Natürliche Sprache",
+          "description": "Texte in deutscher Sprache einfügen – der Dreisatz Rechner erkennt Zahlen und Einheiten automatisch."
         },
         {
-          "title": "Scene-aware rendering",
-          "description": "Gemini analyzes pose, lighting, and framing to keep faces natural while adding dreamy highlights and glow."
+          "title": "Zwei Modi",
+          "description": "KI-Textmodus und klassische Eingabe mit A1, B1, A2 für maximale Kontrolle."
         },
         {
-          "title": "Emotion-driven prompts",
-          "description": "Built-in storytelling templates for celeb meetups, reunion hugs, vintage fashion shoots, and more."
+          "title": "Schritt-für-Schritt",
+          "description": "Analyse, Formel, Antwortsatz inklusive Kontrollfragen zur Plausibilitätsprüfung."
         },
         {
-          "title": "One-click social outputs",
-          "description": "Export optimized crops for Instagram Stories, Xiaohongshu posts, and printable 3×4\" keepsakes."
+          "title": "Export & Teilen",
+          "description": "Rechenweg kopieren, PDF speichern oder als Unterrichtsanleitung teilen."
         }
       ]
-    },
-    "workflow": {
-      "title": "Create in three simple steps",
-      "steps": [
-        {
-          "title": "Upload & describe",
-          "description": "Drop in a selfie or group photo and choose the mood you want — from golden-hour romantic to 90s camcorder."
-        },
-        {
-          "title": "Pick a template",
-          "description": "Select a ready-made prompt pack that styles borders, captions, and filters for your story."
-        },
-        {
-          "title": "Generate & refine",
-          "description": "Review up to four variations, tweak grain or lighting, then save, download, or share instantly."
-        }
-      ],
-      "description": "Go from photo upload to share-ready polaroids without touching complex prompt strings."
-    },
-    "templates": {
-      "title": "Template collections included",
-      "items": [
-        {
-          "title": "Celeb Selfie Set",
-          "description": "Meet your idols with natural posing, flash bloom, and autograph overlays."
-        },
-        {
-          "title": "Reunion Stories",
-          "description": "Warm grain and soft focus tuned for hugging your childhood self or long-distance family."
-        },
-        {
-          "title": "Retro Fashion Diaries",
-          "description": "High-contrast film with stylized typography for Y2K street snaps and magazine covers."
-        }
-      ],
-      "description": "Curated prompt packs and overlays for every storytelling moment."
-    },
-    "testimonials": {
-      "title": "Loved by nostalgic creators",
-      "items": [
-        {
-          "name": "Lena · Lifestyle blogger",
-          "quote": "“My Xiaohongshu followers triple-tapped the Gemini polaroids — they look like real film from my dad's archive.”"
-        },
-        {
-          "name": "Marcus · Wedding filmmaker",
-          "quote": "“We deliver AI polaroid thank-you cards minutes after the ceremony. Couples are obsessed.”"
-        },
-        {
-          "name": "Aya · K-pop fan artist",
-          "quote": "“The celeb meet and greet prompts are magic. I can finally imagine polaroids with my bias.”"
-        }
-      ],
-      "description": "Creators across weddings, fandoms, and lifestyle blogs rely on AI Polaroid Photo to deliver instant nostalgia."
-    },
-    "cta": {
-      "title": "Ready to print your memories?",
-      "description": "Start with 2 free AI polaroid renders daily. Upgrade for HD exports, batch generation, and custom LoRA styles.",
-      "primary": "Start for free",
-      "secondary": "View pricing"
-    },
-    "faq": {
-      "title": "Frequently asked questions",
-      "items": [
-        {
-          "question": "Do I need prompt engineering experience?",
-          "answer": "No. Our curated templates layer Gemini prompts, camera metadata, and filter settings automatically. You can still customize keywords if you want finer control."
-        },
-        {
-          "question": "Can I print the photos?",
-          "answer": "Yes. Download high-resolution JPEGs optimized for 3×4\" polaroid printers or send directly to our print partners from the export panel."
-        },
-        {
-          "question": "Is my data private?",
-          "answer": "Uploads are encrypted, auto-deleted after 72 hours, and never used to train third-party models. Enable local-only processing in settings for extra control."
-        },
-        {
-          "question": "Which devices are supported?",
-          "answer": "AI Polaroid Photo works in modern mobile and desktop browsers. Install the PWA for a native-like experience on iOS and Android."
-        }
-      ],
-      "subtitle": "Answers to common questions about tips, printing, privacy, and supported devices."
-    },
-    "pricing": {
-      "title": "Pricing",
-      "subtitle": "Choose the plan that fits your creative flow",
-      "description": "Start free with two daily renders. Upgrade for HD exports, batch generation, and custom styles."
     }
   },
   "AITextPage": {
@@ -910,38 +707,33 @@
     "description": "MkSaaS lets you make AI SaaS in days, simply and effortlessly"
   },
   "AIPolaroidPage": {
-    "title": "AI Polaroid Photo",
-    "description": "Everything you need to generate nostalgic instant photos online.",
+    "title": "Dreisatz Rechner ",
+    "description": "Curated template packs inspired by the community's favorite storytelling moments.",
     "hero": {
-      "title": "Design your AI polaroid experience",
-      "description": "Build moodboards, manage prompt packs, and publish galleries that turn AI outputs into real stories.",
-      "primaryCta": "Launch Generator",
-      "secondaryCta": "View Templates"
+      "title": "Template packs that speak your language",
+      "description": "From celeb meetups to retro travel logs, each pack blends prompts, overlays, and typography for instant results.",
+      "primaryCta": "Browse packs"
     },
     "sections": [
       {
-        "title": "Core capabilities",
+        "title": "What you get",
         "body": [
-          "Auto-detect lighting and faces to keep results natural while adding authentic film glow.",
-          "Save favorite looks as reusable collections for events, fandoms, or clients."
+          "Prompt recipes tuned for Gemini Nano Banana, Midjourney, and custom LoRA styles.",
+          "Matching border frames, captions, stickers, and handwriting fonts for cohesive storytelling."
         ]
       },
       {
-        "title": "Built for teams and creators",
+        "title": "Popular collections",
         "body": [
-          "Collaborate with editors through shared folders and approval workflows.",
-          "Track performance metrics like saves, exports, and social share rate."
+          "Celeb Selfie Studio — designed for fans who want a believable autograph moment.",
+          "Reunion Therapy — warm, low-contrast presets ideal for hugging your younger self or long-distance family.",
+          "Runway Archives — high-fashion poses, chromatic aberration, and magazine-style typography."
         ]
       }
-    ],
-    "cta": {
-      "title": "Start creating AI polaroids today",
-      "primary": "Get Started",
-      "secondary": "Request demo"
-    }
+    ]
   },
   "AIPolaroidGeneratorPage": {
-    "title": "AI Polaroid Generator",
+    "title": "Dreisatz Rechner Generator",
     "description": "A deep dive into the generator workspace and controls.",
     "hero": {
       "title": "Generate cinematic polaroids without guesswork",
@@ -972,32 +764,6 @@
       }
     ]
   },
-  "AIPolaroidTemplatesPage": {
-    "title": "AI Polaroid Templates",
-    "description": "Curated template packs inspired by the community's favorite storytelling moments.",
-    "hero": {
-      "title": "Template packs that speak your language",
-      "description": "From celeb meetups to retro travel logs, each pack blends prompts, overlays, and typography for instant results.",
-      "primaryCta": "Browse packs"
-    },
-    "sections": [
-      {
-        "title": "What you get",
-        "body": [
-          "Prompt recipes tuned for Gemini Nano Banana, Midjourney, and custom LoRA styles.",
-          "Matching border frames, captions, stickers, and handwriting fonts for cohesive storytelling."
-        ]
-      },
-      {
-        "title": "Popular collections",
-        "body": [
-          "Celeb Selfie Studio — designed for fans who want a believable autograph moment.",
-          "Reunion Therapy — warm, low-contrast presets ideal for hugging your younger self or long-distance family.",
-          "Runway Archives — high-fashion poses, chromatic aberration, and magazine-style typography."
-        ]
-      }
-    ]
-  },
   "AIVintagePhotoPage": {
     "title": "AI Vintage Photo Effects",
     "description": "Recreate classic film moods with modern AI tooling.",
@@ -1024,8 +790,8 @@
       }
     ]
   },
-  "GalleryPage": {
-    "title": "AI Polaroid Gallery",
+  "Page": {
+    "title": "Dreisatz Rechner ",
     "description": "Explore curated examples generated by creators and brand partners.",
     "hero": {
       "title": "See what's possible with AI polaroids",
@@ -1043,14 +809,14 @@
       {
         "title": "How to get featured",
         "body": [
-          "Tag #aipolaroidphoto on social or submit via the in-app gallery uploader.",
+          "Verwenden Sie den Hashtag #dreisatzrechner in sozialen Netzwerken oder reichen Sie Ihren Beitrag über den Galerie-Uploader ein.",
           "Share behind-the-scenes prompts and lighting notes to help others recreate the look."
         ]
       }
     ]
   },
   "TutorialsPage": {
-    "title": "AI Polaroid Tutorials",
+    "title": "Dreisatz Rechner Tutorials",
     "description": "Step-by-step guides for crafting the perfect AI polaroid story.",
     "hero": {
       "title": "Master the AI polaroid workflow",
@@ -1078,166 +844,175 @@
     "title": "UGC & Copyright Policy",
     "description": "Creators may upload only media they have rights to use. We review takedown requests within 24 hours and provide safe remix tools.",
     "body": [
-      "AI Polaroid Photo lets you combine your own photos with AI-generated effects. Only upload images, prompts, and overlays you have permission to use.",
-      "We do not host unlicensed celebrity likenesses or commercial IP. For takedown requests, email support@aipolaroidphoto.org with relevant URLs and proof of ownership. We respond within 24 hours."
+      "Dreisatz Rechner Photo lets you combine your own photos with AI-generated effects. Only upload images, prompts, and overlays you have permission to use.",
+      "Wir hosten keine unlizenzierte Prominenz oder kommerzielles IP. Für Löschanfragen senden Sie bitte eine E-Mail an support@dreisatzrechner.org mit den relevanten Links und einem Eigentumsnachweis. Wir antworten innerhalb von 24 Stunden."
     ],
     "backLink": "Back to generator →",
     "termsLink": "Review Terms of Service →"
   },
-  "AiPolaroidEditor": {
-    "badge": "AI Polaroid Photo",
-    "hero": {
-      "title": "Launch the editor and generate your first AI polaroid instantly",
-      "description": "Describe the mood, people, or story and the right column renders a border-ready polaroid in real time.",
-      "features": [
-        {
-          "title": "Instant results",
-          "description": "Dual rendering engines deliver a high-resolution polaroid in under ten seconds."
+  "DreisatzPage": {
+    "solver": {
+      "tabs": {
+        "ai": "KI-Modus",
+        "classic": "Klassische Eingabe"
+      },
+      "title": "Dreisatz Rechner-Aufgaben in natürlicher Sprache lösen",
+      "description": "Fügen Sie die komplette Textaufgabe ein – wir erkennen den Dreisatz, berechnen den fehlenden Wert und erklären jeden Schritt. Dreisatz Rechner erklärt jeden Schritt.",
+      "textareaLabel": "Textaufgabe",
+      "textareaPlaceholder": "Beispiel: Ein Auto verbraucht 8 Liter auf 100 km. Wie viele Liter braucht es für 350 km?",
+      "helper": "Tipp: Nennen Sie Zahlen und Einheiten wie km, €, Minuten und prüfen Sie den Dreisatz Rechner auf korrekte Einheiten.",
+      "submit": "Mit KI berechnen",
+      "clear": "Zurücksetzen",
+      "loading": "Aufgabe wird analysiert …",
+      "errorTooShort": "Bitte beschreiben Sie die Aufgabe mit mindestens 12 Zeichen.",
+      "errorGeneric": "Die Aufgabe konnte nicht gelöst werden. Formulieren Sie sie ggf. einfacher.",
+      "result": {
+        "badge": {
+          "proportional": "Proportionaler Dreisatz",
+          "antiproportional": "Antiproportionaler Dreisatz"
         },
-        {
-          "title": "Authentic film texture",
-          "description": "Borders, captions, and light leaks recreate the look of true instant cameras."
-        },
-        {
-          "title": "Template presets",
-          "description": "Switch between travel, wedding, and cafe vibes to match your narrative."
-        }
-      ],
-      "featureLabel": "Why creators love it",
-      "tags": ["Polaroid generator", "Vintage vibe", "Instant sharing"]
-    },
-    "promptCard": {
-      "title": "Polaroid prompt engine",
-      "description": "Describe the scene and we will develop the AI polaroid for you instantly."
-    },
-    "tabs": {
-      "imageToImage": "Image to Image",
-      "textToImage": "Text to Image",
-      "textToImageDescription": "Use Text to Image mode to create polaroids directly from your description."
-    },
-    "providers": {
-      "title": "Generation engines",
-      "siliconflow": {
-        "name": "SiliconFlow",
-        "description": "Balanced quality model for crisp, detailed polaroids.",
-        "badge": "Quality focused"
+        "title": "Lösung",
+        "analysisHeading": "Analyse",
+        "valuesHeading": "Bekannte Werte",
+        "valueA1": "A₁ (Ausgangsgröße)",
+        "valueB1": "B₁ (Ausgangswert)",
+        "valueA2": "A₂ (Gesuchte Größe)",
+        "valueB2": "Ergebnis",
+        "stepsHeading": "Rechenschritte",
+        "answerHeading": "Antwortsatz",
+        "copy": "Schritte kopieren",
+        "share": "Lösung teilen",
+        "copySuccess": "Schritte wurden in die Zwischenablage kopiert.",
+        "copyError": "Zwischenablage nicht verfügbar. Bitte manuell kopieren.",
+        "shareError": "Dieses Gerät unterstützt kein automatisches Teilen."
       },
-      "nanoBanana": {
-        "name": "Nano Banana",
-        "description": "Flux-based engine tuned for lightning-fast previews.",
-        "badge": "Speed boost"
+      "feedback": {
+        "question": "War diese Erklärung hilfreich?",
+        "positive": "Vielen Dank für Ihr Feedback!",
+        "negative": "Was hat gefehlt?",
+        "placeholder": "Optional: Beschreiben Sie, was die KI verbessern soll.",
+        "submit": "Feedback senden",
+        "submitted": "Feedback gespeichert. Wir nutzen es für bessere Antworten.",
+        "up": "Ja",
+        "down": "Nein"
+      },
+      "apiErrors": {
+        "parse": "Wir konnten die Größen in dieser Aufgabe nicht erkennen.",
+        "missingNumbers": "Bitte nennen Sie mindestens zwei bekannte Werte und eine gesuchte Größe.",
+        "unknown": "Beim Lösen der Aufgabe ist ein Fehler aufgetreten."
       }
-    },
-    "promptEnhancements": {
-      "vintagePolaroid": "Shot on vintage polaroid film with warm tones, soft focus, natural light leaks, and a handwritten caption along the bottom border.",
-      "retroFilm": "Captured like a retro film photo with subtle grain, low saturation, and a nostalgic color palette.",
-      "modernMinimal": "Minimalist studio lighting with crisp edges, clean composition, and a refined instant film border.",
-      "artisticSketch": "Rendered as an artistic sketch with pencil shading, textured paper, and a hand-drawn instant film border."
-    },
-    "batch": {
-      "title": "Batch processing",
-      "cta": "Upgrade",
-      "description": "Enable batch mode to develop multiple polaroid shots at once."
-    },
-    "reference": {
-      "title": "Reference photo",
-      "counter": "{current}/{max}",
-      "uploadTitle": "Upload a photo to restyle as a polaroid",
-      "uploadDescription": "JPG or PNG up to 50MB",
-      "uploadedAlt": "Uploaded reference photo"
-    },
-    "form": {
-      "defaultPrompt": "Polaroid photo of a couple laughing under string lights, soft grain, handwritten caption \"forever summer\"",
-      "promptLabel": "Polaroid prompt",
-      "promptPlaceholder": "Describe the polaroid mood, lighting, film stock, and caption...",
-      "copyButton": "Copy",
-      "generateButton": {
-        "loading": "Developing...",
-        "idle": "Generate polaroid"
-      },
-      "progressMessage": "Developing your polaroid... {progress}%"
-    },
-    "gallery": {
-      "title": "AI polaroid gallery",
-      "description": "Your finished AI polaroid photos appear here with captions and film borders.",
-      "emptyTitle": "Ready to develop your next polaroid",
-      "emptyDescription": "Describe your story and we will craft an AI polaroid for you."
-    },
-    "templates": {
-      "title": "Polaroid film templates",
-      "description": "Choose from fan-favorite instant film presets.",
-      "proLabel": "Pro",
-      "fallbackName": "Custom polaroid",
-      "vintage": {
-        "name": "Vintage Polaroid",
-        "description": "Classic instant camera aesthetic with warm tones."
-      },
-      "retro": {
-        "name": "Retro film",
-        "description": "70s film photography with graceful grain and faded colors."
-      },
-      "modern": {
-        "name": "Modern minimal",
-        "description": "Clean, contemporary style with crisp edges."
-      },
-      "artistic": {
-        "name": "Artistic sketch",
-        "description": "Hand-drawn illustration style with textured paper."
-      }
-    },
-    "toast": {
-      "validation": {
-        "missingPrompt": {
-          "title": "Enter a prompt",
-          "description": "Describe the scene you want before generating."
-        },
-        "imageToImage": {
-          "title": "Image-to-image coming soon",
-          "description": "Switch back to Text to Image mode to create your polaroid."
-        }
-      },
-      "success": {
-        "title": "Generation complete",
-        "description": "Your new polaroid is ready."
-      },
-      "error": {
-        "title": "Generation failed",
-        "defaultDescription": "Failed to generate an image. Try again later.",
-        "emptyResult": "Generation succeeded but no image was returned. Please try again."
-      },
-      "copy": {
-        "successTitle": "Prompt copied",
-        "successDescription": "Use it anywhere you like.",
-        "errorTitle": "Copy failed",
-        "errorDescription": "Clipboard is unavailable. Copy it manually."
-      },
-      "share": {
-        "successTitle": "Link copied",
-        "successDescription": "Share the image link directly with friends.",
-        "errorTitle": "Share failed",
-        "errorDescription": "Cannot share automatically. Copy the link manually."
-      },
-      "downloadError": {
-        "title": "Download failed",
-        "description": "Unable to download the image right now. Try saving it manually."
-      }
-    },
-    "share": {
-      "title": "AI Polaroid Photo",
-      "text": "Check out this AI polaroid I just developed."
     }
   },
-  "AiPolaroidVideo": {},
-  "ImageGenerator": {
-    "heading": "Generated images",
-    "errorsTrigger": "{count, plural, one {# error occurred} other {# errors occurred}}",
-    "providerError": "{provider} error",
-    "toggleView": "Toggle provider view"
+  "Marketing": {
+    "navbar": {
+      "primary": {
+        "calculator": "Dreisatz Rechner",
+        "guide": "Schritt-für-Schritt-Anleitung",
+        "formulas": "Formeln",
+        "examples": "Anwendungsfälle",
+        "resources": {
+          "title": "Wissensdatenbank",
+          "items": {
+            "checklist": {
+              "title": "Checkliste",
+              "description": "Kontrollfragen für den Dreisatz Rechner"
+            },
+            "tables": {
+              "title": "Tabellen",
+              "description": "Proportional/antiproportional im Überblick"
+            },
+            "school": {
+              "title": "Schule",
+              "description": "Unterrichtsmaterial für den Dreisatz Rechner"
+            },
+            "glossary": {
+              "title": "Glossar",
+              "description": "Begriffe schnell nachschlagen"
+            },
+            "faq": {
+              "title": "FAQ",
+              "description": "Häufige Fragen zum Dreisatz Rechner"
+            },
+            "contact": {
+              "title": "Kontakt",
+              "description": "Schreiben Sie dem Dreisatz Rechner Team"
+            },
+            "privacy": {
+              "title": "Datenschutz",
+              "description": "So schützen wir Ihre Daten"
+            },
+            "terms": {
+              "title": "Nutzungsbedingungen",
+              "description": "Regeln für den Dreisatz Rechner"
+            }
+          }
+        }
+      }
+    },
+    "footer": {
+      "tagline": "Dreisatz Rechner verstehen & lösen",
+      "calculator": {
+        "title": "Dreisatz Rechner",
+        "items": {
+          "start": "Rechner öffnen",
+          "stepGuide": "Schritt-Anleitung",
+          "formulas": "Formeln",
+          "tables": "Tabellen"
+        }
+      },
+      "learn": {
+        "title": "Lernen",
+        "items": {
+          "useCases": "Anwendungsfälle",
+          "practice": "Übungen",
+          "glossary": "Glossar",
+          "checklist": "Checkliste"
+        }
+      },
+      "service": {
+        "title": "Service",
+        "items": {
+          "contact": "Kontakt",
+          "newsletter": "Newsletter",
+          "school": "Schulmaterial"
+        }
+      },
+      "legal": {
+        "title": "Rechtliches",
+        "items": {
+          "cookiePolicy": "Cookie-Richtlinie",
+          "privacyPolicy": "Datenschutz",
+          "termsOfService": "Nutzungsbedingungen"
+        }
+      }
+    }
   },
-  "UsageLimit": {
-    "title": "Free preview limit reached",
-    "anonymousDescription": "Create a free account to unlock two more complimentary generations.",
-    "authenticatedDescription": "You have used all four complimentary generations. Choose a plan to keep creating.",
-    "cta": "View pricing"
+  "DreisatzSeo": {
+    "hero": {
+      "title": "Dreisatz Rechner — Verhältnisse intuitiv lösen",
+      "description": "Der Dreisatz Rechner erklärt jeden Rechenschritt in deutscher Sprache. Nutzen Sie den KI-Modus für Textaufgaben oder die klassische Eingabe mit A1, B1 und A2."
+    },
+    "sections": [
+      {
+        "title": "Was ist der Dreisatz Rechner?",
+        "body": "Der Dreisatz Rechner ist ein deutschsprachiges Online-Tool, das proportionale und antiproportionale Aufgaben automatisch analysiert. Er liefert verständliche Rechenwege, Antwortsätze und Formeln für Schule und Beruf."
+      },
+      {
+        "title": "Für wen eignet sich der Dreisatz Rechner?",
+        "body": "Schülerinnen, Studierende, Auszubildende sowie kaufmännische und technische Fachkräfte profitieren vom Dreisatz Rechner. Er hilft bei Hausaufgaben, Prüfungen und Kalkulationen im Arbeitsalltag."
+      },
+      {
+        "title": "Welche Vorteile bietet der Dreisatz Rechner?",
+        "body": "Direkte Textanalyse, detaillierte Schritt-für-Schritt-Erklärung, Kontrolleinheiten und Checklisten machen den Dreisatz Rechner zu einem professionellen Lern- und Arbeitstool."
+      }
+    ]
+  },
+  "HeroSeo": {
+    "title": "Dreisatz Rechner Online – Textaufgaben verständlich lösen",
+    "bullets": [
+      "Dreisatz Rechner analysiert komplette Textaufgaben",
+      "Proportionaler und antiproportionaler Dreisatz mit Rechenweg",
+      "Kostenloses Tool für Schule, Ausbildung und Beruf"
+    ]
   }
 }

@@ -3,21 +3,16 @@
 import { Routes } from '@/routes';
 import type { NestedMenuItem } from '@/types';
 import {
-  BuildingIcon,
-  ComponentIcon,
-  CookieIcon,
+  BookOpenIcon,
+  CalculatorIcon,
+  ClipboardCheckIcon,
   FileTextIcon,
-  FlameIcon,
-  ListChecksIcon,
+  HelpCircleIcon,
   MailIcon,
-  MailboxIcon,
-  RocketIcon,
+  SchoolIcon,
   ShieldCheckIcon,
-  SquareKanbanIcon,
-  WandSparklesIcon,
 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { websiteConfig } from './website';
 
 /**
  * Get navbar config with translations
@@ -25,7 +20,7 @@ import { websiteConfig } from './website';
  * NOTICE: used in client components only
  *
  * docs:
- * https://aipolaroidphoto.org/docs/config/navbar
+ * https://dreisatzrechner.org/docs/config/navbar
  *
  * @returns The navbar config with translated titles and descriptions
  */
@@ -34,115 +29,80 @@ export function getNavbarLinks(): NestedMenuItem[] {
 
   return [
     {
-      title: t('generator.title'),
-      href: Routes.AiPolaroidGenerator,
+      title: t('primary.calculator'),
+      href: '/#rechner',
       external: false,
     },
     {
-      title: t('templates.title'),
-      href: Routes.AiPolaroidTemplates,
+      title: t('primary.guide'),
+      href: '/#leitfaden',
       external: false,
     },
     {
-      title: t('vintage.title'),
-      href: Routes.AiVintagePhoto,
+      title: t('primary.formulas'),
+      href: '/#formeln',
       external: false,
     },
     {
-      title: t('gallery.title'),
-      href: Routes.Gallery,
+      title: t('primary.examples'),
+      href: '/#anwendungsfaelle',
       external: false,
     },
     {
-      title: t('tutorials.title'),
-      href: Routes.Tutorials,
-      external: false,
-    },
-    ...(websiteConfig.blog.enable
-      ? [
-          {
-            title: t('blog.title'),
-            href: Routes.Blog,
-            external: false,
-          },
-        ]
-      : []),
-    {
-      title: t('pages.title'),
+      title: t('primary.resources.title'),
       items: [
         {
-          title: t('pages.items.tools.title'),
-          description: t('pages.items.tools.description'),
-          icon: <WandSparklesIcon className="size-4 shrink-0" />,
-          href: Routes.Tools,
+          title: t('primary.resources.items.checklist.title'),
+          description: t('primary.resources.items.checklist.description'),
+          icon: <ClipboardCheckIcon className="size-4 shrink-0" />,
+          href: '/#fehlervermeidung',
           external: false,
         },
         {
-          title: t('pages.items.wan22.title'),
-          description: t('pages.items.wan22.description'),
-          icon: <RocketIcon className="size-4 shrink-0" />,
-          href: Routes.Wan22,
+          title: t('primary.resources.items.tables.title'),
+          description: t('primary.resources.items.tables.description'),
+          icon: <CalculatorIcon className="size-4 shrink-0" />,
+          href: '/#tabellen',
           external: false,
         },
         {
-          title: t('pages.items.sora2.title'),
-          description: t('pages.items.sora2.description'),
-          icon: <FlameIcon className="size-4 shrink-0" />,
-          href: Routes.Sora2OpenAI,
+          title: t('primary.resources.items.school.title'),
+          description: t('primary.resources.items.school.description'),
+          icon: <SchoolIcon className="size-4 shrink-0" />,
+          href: '/#schule',
           external: false,
         },
         {
-          title: t('pages.items.about.title'),
-          description: t('pages.items.about.description'),
-          icon: <BuildingIcon className="size-4 shrink-0" />,
-          href: Routes.About,
+          title: t('primary.resources.items.glossary.title'),
+          description: t('primary.resources.items.glossary.description'),
+          icon: <BookOpenIcon className="size-4 shrink-0" />,
+          href: '/#glossar',
           external: false,
         },
         {
-          title: t('pages.items.contact.title'),
-          description: t('pages.items.contact.description'),
+          title: t('primary.resources.items.faq.title'),
+          description: t('primary.resources.items.faq.description'),
+          icon: <HelpCircleIcon className="size-4 shrink-0" />,
+          href: '/#faq',
+          external: false,
+        },
+        {
+          title: t('primary.resources.items.contact.title'),
+          description: t('primary.resources.items.contact.description'),
           icon: <MailIcon className="size-4 shrink-0" />,
           href: Routes.Contact,
           external: false,
         },
         {
-          title: t('pages.items.waitlist.title'),
-          description: t('pages.items.waitlist.description'),
-          icon: <MailboxIcon className="size-4 shrink-0" />,
-          href: Routes.Waitlist,
-          external: false,
-        },
-        {
-          title: t('pages.items.roadmap.title'),
-          description: t('pages.items.roadmap.description'),
-          icon: <SquareKanbanIcon className="size-4 shrink-0" />,
-          href: Routes.Roadmap,
-          external: true,
-        },
-        {
-          title: t('pages.items.changelog.title'),
-          description: t('pages.items.changelog.description'),
-          icon: <ListChecksIcon className="size-4 shrink-0" />,
-          href: Routes.Changelog,
-          external: false,
-        },
-        {
-          title: t('pages.items.cookiePolicy.title'),
-          description: t('pages.items.cookiePolicy.description'),
-          icon: <CookieIcon className="size-4 shrink-0" />,
-          href: Routes.CookiePolicy,
-          external: false,
-        },
-        {
-          title: t('pages.items.privacyPolicy.title'),
-          description: t('pages.items.privacyPolicy.description'),
+          title: t('primary.resources.items.privacy.title'),
+          description: t('primary.resources.items.privacy.description'),
           icon: <ShieldCheckIcon className="size-4 shrink-0" />,
           href: Routes.PrivacyPolicy,
           external: false,
         },
         {
-          title: t('pages.items.termsOfService.title'),
-          description: t('pages.items.termsOfService.description'),
+          title: t('primary.resources.items.terms.title'),
+          description: t('primary.resources.items.terms.description'),
           icon: <FileTextIcon className="size-4 shrink-0" />,
           href: Routes.TermsOfService,
           external: false,

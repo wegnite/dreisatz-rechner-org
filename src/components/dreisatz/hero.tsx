@@ -56,7 +56,7 @@ export function DreisatzHero() {
 
           <div className="grid gap-3 sm:grid-cols-2">
             {stats.map((item, index) => (
-              <StatItem key={index} title={item.value} description={item.label} />
+              <StatItem key={index} value={item.value} label={item.label} />
             ))}
           </div>
         </div>
@@ -82,16 +82,16 @@ export function DreisatzHero() {
 }
 
 function StatItem({
-  title,
-  description,
+  value,
+  label,
 }: {
-  title: string;
-  description: string;
+  value: string;
+  label: string;
 }) {
   return (
-    <div className="rounded-xl border border-primary/20 bg-background/80 p-4">
-      <h3 className="text-base font-semibold text-foreground">{title}</h3>
-      <p className="mt-1 text-sm text-muted-foreground">{description}</p>
+    <div className="rounded-xl border border-white/10 bg-background/80 p-4">
+      <h3 className="text-2xl font-semibold text-white">{value}</h3>
+      <p className="mt-1 text-sm text-slate-300/90">{label}</p>
     </div>
   );
 }

@@ -25,27 +25,27 @@ import { useTranslations } from 'next-intl';
  * @returns The navbar config with translated titles and descriptions
  */
 export function getNavbarLinks(): NestedMenuItem[] {
-  const t = useTranslations('Marketing.navbar');
+  const t = useTranslations();
 
   return [
     {
       title: t('primary.calculator'),
-      href: '/#rechner',
+      href: Routes.Calculator,
       external: false,
     },
     {
       title: t('primary.guide'),
-      href: '/#leitfaden',
+      href: Routes.VisualGuide,
       external: false,
     },
     {
       title: t('primary.formulas'),
-      href: '/#formeln',
+      href: Routes.Formulas,
       external: false,
     },
     {
       title: t('primary.examples'),
-      href: '/#anwendungsfaelle',
+      href: Routes.UseCases,
       external: false,
     },
     {
@@ -55,35 +55,42 @@ export function getNavbarLinks(): NestedMenuItem[] {
           title: t('primary.resources.items.checklist.title'),
           description: t('primary.resources.items.checklist.description'),
           icon: <ClipboardCheckIcon className="size-4 shrink-0" />,
-          href: '/#fehlervermeidung',
+          href: Routes.Checklist,
           external: false,
         },
         {
           title: t('primary.resources.items.tables.title'),
           description: t('primary.resources.items.tables.description'),
           icon: <CalculatorIcon className="size-4 shrink-0" />,
-          href: '/#tabellen',
+          href: Routes.Formulas,
           external: false,
         },
         {
           title: t('primary.resources.items.school.title'),
           description: t('primary.resources.items.school.description'),
           icon: <SchoolIcon className="size-4 shrink-0" />,
-          href: '/#schule',
+          href: Routes.UseCases,
           external: false,
         },
         {
           title: t('primary.resources.items.glossary.title'),
           description: t('primary.resources.items.glossary.description'),
           icon: <BookOpenIcon className="size-4 shrink-0" />,
-          href: '/#glossar',
+          href: Routes.Glossary,
+          external: false,
+        },
+        {
+          title: t('primary.resources.items.blog.title'),
+          description: t('primary.resources.items.blog.description'),
+          icon: <BookOpenIcon className="size-4 shrink-0" />,
+          href: Routes.Blog,
           external: false,
         },
         {
           title: t('primary.resources.items.faq.title'),
           description: t('primary.resources.items.faq.description'),
           icon: <HelpCircleIcon className="size-4 shrink-0" />,
-          href: '/#faq',
+          href: Routes.FAQ,
           external: false,
         },
         {

@@ -56,20 +56,19 @@ export function constructMetadata({
     ...(keywords && { keywords }),
     icons: {
       icon: [
-        { url: '/favicon.ico' },
+        { url: '/calculator/calculator-favicon.ico' },
         {
-          url: '/favicon-32x32.png',
+          url: '/calculator/calculator.png',
           type: 'image/png',
-          sizes: '32x32',
+          sizes: '512x512',
         },
         {
-          url: '/favicon-16x16.png',
-          type: 'image/png',
-          sizes: '16x16',
+          url: '/calculator/calculator.svg',
+          type: 'image/svg+xml',
         },
       ],
-      shortcut: '/favicon-32x32.png',
-      apple: '/apple-touch-icon.png',
+      shortcut: '/calculator/calculator-favicon.ico',
+      apple: '/calculator/calculator.png',
     },
     metadataBase: new URL(getBaseUrl()),
     manifest: `${getBaseUrl()}/manifest.webmanifest`,

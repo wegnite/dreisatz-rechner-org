@@ -5,7 +5,6 @@ import { useCreditBalance } from '@/hooks/use-credits';
 import { useLocaleRouter } from '@/i18n/navigation';
 import { Routes } from '@/routes';
 import { CoinsIcon, Loader2Icon } from 'lucide-react';
-import { useTranslations } from 'next-intl';
 
 export function CreditsBalanceMenu() {
   // If credits are not enabled, return null
@@ -13,7 +12,6 @@ export function CreditsBalanceMenu() {
     return null;
   }
 
-  const t = useTranslations('Marketing.avatar');
   const router = useLocaleRouter();
 
   // Use TanStack Query hook for credit balance
@@ -30,7 +28,7 @@ export function CreditsBalanceMenu() {
     >
       <div className="flex items-center space-x-2.5">
         <CoinsIcon className="h-4 w-4" />
-        <p className="text-sm">{t('credits')}</p>
+        <p className="text-sm">Credits</p>
       </div>
       <div className="flex items-center">
         <p className="text-sm font-medium">

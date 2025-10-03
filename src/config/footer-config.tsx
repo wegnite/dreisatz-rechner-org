@@ -15,7 +15,7 @@ import { useTranslations } from 'next-intl';
  * @returns The footer config with translated titles
  */
 export function getFooterLinks(): NestedMenuItem[] {
-  const t = useTranslations('Marketing.footer');
+  const t = useTranslations();
 
   return [
     {
@@ -23,22 +23,22 @@ export function getFooterLinks(): NestedMenuItem[] {
       items: [
         {
           title: t('calculator.items.start'),
-          href: '/#rechner',
+          href: Routes.Calculator,
           external: false,
         },
         {
           title: t('calculator.items.stepGuide'),
-          href: '/#leitfaden',
+          href: Routes.VisualGuide,
           external: false,
         },
         {
           title: t('calculator.items.formulas'),
-          href: '/#formeln',
+          href: Routes.Formulas,
           external: false,
         },
         {
           title: t('calculator.items.tables'),
-          href: '/#tabellen',
+          href: Routes.Formulas,
           external: false,
         },
       ],
@@ -48,22 +48,27 @@ export function getFooterLinks(): NestedMenuItem[] {
       items: [
         {
           title: t('learn.items.useCases'),
-          href: '/#anwendungsfaelle',
+          href: Routes.UseCases,
           external: false,
         },
         {
           title: t('learn.items.practice'),
-          href: '/#uebungen',
+          href: Routes.UseCases,
           external: false,
         },
         {
           title: t('learn.items.glossary'),
-          href: '/#glossar',
+          href: Routes.Glossary,
           external: false,
         },
         {
           title: t('learn.items.checklist'),
-          href: '/#fehlervermeidung',
+          href: Routes.Checklist,
+          external: false,
+        },
+        {
+          title: t('learn.items.blog'),
+          href: Routes.Blog,
           external: false,
         },
       ],
@@ -78,12 +83,12 @@ export function getFooterLinks(): NestedMenuItem[] {
         },
         {
           title: t('service.items.newsletter'),
-          href: '/#newsletter',
+          href: Routes.Newsletter,
           external: false,
         },
         {
           title: t('service.items.school'),
-          href: '/#schule',
+          href: Routes.UseCases,
           external: false,
         },
       ],

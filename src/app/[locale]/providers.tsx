@@ -41,15 +41,15 @@ export function Providers({ children, locale }: ProvidersProps) {
   );
 
   // translations object for fumadocs-ui from our message files
-  const t = useTranslations('DocsPage');
+  const t = useTranslations();
   const translations: Partial<Translations> = {
-    toc: t('toc'),
-    search: t('search'),
-    lastUpdate: t('lastUpdate'),
-    searchNoResult: t('searchNoResult'),
-    previousPage: t('previousPage'),
-    nextPage: t('nextPage'),
-    chooseLanguage: t('chooseLanguage'),
+    toc: 'Inhaltsverzeichnis',
+    search: 'Suche',
+    lastUpdate: 'Zuletzt aktualisiert am',
+    searchNoResult: 'Keine Ergebnisse',
+    previousPage: 'Vorherige',
+    nextPage: 'Nächste',
+    chooseLanguage: 'Sprache wählen',
   };
 
   return (

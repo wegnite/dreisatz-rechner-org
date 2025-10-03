@@ -28,7 +28,7 @@ import { websiteConfig } from './website';
  * @returns The sidebar config with translated titles and descriptions
  */
 export function getSidebarLinks(): NestedMenuItem[] {
-  const t = useTranslations('Dashboard');
+  const t = useTranslations();
 
   // if is demo website, allow user to access admin and user pages, but data is fake
   const isDemo = isDemoWebsite();

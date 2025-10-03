@@ -1,8 +1,18 @@
 'use client';
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ShoppingCart, Fuel, Candy, Clock, Ruler, DollarSign, Users, Car, PawPrint } from 'lucide-react';
+import { useMessages, useTranslations } from 'next-intl';
+import {
+  Candy,
+  Clock,
+  DollarSign,
+  Fuel,
+  PawPrint,
+  Ruler,
+  ShoppingCart,
+  Users,
+  Car,
+} from 'lucide-react';
 
 export interface DreisatzExample {
   title: string;
@@ -15,189 +25,94 @@ export interface DreisatzExample {
   type: 'proportional' | 'antiproportional';
 }
 
-interface ExampleCard {
-  icon: React.ReactNode;
-  payload: DreisatzExample;
-}
-
-const examples: ExampleCard[] = [
-  {
-    icon: <ShoppingCart className="h-5 w-5" />,
-    payload: {
-      title: 'Einkauf',
-      description: '5 Äpfel kosten 2,50 €',
-      a1: 5,
-      b1: 2.5,
-      a2: 3,
-      unitA: 'Äpfel',
-      unitB: 'Euro',
-      type: 'proportional',
-    },
-  },
-  {
-    icon: <Fuel className="h-5 w-5" />,
-    payload: {
-      title: 'Kraftstoff',
-      description: '8 Liter auf 100 km, Strecke 350 km',
-      a1: 100,
-      b1: 8,
-      a2: 350,
-      unitA: 'Kilometer',
-      unitB: 'Liter',
-      type: 'proportional',
-    },
-  },
-  {
-    icon: <Candy className="h-5 w-5" />,
-    payload: {
-      title: 'Kalorien',
-      description: '100 g entsprechen 480 kcal',
-      a1: 100,
-      b1: 480,
-      a2: 65,
-      unitA: 'Gramm',
-      unitB: 'kcal',
-      type: 'proportional',
-    },
-  },
-  {
-    icon: <Clock className="h-5 w-5" />,
-    payload: {
-      title: 'Zeit & Arbeit',
-      description: '3 Maler benötigen 5 Stunden',
-      a1: 3,
-      b1: 5,
-      a2: 5,
-      unitA: 'Maler',
-      unitB: 'Stunden',
-      type: 'antiproportional',
-    },
-  },
-  {
-    icon: <Ruler className="h-5 w-5" />,
-    payload: {
-      title: 'Maßstab',
-      description: '1 cm im Plan entspricht 50 cm real',
-      a1: 1,
-      b1: 50,
-      a2: 12,
-      unitA: 'cm (Plan)',
-      unitB: 'cm (Real)',
-      type: 'proportional',
-    },
-  },
-  {
-    icon: <DollarSign className="h-5 w-5" />,
-    payload: {
-      title: 'Wechselkurs',
-      description: '100 € entsprechen 110 $',
-      a1: 100,
-      b1: 110,
-      a2: 250,
-      unitA: 'Euro',
-      unitB: 'US-Dollar',
-      type: 'proportional',
-    },
-  },
-  {
-    icon: <Car className="h-5 w-5" />,
-    payload: {
-      title: 'Geschwindigkeit & Zeit',
-      description: 'Mit 80 km/h braucht man 3 Stunden',
-      a1: 80,
-      b1: 3,
-      a2: 120,
-      unitA: 'km/h',
-      unitB: 'Stunden',
-      type: 'antiproportional',
-    },
-  },
-  {
-    icon: <PawPrint className="h-5 w-5" />,
-    payload: {
-      title: 'Futter für Tiere',
-      description: 'Futter für 3 Hunde reicht 10 Tage',
-      a1: 3,
-      b1: 10,
-      a2: 5,
-      unitA: 'Hunde',
-      unitB: 'Tage',
-      type: 'antiproportional',
-    },
-  },
-  {
-    icon: <Users className="h-5 w-5" />,
-    payload: {
-      title: 'Arbeitszeit',
-      description: '2 Personen benötigen 8 Stunden',
-      a1: 2,
-      b1: 8,
-      a2: 4,
-      unitA: 'Personen',
-      unitB: 'Stunden',
-      type: 'antiproportional',
-    },
-  },
-];
+const ICON_MAP: Record<string, JSX.Element> = {
+  shopping: <ShoppingCart className="h-5 w-5" />,
+  fuel: <Fuel className="h-5 w-5" />,
+  calorie: <Candy className="h-5 w-5" />,
+  time: <Clock className="h-5 w-5" />,
+  scale: <Ruler className="h-5 w-5" />,
+  currency: <DollarSign className="h-5 w-5" />,
+  animal: <PawPrint className="h-5 w-5" />,
+  team: <Users className="h-5 w-5" />,
+  speed: <Car className="h-5 w-5" />,
+};
 
 interface QuickExamplesProps {
   onExampleClick?: (example: DreisatzExample) => void;
 }
 
 export function QuickExamples({ onExampleClick }: QuickExamplesProps) {
+  const messages = useMessages() as Record<string, any>;
+  const t = useTranslations();
+  const examples = (messages?.DreisatzExamples as any[]) || [];
+
   return (
-    <div className="w-full">
-      <div className="mb-6">
-        <h2 className="mb-2 text-2xl font-semibold text-gray-900">
-          Beispielrechnungen für den Dreisatz Rechner
+    <div className="w-full space-y-4">
+      <div>
+        <h2 className="mb-2 text-2xl font-semibold text-foreground">
+          {t('examplesHeading')}
         </h2>
-        <p className="text-sm text-gray-600">
-          Klicken Sie auf ein Beispiel, um die Werte automatisch in den Dreisatz Rechner zu übernehmen
-          und die Berechnung mit allen Zwischenschritten anzuzeigen. So lernen Sie die Methode am besten kennen.
-        </p>
+        <p className="text-sm text-muted-foreground">{t('examplesDescription')}</p>
       </div>
 
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {examples.map((example, index) => (
-          <button
-            key={index}
-            type="button"
-            onClick={() => onExampleClick?.(example.payload)}
-            className="rounded-lg border border-gray-200 bg-white p-4 text-left transition-all hover:border-blue-500 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <div className="mb-3 flex items-center justify-between gap-2">
-              <div className="flex items-center gap-2">
-                <div className={`rounded-md p-2 ${
-                  example.payload.type === 'proportional'
-                    ? 'bg-green-50 text-green-600'
-                    : 'bg-orange-50 text-orange-600'
-                }`}>
-                  {example.icon}
+        {examples.map((example, index) => {
+          const values = example['values'] || {};
+          const payload: DreisatzExample = {
+            title: example['title'],
+            description: example['description'],
+            a1: Number(values['a1'] ?? 0),
+            b1: Number(values['b1'] ?? 0),
+            a2: Number(values['a2'] ?? 0),
+            unitA: values['unitA'] ?? '',
+            unitB: values['unitB'] ?? '',
+            type: (values['type'] ?? 'proportional') as DreisatzExample['type'],
+          };
+          const iconName = (example['icon'] as string) || 'shopping';
+          const icon = ICON_MAP[iconName] ?? ICON_MAP['shopping'];
+          const typeLabel =
+            payload.type === 'proportional'
+ ? t('typeLabelProportional') : t('typeLabelAntiproportional');
+
+          return (
+            <button
+              key={index}
+              type="button"
+              onClick={() => onExampleClick?.(payload)}
+              className="rounded-lg border border-border bg-background p-4 text-left transition-all hover:border-primary hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary"
+            >
+              <div className="mb-3 flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <div
+                    className={"rounded-md p-2 " +
+                      (payload.type === 'proportional'
+                        ? 'bg-emerald-100 text-emerald-600'
+                        : 'bg-amber-100 text-amber-600')}
+                  >
+                    {icon}
+                  </div>
+                  <span className="font-semibold text-foreground">{payload.title}</span>
                 </div>
-                <span className="font-semibold text-gray-900">{example.payload.title}</span>
+                <span
+                  className={"rounded-full px-2 py-0.5 text-xs font-medium " +
+                    (payload.type === 'proportional'
+                      ? 'bg-emerald-100 text-emerald-700'
+                      : 'bg-amber-100 text-amber-700')}
+                >
+                  {typeLabel}
+                </span>
               </div>
-              <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${
-                example.payload.type === 'proportional'
-                  ? 'bg-green-100 text-green-700'
-                  : 'bg-orange-100 text-orange-700'
-              }`}>
-                {example.payload.type === 'proportional' ? 'Prop.' : 'Anti.'}
-              </span>
-            </div>
-            <p className="mb-2 text-sm text-gray-600">
-              {example.payload.description}
-            </p>
-            <div className="space-y-1 text-xs text-gray-500">
-              <div>
-                {example.payload.a1} {example.payload.unitA} → {example.payload.b1}{' '}
-                {example.payload.unitB}
+              <p className="mb-2 text-sm text-muted-foreground">{payload.description}</p>
+              <div className="space-y-1 text-xs text-muted-foreground">
+                <div>{example['known']}</div>
+                <div>{example['question']}</div>
               </div>
-              <div>
-                {example.payload.a2} {example.payload.unitA} → ?
-              </div>
-            </div>
-          </button>
-        ))}
+              <Button variant="link" className="mt-3 h-auto px-0 text-sm">
+                {t('exampleCta')}
+              </Button>
+            </button>
+          );
+        })}
       </div>
     </div>
   );

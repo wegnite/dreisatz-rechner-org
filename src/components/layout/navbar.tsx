@@ -1,6 +1,5 @@
 'use client';
 
-import { LoginWrapper } from '@/components/auth/login-wrapper';
 import Container from '@/components/layout/container';
 import { Logo } from '@/components/layout/logo';
 import { ModeSwitcher } from '@/components/layout/mode-switcher';
@@ -66,7 +65,7 @@ export function Navbar({ scroll }: NavBarProps) {
           : 'border-b border-white/10 bg-[#030516]/90 backdrop-blur-xl'
       )}
     >
-      <Container className="px-4">
+      <Container className="max-w-7xl px-6 lg:px-8">
         {/* desktop navbar */}
         <nav className="hidden lg:flex">
           {/* logo and name */}
@@ -82,7 +81,7 @@ export function Navbar({ scroll }: NavBarProps) {
           {/* menu links */}
           <div className="flex-1 flex items-center justify-center space-x-2">
             <NavigationMenu className="relative">
-              <NavigationMenuList className="flex items-center">
+              <NavigationMenuList className="flex items-center gap-1">
                 {menuLinks?.map((item, index) =>
                   item.items ? (
                     <NavigationMenuItem key={index} className="relative">
@@ -215,18 +214,8 @@ export function Navbar({ scroll }: NavBarProps) {
               </>
             ) : (
               <div className="flex items-center gap-x-4">
-                <LoginWrapper mode="modal" asChild>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="cursor-pointer border-white/25 text-white hover:bg-white/10"
-                  >
-                    {t('Common.login')}
-                  </Button>
-                </LoginWrapper>
-
                 <LocaleLink
-                  href={Routes.Register}
+                  href={Routes.Login}
                   className={cn(
                     buttonVariants({
                       size: 'sm',

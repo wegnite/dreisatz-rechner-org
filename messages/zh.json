@@ -944,6 +944,10 @@
             "terms": {
               "title": "使用条款",
               "description": "Dreisatz 计算器的使用规则"
+            },
+            "blog": {
+              "title": "博客",
+              "description": "Dreisatz Rechner 最新资讯"
             }
           }
         }
@@ -966,7 +970,8 @@
           "useCases": "应用案例",
           "practice": "练习题",
           "glossary": "术语表",
-          "checklist": "检查清单"
+          "checklist": "检查清单",
+          "blog": "博客"
         }
       },
       "service": {
@@ -1080,7 +1085,14 @@
           "职业教育：用 Dreisatz Rechner 表达百分比、配比与关键指标。"
         ],
         "note": "可加入行业案例，训练专业词汇。"
-      }
+      },
+      "labelExercises": "练习题",
+      "exerciseNote": "使用经典 Dreisatz 模式核对答案。",
+      "examplesHeading": "Dreisatz 示例题",
+      "examplesDescription": "点击任意示例即可自动填入 Dreisatz Rechner，并跟随完整步骤。",
+      "exampleCta": "将示例填入 Dreisatz Rechner",
+      "typeLabelProportional": "正",
+      "typeLabelAntiproportional": "反"
     },
     "formulas": {
       "label": "公式知识",
@@ -1140,7 +1152,14 @@
         "仔细检查单位。",
         "记录中间结果。",
         "用原始场景检验结果是否合理。"
-      ]
+      ],
+      "tableTitle": "常见 Dreisatz 问题对照表",
+      "tableHead": {
+        "situation": "场景",
+        "question": "问题",
+        "type": "类型",
+        "strategy": "策略"
+      }
     },
     "checklist": {
       "label": "质量检查",
@@ -1219,5 +1238,142 @@
         "在工作中，Dreisatz Rechner 也能提供透明的计算流程，从采购决策到技术比例调整都适用。"
       ]
     }
-  }
+  },
+  "DreisatzExamples": [
+    {
+      "icon": "shopping",
+      "title": "购物",
+      "description": "5 个苹果 2.50 欧",
+      "values": {
+        "a1": 5,
+        "b1": 2.5,
+        "a2": 3,
+        "unitA": "个",
+        "unitB": "欧元",
+        "type": "proportional"
+      },
+      "known": "5 个 → 2.50 欧",
+      "question": "3 个 → ?"
+    },
+    {
+      "icon": "fuel",
+      "title": "燃油",
+      "description": "100 公里耗 8 升，行驶 350 公里",
+      "values": {
+        "a1": 100,
+        "b1": 8,
+        "a2": 350,
+        "unitA": "公里",
+        "unitB": "升",
+        "type": "proportional"
+      },
+      "known": "100 公里 → 8 升",
+      "question": "350 公里 → ?"
+    },
+    {
+      "icon": "calorie",
+      "title": "热量",
+      "description": "100 克食物含 480 千卡",
+      "values": {
+        "a1": 100,
+        "b1": 480,
+        "a2": 65,
+        "unitA": "克",
+        "unitB": "千卡",
+        "type": "proportional"
+      },
+      "known": "100 克 → 480 千卡",
+      "question": "65 克 → ?"
+    },
+    {
+      "icon": "time",
+      "title": "时间/劳动",
+      "description": "3 名油漆工 5 小时完成",
+      "values": {
+        "a1": 3,
+        "b1": 5,
+        "a2": 5,
+        "unitA": "名",
+        "unitB": "小时",
+        "type": "antiproportional"
+      },
+      "known": "3 名 → 5 小时",
+      "question": "5 名 → ?"
+    },
+    {
+      "icon": "scale",
+      "title": "比例尺",
+      "description": "平面图 1 厘米对应真实 50 厘米",
+      "values": {
+        "a1": 1,
+        "b1": 50,
+        "a2": 12,
+        "unitA": "厘米 (图)",
+        "unitB": "厘米 (实)",
+        "type": "proportional"
+      },
+      "known": "1 厘米 → 50 厘米",
+      "question": "12 厘米 → ?"
+    },
+    {
+      "icon": "currency",
+      "title": "汇率",
+      "description": "100 欧元等于 110 美元",
+      "values": {
+        "a1": 100,
+        "b1": 110,
+        "a2": 250,
+        "unitA": "欧元",
+        "unitB": "美元",
+        "type": "proportional"
+      },
+      "known": "100 欧 → 110 美元",
+      "question": "250 欧 → ?"
+    },
+    {
+      "icon": "speed",
+      "title": "速度与时间",
+      "description": "80 公里/小时需 3 小时",
+      "values": {
+        "a1": 80,
+        "b1": 3,
+        "a2": 120,
+        "unitA": "公里/小时",
+        "unitB": "小时",
+        "type": "antiproportional"
+      },
+      "known": "80 km/h → 3 小时",
+      "question": "120 km/h → ?"
+    },
+    {
+      "icon": "animal",
+      "title": "动物饲料",
+      "description": "3 只狗的饲料可吃 10 天",
+      "values": {
+        "a1": 3,
+        "b1": 10,
+        "a2": 5,
+        "unitA": "只",
+        "unitB": "天",
+        "type": "antiproportional"
+      },
+      "known": "3 只 → 10 天",
+      "question": "5 只 → ?"
+    },
+    {
+      "icon": "team",
+      "title": "团队协作",
+      "description": "2 个人需要 8 小时完成任务",
+      "values": {
+        "a1": 2,
+        "b1": 8,
+        "a2": 4,
+        "unitA": "人",
+        "unitB": "小时",
+        "type": "antiproportional"
+      },
+      "known": "2 人 → 8 小时",
+      "question": "4 人 → ?"
+    }
+  ]
 }

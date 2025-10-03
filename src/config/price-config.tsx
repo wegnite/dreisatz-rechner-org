@@ -17,7 +17,7 @@ import { websiteConfig } from './website';
  * @returns The price plans with translated content
  */
 export function getPricePlans(): Record<string, PricePlan> {
-  const t = useTranslations('PricePlans');
+  const t = useTranslations();
   const priceConfig = websiteConfig.price;
   const plans: Record<string, PricePlan> = {};
 

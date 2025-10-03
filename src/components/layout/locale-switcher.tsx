@@ -36,7 +36,7 @@ export default function LocaleSwitcher() {
   const locale = useLocale();
   const { currentLocale, setCurrentLocale } = useLocaleStore();
   const [, startTransition] = useTransition();
-  const t = useTranslations('Common');
+  const t = useTranslations();
 
   useEffect(() => {
     setCurrentLocale(locale);

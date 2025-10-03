@@ -7,7 +7,6 @@ import {
   LayoutDashboardIcon,
   Settings2Icon,
 } from 'lucide-react';
-import { useTranslations } from 'next-intl';
 
 /**
  * Get avatar config with translations
@@ -20,21 +19,19 @@ import { useTranslations } from 'next-intl';
  * @returns The avatar config with translated titles
  */
 export function getAvatarLinks(): MenuItem[] {
-  const t = useTranslations('Marketing.avatar');
-
   return [
     {
-      title: t('dashboard'),
+      title: 'Dashboard',
       href: Routes.Dashboard,
       icon: <LayoutDashboardIcon className="size-4 shrink-0" />,
     },
     {
-      title: t('billing'),
+      title: 'Billing',
       href: Routes.SettingsBilling,
       icon: <CreditCardIcon className="size-4 shrink-0" />,
     },
     {
-      title: t('settings'),
+      title: 'Settings',
       href: Routes.SettingsProfile,
       icon: <Settings2Icon className="size-4 shrink-0" />,
     },

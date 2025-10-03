@@ -3,7 +3,6 @@ import { constructMetadata } from '@/lib/metadata';
 import { getUrlWithLocale } from '@/lib/urls/urls';
 import type { Metadata } from 'next';
 import type { Locale } from 'next-intl';
-import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata({
   params,
@@ -11,11 +10,10 @@ export async function generateMetadata({
   params: Promise<{ locale: Locale }>;
 }): Promise<Metadata | undefined> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'HomePage' });
 
   return constructMetadata({
-    title: t('title'),
-    description: t('description'),
+    title: 'Dreisatz Rechner – Verhältnisrechnung meistern',
+    description: 'Dreisatz Rechner löst proportionale und antiproportionale Aufgaben mit erklärten Schritten. Ideal für Schule, Berufsausbildung und kaufmännische Kalkulationen.',
     canonicalUrl: getUrlWithLocale('/', locale),
   });
 }

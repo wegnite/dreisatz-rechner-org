@@ -17,7 +17,7 @@ import { websiteConfig } from './website';
  * @returns The credit packages with translated content
  */
 export function getCreditPackages(): Record<string, CreditPackage> {
-  const t = useTranslations('CreditPackages');
+  const t = useTranslations();
   const creditConfig = websiteConfig.credits;
   const packages: Record<string, CreditPackage> = {};
 

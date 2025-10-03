@@ -21,7 +21,7 @@ export function ModeSwitcher() {
   }
 
   const { setTheme } = useTheme();
-  const t = useTranslations('Common.mode');
+  const t = useTranslations();
 
   return (
     <DropdownMenu>

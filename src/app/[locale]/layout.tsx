@@ -5,8 +5,6 @@ import {
   fontNotoSansMono,
   fontNotoSerif,
 } from '@/assets/fonts';
-import AffonsoScript from '@/components/affiliate/affonso';
-import PromotekitScript from '@/components/affiliate/promotekit';
 import { TailwindIndicator } from '@/components/layout/tailwind-indicator';
 import { routing } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
@@ -51,8 +49,6 @@ export default async function LocaleLayout({
       style={{ colorScheme: 'dark' }}
     >
       <head>
-        <AffonsoScript />
-        <PromotekitScript />
         <Script
           id="google-analytics"
           src="https://www.googletagmanager.com/gtag/js?id=G-76J2YGEDYY"

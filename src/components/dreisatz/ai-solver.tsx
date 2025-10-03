@@ -48,7 +48,7 @@ interface DreisatzAiSolverProps {
 }
 
 export function DreisatzAiSolver({ mode, onModeChange }: DreisatzAiSolverProps) {
-  const t = useTranslations('DreisatzPage.solver');
+  const t = useTranslations();
   const locale = useLocale();
   const { toast } = useToast();
 

@@ -944,6 +944,10 @@
             "terms": {
               "title": "Terms",
               "description": "Usage rules for the Dreisatz Rechner"
+            },
+            "blog": {
+              "title": "Blog",
+              "description": "Dreisatz Rechner updates"
             }
           }
         }
@@ -966,7 +970,8 @@
           "useCases": "Use cases",
           "practice": "Exercises",
           "glossary": "Glossary",
-          "checklist": "Checklist"
+          "checklist": "Checklist",
+          "blog": "Blog"
         }
       },
       "service": {
@@ -1080,7 +1085,14 @@
           "Vocational training: describe percentages, mixtures and KPIs with the Dreisatz Rechner."
         ],
         "note": "Add your own examples to train domain-specific vocabulary."
-      }
+      },
+      "labelExercises": "Exercises to practise",
+      "exerciseNote": "Use the classic Dreisatz mode to double-check your answers.",
+      "examplesHeading": "Example tasks for the Dreisatz Rechner",
+      "examplesDescription": "Pick a scenario to auto-fill the Dreisatz Rechner and follow the complete solution path.",
+      "exampleCta": "Send values to the Dreisatz Rechner",
+      "typeLabelProportional": "Prop.",
+      "typeLabelAntiproportional": "Anti."
     },
     "formulas": {
       "label": "Formula knowledge",
@@ -1140,7 +1152,14 @@
         "Check units carefully.",
         "Write down intermediate values.",
         "Run a plausibility check with the original scenario."
-      ]
+      ],
+      "tableTitle": "Reference table for common problems",
+      "tableHead": {
+        "situation": "Scenario",
+        "question": "Question",
+        "type": "Type",
+        "strategy": "Strategy"
+      }
     },
     "checklist": {
       "label": "Quality control",
@@ -1219,5 +1238,142 @@
         "Professionals rely on the Dreisatz Rechner for transparent calculations—from purchasing decisions to technical scaling. With AI mode and classic inputs the tool remains flexible and reliable."
       ]
     }
-  }
+  },
+  "DreisatzExamples": [
+    {
+      "icon": "shopping",
+      "title": "Groceries",
+      "description": "5 apples cost €2.50",
+      "values": {
+        "a1": 5,
+        "b1": 2.5,
+        "a2": 3,
+        "unitA": "apples",
+        "unitB": "euros",
+        "type": "proportional"
+      },
+      "known": "5 apples → €2.50",
+      "question": "3 apples → ?"
+    },
+    {
+      "icon": "fuel",
+      "title": "Fuel",
+      "description": "8 litres per 100 km, trip 350 km",
+      "values": {
+        "a1": 100,
+        "b1": 8,
+        "a2": 350,
+        "unitA": "km",
+        "unitB": "litres",
+        "type": "proportional"
+      },
+      "known": "100 km → 8 litres",
+      "question": "350 km → ?"
+    },
+    {
+      "icon": "calorie",
+      "title": "Calories",
+      "description": "100 g provide 480 kcal",
+      "values": {
+        "a1": 100,
+        "b1": 480,
+        "a2": 65,
+        "unitA": "grams",
+        "unitB": "kcal",
+        "type": "proportional"
+      },
+      "known": "100 g → 480 kcal",
+      "question": "65 g → ?"
+    },
+    {
+      "icon": "time",
+      "title": "Time & labour",
+      "description": "3 painters finish in 5 hours",
+      "values": {
+        "a1": 3,
+        "b1": 5,
+        "a2": 5,
+        "unitA": "painters",
+        "unitB": "hours",
+        "type": "antiproportional"
+      },
+      "known": "3 painters → 5 h",
+      "question": "5 painters → ?"
+    },
+    {
+      "icon": "scale",
+      "title": "Scale drawing",
+      "description": "1 cm on plan equals 50 cm real",
+      "values": {
+        "a1": 1,
+        "b1": 50,
+        "a2": 12,
+        "unitA": "cm (plan)",
+        "unitB": "cm (real)",
+        "type": "proportional"
+      },
+      "known": "1 cm → 50 cm",
+      "question": "12 cm → ?"
+    },
+    {
+      "icon": "currency",
+      "title": "Currency conversion",
+      "description": "€100 equals $110",
+      "values": {
+        "a1": 100,
+        "b1": 110,
+        "a2": 250,
+        "unitA": "EUR",
+        "unitB": "USD",
+        "type": "proportional"
+      },
+      "known": "€100 → $110",
+      "question": "€250 → ?"
+    },
+    {
+      "icon": "speed",
+      "title": "Speed & time",
+      "description": "Travelling 80 km/h takes 3 h",
+      "values": {
+        "a1": 80,
+        "b1": 3,
+        "a2": 120,
+        "unitA": "km/h",
+        "unitB": "hours",
+        "type": "antiproportional"
+      },
+      "known": "80 km/h → 3 h",
+      "question": "120 km/h → ?"
+    },
+    {
+      "icon": "animal",
+      "title": "Pet feeding",
+      "description": "Food for 3 dogs lasts 10 days",
+      "values": {
+        "a1": 3,
+        "b1": 10,
+        "a2": 5,
+        "unitA": "dogs",
+        "unitB": "days",
+        "type": "antiproportional"
+      },
+      "known": "3 dogs → 10 days",
+      "question": "5 dogs → ?"
+    },
+    {
+      "icon": "team",
+      "title": "Project team",
+      "description": "2 members need 8 hours",
+      "values": {
+        "a1": 2,
+        "b1": 8,
+        "a2": 4,
+        "unitA": "people",
+        "unitB": "hours",
+        "type": "antiproportional"
+      },
+      "known": "2 people → 8 h",
+      "question": "4 people → ?"
+    }
+  ]
 }

@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { useTranslations } from 'next-intl';
 
 export function DreisatzHero() {
-  const t = useTranslations('HomePage');
+  const t = useTranslations();
+  const visualsT = useTranslations();
   const stats = Array.from({ length: 3 }).map((_, index) => ({
     value: t(`stats.items.${index}.value`),
     label: t(`stats.items.${index}.label`),
@@ -65,14 +66,14 @@ export function DreisatzHero() {
           <div className="relative rounded-[32px] border border-white/10 bg-slate-950/60 p-6 shadow-[0_30px_100px_-60px_rgba(56,189,248,0.75)] backdrop-blur">
             <Image
               src="/calculator/calculator.png"
-              alt="Screenshot Dreisatz Rechner Oberfläche"
+              alt={visualsT('imageCaption')}
               width={540}
               height={380}
               className="rounded-2xl"
               priority
             />
             <p className="mt-4 text-sm text-slate-200/80">
-              Dreisatz Rechner mit KI-Textmodus &amp; klassischer Eingabe – jeder Schritt wird erläutert.
+              {visualsT('imageCaption')}
             </p>
           </div>
         </div>

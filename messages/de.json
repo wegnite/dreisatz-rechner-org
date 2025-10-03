@@ -944,6 +944,10 @@
             "terms": {
               "title": "Nutzungsbedingungen",
               "description": "Regeln für den Dreisatz Rechner"
+            },
+            "blog": {
+              "title": "Blog",
+              "description": "Dreisatz Rechner Neuigkeiten"
             }
           }
         }
@@ -966,7 +970,8 @@
           "useCases": "Anwendungsfälle",
           "practice": "Übungen",
           "glossary": "Glossar",
-          "checklist": "Checkliste"
+          "checklist": "Checkliste",
+          "blog": "Blog"
         }
       },
       "service": {
@@ -1080,7 +1085,14 @@
           "Berufsschule/FOS: Prozentrechnungen, Mischkalkulationen und Kennzahlen mit dem Dreisatz Rechner darstellen."
         ],
         "note": "Ergänzen Sie eigene Beispiele, um branchenspezifische Begriffe zu trainieren."
-      }
+      },
+      "labelExercises": "Übungsaufgaben zum Mitrechnen",
+      "exerciseNote": "Nutzen Sie den klassischen Modus im Dreisatz Rechner, um Ergebnisse direkt zu prüfen.",
+      "examplesHeading": "Beispielrechnungen für den Dreisatz Rechner",
+      "examplesDescription": "Klicken Sie auf ein Beispiel, um die Werte automatisch in den Dreisatz Rechner zu übernehmen und den Rechenweg zu studieren.",
+      "exampleCta": "Werte in den Dreisatz Rechner übernehmen",
+      "typeLabelProportional": "Prop.",
+      "typeLabelAntiproportional": "Anti."
     },
     "formulas": {
       "label": "Formelwissen",
@@ -1140,7 +1152,14 @@
         "Einheiten konsequent prüfen.",
         "Zwischenergebnisse notieren und vergleichen.",
         "Ergebnis mit einer Plausibilitätsfrage prüfen."
-      ]
+      ],
+      "tableTitle": "Vergleichstabelle für häufige Aufgaben",
+      "tableHead": {
+        "situation": "Situation",
+        "question": "Fragestellung",
+        "type": "Typ",
+        "strategy": "Strategie"
+      }
     },
     "checklist": {
       "label": "Qualitätssicherung",
@@ -1219,5 +1238,142 @@
         "Im Berufsalltag sorgt der Dreisatz Rechner für transparente Kalkulationen – von Einkaufsentscheidungen bis zu technischen Skalierungen. Durch KI-Modus und klassische Eingabe bleibt das Tool flexibel und nachvollziehbar."
       ]
     }
-  }
+  },
+  "DreisatzExamples": [
+    {
+      "icon": "shopping",
+      "title": "Einkauf",
+      "description": "5 Äpfel kosten 2,50 €",
+      "values": {
+        "a1": 5,
+        "b1": 2.5,
+        "a2": 3,
+        "unitA": "Äpfel",
+        "unitB": "Euro",
+        "type": "proportional"
+      },
+      "known": "5 Äpfel → 2,50 €",
+      "question": "3 Äpfel → ?"
+    },
+    {
+      "icon": "fuel",
+      "title": "Kraftstoff",
+      "description": "8 Liter auf 100 km, Strecke 350 km",
+      "values": {
+        "a1": 100,
+        "b1": 8,
+        "a2": 350,
+        "unitA": "Kilometer",
+        "unitB": "Liter",
+        "type": "proportional"
+      },
+      "known": "100 km → 8 Liter",
+      "question": "350 km → ?"
+    },
+    {
+      "icon": "calorie",
+      "title": "Kalorien",
+      "description": "100 g liefern 480 kcal",
+      "values": {
+        "a1": 100,
+        "b1": 480,
+        "a2": 65,
+        "unitA": "Gramm",
+        "unitB": "kcal",
+        "type": "proportional"
+      },
+      "known": "100 g → 480 kcal",
+      "question": "65 g → ?"
+    },
+    {
+      "icon": "time",
+      "title": "Zeit & Arbeit",
+      "description": "3 Maler benötigen 5 Stunden",
+      "values": {
+        "a1": 3,
+        "b1": 5,
+        "a2": 5,
+        "unitA": "Maler",
+        "unitB": "Stunden",
+        "type": "antiproportional"
+      },
+      "known": "3 Maler → 5 Stunden",
+      "question": "5 Maler → ?"
+    },
+    {
+      "icon": "scale",
+      "title": "Maßstab",
+      "description": "1 cm im Plan entspricht 50 cm real",
+      "values": {
+        "a1": 1,
+        "b1": 50,
+        "a2": 12,
+        "unitA": "cm (Plan)",
+        "unitB": "cm (Real)",
+        "type": "proportional"
+      },
+      "known": "1 cm → 50 cm",
+      "question": "12 cm → ?"
+    },
+    {
+      "icon": "currency",
+      "title": "Wechselkurs",
+      "description": "100 € entsprechen 110 $",
+      "values": {
+        "a1": 100,
+        "b1": 110,
+        "a2": 250,
+        "unitA": "Euro",
+        "unitB": "US-Dollar",
+        "type": "proportional"
+      },
+      "known": "100 € → 110 $",
+      "question": "250 € → ?"
+    },
+    {
+      "icon": "speed",
+      "title": "Geschwindigkeit & Zeit",
+      "description": "Mit 80 km/h braucht man 3 Stunden",
+      "values": {
+        "a1": 80,
+        "b1": 3,
+        "a2": 120,
+        "unitA": "km/h",
+        "unitB": "Stunden",
+        "type": "antiproportional"
+      },
+      "known": "80 km/h → 3 Stunden",
+      "question": "120 km/h → ?"
+    },
+    {
+      "icon": "animal",
+      "title": "Futter für Tiere",
+      "description": "Futter für 3 Hunde reicht 10 Tage",
+      "values": {
+        "a1": 3,
+        "b1": 10,
+        "a2": 5,
+        "unitA": "Hunde",
+        "unitB": "Tage",
+        "type": "antiproportional"
+      },
+      "known": "3 Hunde → 10 Tage",
+      "question": "5 Hunde → ?"
+    },
+    {
+      "icon": "team",
+      "title": "Arbeitszeit",
+      "description": "2 Personen benötigen 8 Stunden",
+      "values": {
+        "a1": 2,
+        "b1": 8,
+        "a2": 4,
+        "unitA": "Personen",
+        "unitB": "Stunden",
+        "type": "antiproportional"
+      },
+      "known": "2 Personen → 8 Stunden",
+      "question": "4 Personen → ?"
+    }
+  ]
 }

@@ -26,7 +26,7 @@ export function ThemeSelector() {
   }
 
   const { activeTheme, setActiveTheme } = useThemeConfig();
-  const t = useTranslations('Common.theme');
+  const t = useTranslations();
 
   const DEFAULT_THEMES = [
     {

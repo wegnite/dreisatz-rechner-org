@@ -18,7 +18,7 @@ export function ModeSwitcherHorizontal() {
 
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const t = useTranslations('Common.mode');
+  const t = useTranslations();
 
   // Only show the UI after hydration to prevent hydration mismatch
   useEffect(() => {

@@ -17,7 +17,7 @@ import { useTransition } from 'react';
  * https://x.com/asidorenko_/status/1841547623712407994
  */
 export default function Error({ reset }: { reset: () => void }) {
-  const t = useTranslations('ErrorPage');
+  const t = useTranslations();
   const router = useLocaleRouter();
   const [isPending, startTransition] = useTransition();
 

@@ -57,6 +57,11 @@ export function getFooterLinks(): NestedMenuItem[] {
           href: Routes.Wan22,
           external: false,
         },
+        {
+          title: t('resources.items.sora2'),
+          href: Routes.Sora2OpenAI,
+          external: false,
+        },
         ...(websiteConfig.blog.enable
           ? [
               {

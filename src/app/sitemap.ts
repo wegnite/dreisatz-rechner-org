@@ -31,6 +31,12 @@ const staticRoutes = [
   '/contact',
   '/changelog',
   '/wan-2-2',
+  '/wan-2-2/models',
+  '/wan-2-2/workflows',
+  '/wan-2-2/animate-free',
+  '/sora2-openai',
+  '/sora2-openai/workflows',
+  '/sora2-openai/launchpads',
 ];
 
 /**
@@ -67,6 +73,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/contact': { priority: 0.3, changeFrequency: 'yearly' },
     '/changelog': { priority: 0.3, changeFrequency: 'monthly' },
     '/wan-2-2': { priority: 0.6, changeFrequency: 'weekly' },
+    '/wan-2-2/models': { priority: 0.55, changeFrequency: 'weekly' },
+    '/wan-2-2/workflows': { priority: 0.55, changeFrequency: 'weekly' },
+    '/wan-2-2/animate-free': { priority: 0.55, changeFrequency: 'weekly' },
+    '/sora2-openai': { priority: 0.6, changeFrequency: 'weekly' },
+    '/sora2-openai/workflows': { priority: 0.55, changeFrequency: 'weekly' },
+    '/sora2-openai/launchpads': { priority: 0.55, changeFrequency: 'weekly' },
   };
 
   // add static routes

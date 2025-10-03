@@ -6,7 +6,7 @@ import { routing } from './routing';
 // if you want to use a different default locale, you can change to other {locale}.json file
 // we need to export the default messages so that we can use them in the app/manifest.ts file
 // and the email templates can use the default messages to preview the emails
-export { default as defaultMessages } from '../../messages/en.json';
+export { default as defaultMessages } from '../../messages/de.json';
 
 const importLocale = async (locale: Locale): Promise<Messages> => {
   return (await import(`../../messages/${locale}.json`)).default as Messages;

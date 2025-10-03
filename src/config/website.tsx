@@ -56,8 +56,12 @@ export const websiteConfig: WebsiteConfig = {
     enableCredentialLogin: true,
   },
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale: 'de',
     locales: {
+      de: {
+        flag: '🇩🇪',
+        name: 'Deutsch',
+      },
       en: {
         flag: '🇺🇸',
         name: 'English',

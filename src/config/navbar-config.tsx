@@ -85,6 +85,13 @@ export function getNavbarLinks(): NestedMenuItem[] {
           external: false,
         },
         {
+          title: t('pages.items.sora2.title'),
+          description: t('pages.items.sora2.description'),
+          icon: <FlameIcon className="size-4 shrink-0" />,
+          href: Routes.Sora2OpenAI,
+          external: false,
+        },
+        {
           title: t('pages.items.about.title'),
           description: t('pages.items.about.description'),
           icon: <BuildingIcon className="size-4 shrink-0" />,

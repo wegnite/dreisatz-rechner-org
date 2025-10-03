@@ -326,6 +326,10 @@
             "title": "wan 2.2 专题",
             "description": "调研与流量验证一站式方案"
           },
+          "sora2": {
+            "title": "Sora 2 OpenAI 专题",
+            "description": "围绕 Sora 2 视频体验的落地方案"
+          },
           "about": {
             "title": "关于我们",
             "description": "了解团队与产品愿景"
@@ -377,6 +381,7 @@
           "gallery": "作品集",
           "tutorials": "教程",
           "wan22": "wan 2.2 专题",
+          "sora2": "Sora 2 OpenAI 专题",
           "docs": "文档",
           "blog": "博客"
         }

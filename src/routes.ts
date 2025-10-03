@@ -27,7 +27,13 @@ export enum Routes {
   AiVintagePhoto = '/ai/vintage-photo',
   Gallery = '/gallery',
   Tutorials = '/tutorials',
+  Sora2OpenAI = '/sora2-openai',
+  Sora2OpenAIWorkflows = '/sora2-openai/workflows',
+  Sora2OpenAILaunchpads = '/sora2-openai/launchpads',
   Wan22 = '/wan-2-2',
+  Wan22Models = '/wan-2-2/models',
+  Wan22Workflows = '/wan-2-2/workflows',
+  Wan22AnimateFree = '/wan-2-2/animate-free',
 
   // auth routes
   Login = '/auth/login',

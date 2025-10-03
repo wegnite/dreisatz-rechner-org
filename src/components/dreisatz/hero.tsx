@@ -1,8 +1,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { useTranslations } from 'next-intl';
 
 export function DreisatzHero() {
+  const t = useTranslations('HomePage');
+  const stats = Array.from({ length: 3 }).map((_, index) => ({
+    value: t(`stats.items.${index}.value`),
+    label: t(`stats.items.${index}.label`),
+  }));
+
   return (
     <div className="relative overflow-hidden border-b bg-gradient-to-b from-slate-950 via-slate-930 to-slate-900 py-16">
       <div className="pointer-events-none absolute inset-0">
@@ -16,28 +23,26 @@ export function DreisatzHero() {
           <div className="flex items-center gap-3 text-sm font-medium text-primary">
             <Image
               src="/calculator/calculator.svg"
-              alt="Dreisatz Rechner Logo"
+              alt={t('title')}
               width={56}
               height={56}
               className="h-12 w-12 rounded-xl border border-primary/30 bg-primary/10 p-2"
               priority
             />
-            <span>Dreisatz Rechner – Deutsches Lernwerkzeug</span>
+            <span>{t('hero.badge')}</span>
           </div>
 
           <h1 className="text-4xl font-serif font-bold tracking-tight text-white sm:text-5xl md:text-[3.2rem]">
-            Dreisatz Rechner erklärt jeden Rechenschritt – von Textaufgabe bis Antwortsatz
+            {t('hero.title')}
           </h1>
 
           <p className="text-lg leading-relaxed text-slate-200/90 sm:text-xl">
-            Der Dreisatz Rechner nimmt komplette Aufgabenstellungen entgegen, erkennt automatisch
-            Proportionalität, erstellt den Rechenweg in deutscher Sprache und liefert eine
-            nachvollziehbare Antwort. Perfekt für Hausaufgaben, Unterricht und berufliche Kalkulationen.
+            {t('hero.description')}
           </p>
 
           <div className="flex flex-wrap gap-3">
             <Button asChild size="lg" className="rounded-full px-6">
-              <Link href="#rechner">Dreisatz Rechner starten</Link>
+              <Link href="#rechner">{t('hero.primaryCta')}</Link>
             </Button>
             <Button
               asChild
@@ -45,15 +50,14 @@ export function DreisatzHero() {
               size="lg"
               className="rounded-full border-primary/40 bg-white/5 px-6 text-white hover:bg-white/10"
             >
-              <Link href="#dreisatz-video">Videoanleitung ansehen</Link>
+              <Link href="#dreisatz-video">{t('hero.secondaryCta')}</Link>
             </Button>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
-            <StatItem title="Kostenloser Dreisatz Rechner" description="Ohne Anmeldung sofort rechnen" />
-            <StatItem title="Mit Rechenweg" description="Analyse, Formel, Antwortsatz erklärt" />
-            <StatItem title="Lehrplan-konform" description="Geeignet für Sek1, Berufsschule, Umschulung" />
-            <StatItem title="Deutschsprachige Beispiele" description="Textaufgaben, Tabellen, Checkliste" />
+            {stats.map((item, index) => (
+              <StatItem key={index} title={item.value} description={item.label} />
+            ))}
           </div>
         </div>
 

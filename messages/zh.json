@@ -1014,5 +1014,210 @@
       "支持正比例与反比例的详细说明",
       "面向学校、培训和商业场景的免费工具"
     ]
+  },
+  "DreisatzSections": {
+    "visuals": {
+      "label": "步骤理解",
+      "title": "Dreisatz Rechner 的可视化讲解",
+      "description": "图示展示 Dreisatz Rechner 如何标记 A₁、B₁、A₂、B₂，帮助你保持对比例关系的理解。",
+      "cards": [
+        {
+          "title": "视频推荐",
+          "body": "结合 Dreisatz Rechner 使用短视频教程，并边看边核对计算步骤。"
+        },
+        {
+          "title": "利用信息图",
+          "body": "打印信息图作为课堂或笔记的锚点，将每个箭头与计算步骤对应。"
+        }
+      ],
+      "imageCaption": "Dreisatz Rechner：同时支持文本模式与经典 A1/B1/A2 输入。",
+      "downloadCta": "下载信息图",
+      "downloadHint": "适合课堂演示和屏幕录制。"
+    },
+    "useCases": {
+      "label": "实际场景",
+      "title": "Dreisatz Rechner 应用案例",
+      "description": "从购物清单到工程项目——Dreisatz Rechner 在几秒钟内给出可靠结果。选择一个案例并将方法迁移到你的任务。",
+      "categories": [
+        {
+          "title": "工作与日常",
+          "body": "利用 Dreisatz Rechner 让数量与加价计算透明化。",
+          "bullets": [
+            "建筑材料计划",
+            "餐饮配方调整",
+            "价格与折扣对比"
+          ]
+        },
+        {
+          "title": "学校与高校",
+          "body": "学生通过 Dreisatz Rechner 巩固正反比例概念。",
+          "bullets": [
+            "配有完整解答的练习",
+            "考试复习",
+            "自检控制问题"
+          ]
+        },
+        {
+          "title": "工程与科学",
+          "body": "在不出错的情况下缩放测量、时间和剂量。",
+          "bullets": [
+            "电压/压力计算",
+            "实验溶液配比",
+            "机器产能规划"
+          ]
+        }
+      ],
+      "exercises": [
+        "打印机 6 分钟输出 120 页。使用 Dreisatz Rechner 计算 420 页的打印时间。",
+        "18 升油漆可覆盖 240 m²。借助 Dreisatz Rechner 计算 86 m² 需要多少油漆。",
+        "4 台服务器 15 分钟完成任务。6 台服务器需要多久？使用反比例 Dreisatz 检查。"
+      ],
+      "learningGoals": {
+        "title": "学习目标与能力框架",
+        "points": [
+          "小学：正确说出比例与单位。",
+          "中学阶段：拆解文字题并判断 Dreisatz 类型。",
+          "职业教育：用 Dreisatz Rechner 表达百分比、配比与关键指标。"
+        ],
+        "note": "可加入行业案例，训练专业词汇。"
+      }
+    },
+    "formulas": {
+      "label": "公式知识",
+      "title": "正比例与反比例 Dreisatz",
+      "description": "Dreisatz Rechner 会记录所有步骤，下列卡片总结了关键公式与检查问题。",
+      "sections": [
+        {
+          "name": "正比例 Dreisatz",
+          "formula": "B₂ = B₁ × (A₂ ÷ A₁)",
+          "steps": [
+            "先计算单位值：B₁ ÷ A₁。",
+            "再乘以目标数量：结果 × A₂。"
+          ],
+          "question": "两个量一起增减吗？→ 正比例",
+          "example": "5 千克苹果 9.50 欧，3.2 千克约 6.08 欧。",
+          "tags": "零售、单位换算、食谱"
+        },
+        {
+          "name": "反比例 Dreisatz",
+          "formula": "B₂ = (A₁ × B₁) ÷ A₂",
+          "steps": [
+            "先求出乘积：A₁ × B₁。",
+            "再除以新数量：乘积 ÷ A₂。"
+          ],
+          "question": "一个增、一个减？→ 反比例",
+          "example": "3 名工人 8 小时完成任务，5 名工人需 4.8 小时。",
+          "tags": "团队计划、机器时间、速度"
+        }
+      ],
+      "table": [
+        {
+          "situation": "筹款",
+          "question": "3 千克 7.80 欧，1.2 千克多少钱？",
+          "type": "正比例",
+          "strategy": "先算每千克，再放大。"
+        },
+        {
+          "situation": "施工",
+          "question": "9 人比 6 人要多久？",
+          "type": "反比例",
+          "strategy": "维持“人数 × 时间”常量。"
+        },
+        {
+          "situation": "化学混合",
+          "question": "60 克/150 ml，250 ml 需要多少克？",
+          "type": "正比例",
+          "strategy": "先换算到 1 ml，再放大。"
+        },
+        {
+          "situation": "物流",
+          "question": "换小型卡车需要多少趟？",
+          "type": "反比例",
+          "strategy": "保持载重与趟数乘积不变。"
+        }
+      ],
+      "tips": [
+        "仔细检查单位。",
+        "记录中间结果。",
+        "用原始场景检验结果是否合理。"
+      ]
+    },
+    "checklist": {
+      "label": "质量检查",
+      "title": "Dreisatz 计算器检查清单",
+      "description": "使用 Dreisatz Rechner 时请逐项确认，避免常见错误。",
+      "items": [
+        {
+          "title": "单位一致",
+          "body": "每个数后写上单位，必要时先转换。"
+        },
+        {
+          "title": "判断比例类型",
+          "body": "想象情境：两个数同向或反向变化？"
+        },
+        {
+          "title": "记录中间量",
+          "body": "记下单位值或总乘积再继续计算。"
+        },
+        {
+          "title": "合理性检查",
+          "body": "结果与原始情境是否匹配？"
+        }
+      ]
+    },
+    "glossary": {
+      "label": "术语表",
+      "title": "Dreisatz Rechner 术语速查",
+      "description": "快速查阅 Dreisatz 相关术语，便于课堂和复习。",
+      "entries": [
+        {
+          "term": "基准量 (A₁)",
+          "definition": "作为参照的已知数量。"
+        },
+        {
+          "term": "基准值 (B₁)",
+          "definition": "对应基准量的值，例如价格或时间。"
+        },
+        {
+          "term": "目标量 (A₂)",
+          "definition": "希望求得结果的数量。"
+        },
+        {
+          "term": "目标值 (B₂)",
+          "definition": "Dreisatz Rechner 输出的结果。"
+        },
+        {
+          "term": "单位步",
+          "definition": "正比例 Dreisatz 的中间步骤：求每单位值。"
+        },
+        {
+          "term": "总乘积",
+          "definition": "反比例 Dreisatz 的关键：A₁ × B₁。"
+        }
+      ]
+    },
+    "newsletter": {
+      "label": "订阅",
+      "title": "Dreisatz Rechner 资讯",
+      "description": "每月推送练习题、教材与课堂提示，无广告，仅限 Dreisatz 内容。",
+      "placeholder": "输入邮箱",
+      "button": "订阅",
+      "legal": "订阅即同意我们的隐私政策，可随时退订。"
+    },
+    "video": {
+      "label": "视频与课件",
+      "title": "Dreisatz Rechner 视频教学",
+      "description": "该视频演示如何将德语题目输入 Dreisatz Rechner，适用于翻转课堂与自学。",
+      "downloadCta": "下载信息图",
+      "downloadHint": "适合课堂讲义与工作坊资料。",
+      "tip": "提示：每个步骤播放后暂停，让学习者自己在 Dreisatz Rechner 中填写。"
+    },
+    "seoText": {
+      "title": "Dreisatz Rechner 知识中心",
+      "paragraphs": [
+        "Dreisatz Rechner 将分析、公式、答案句整合在一起，帮助教师用真实案例构建课程。",
+        "在工作中，Dreisatz Rechner 也能提供透明的计算流程，从采购决策到技术比例调整都适用。"
+      ]
+    }
   }
 }

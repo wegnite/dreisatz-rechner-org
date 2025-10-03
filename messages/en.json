@@ -1014,5 +1014,210 @@
       "Proportional and inverse proportional explanations",
       "Free tool for school, training and business"
     ]
+  },
+  "DreisatzSections": {
+    "visuals": {
+      "label": "Step-by-step understanding",
+      "title": "Dreisatz Rechner with visual explanations",
+      "description": "Visual highlights show how the Dreisatz Rechner marks A₁, B₁, A₂ and B₂. Learners keep proportions in view while solving.",
+      "cards": [
+        {
+          "title": "Video recommendation",
+          "body": "Combine the Dreisatz Rechner with short explainer videos. Listen to the steps while checking the numbers in the tool."
+        },
+        {
+          "title": "Use the infographic",
+          "body": "Print the infographic as worksheet anchor points. Connect the arrows with each calculation step."
+        }
+      ],
+      "imageCaption": "Dreisatz Rechner: AI text mode and classic A1/B1/A2 entry in one view.",
+      "downloadCta": "Download infographic",
+      "downloadHint": "Perfect for classroom slides and screen recordings."
+    },
+    "useCases": {
+      "label": "Practical scenarios",
+      "title": "Typical use cases for the Dreisatz Rechner",
+      "description": "From shopping lists to technical projects – the Dreisatz Rechner delivers reliable results in seconds. Pick an example and adapt the method to your task.",
+      "categories": [
+        {
+          "title": "Business & everyday life",
+          "body": "Plan quantities and mark-ups with transparent Dreisatz steps.",
+          "bullets": [
+            "Construction material planning",
+            "Recipe scaling in hospitality",
+            "Price and discount comparisons"
+          ]
+        },
+        {
+          "title": "School & higher education",
+          "body": "Students secure their understanding of proportional and inverse proportions.",
+          "bullets": [
+            "Worksheets with full solution",
+            "Exam preparation",
+            "Self-check with control questions"
+          ]
+        },
+        {
+          "title": "Engineering & science",
+          "body": "Scale measurements, runtimes and dosages without errors.",
+          "bullets": [
+            "Electrical and pressure calculations",
+            "Lab mixing ratios",
+            "Machine capacity planning"
+          ]
+        }
+      ],
+      "exercises": [
+        "A printer produces 120 pages in 6 minutes. With the Dreisatz Rechner determine the time for 420 pages when another model prints 150 pages in 6 minutes.",
+        "18 litres of paint cover 240 m². Use the Dreisatz Rechner to calculate the amount for 86 m².",
+        "Four servers finish a job in 15 minutes. How long does it take with six servers? Apply the inverse Dreisatz."
+      ],
+      "learningGoals": {
+        "title": "Learning goals & competency grid",
+        "points": [
+          "Primary level: name proportions and units correctly.",
+          "Lower secondary: structure word problems and decide on the proper Dreisatz type.",
+          "Vocational training: describe percentages, mixtures and KPIs with the Dreisatz Rechner."
+        ],
+        "note": "Add your own examples to train domain-specific vocabulary."
+      }
+    },
+    "formulas": {
+      "label": "Formula knowledge",
+      "title": "Proportional vs inverse Dreisatz",
+      "description": "The Dreisatz Rechner documents every step. These cards summarise the key formulas and control questions.",
+      "sections": [
+        {
+          "name": "Proportional Dreisatz",
+          "formula": "B₂ = B₁ × (A₂ ÷ A₁)",
+          "steps": [
+            "Determine value per unit: B₁ ÷ A₁.",
+            "Multiply by target quantity: result × A₂."
+          ],
+          "question": "Do both values grow together? → proportional.",
+          "example": "5 kg of apples cost €9.50. For 3.2 kg the Dreisatz Rechner outputs €6.08.",
+          "tags": "Retail, conversions, recipes"
+        },
+        {
+          "name": "Inverse Dreisatz",
+          "formula": "B₂ = (A₁ × B₁) ÷ A₂",
+          "steps": [
+            "Build the product of known values: A₁ × B₁.",
+            "Divide by the new quantity: product ÷ A₂."
+          ],
+          "question": "Does one value rise while the other falls? → inverse proportion.",
+          "example": "3 technicians complete a task in 8 h. With 5 technicians the time is 4.8 h.",
+          "tags": "Team planning, machine runtime, speed"
+        }
+      ],
+      "table": [
+        {
+          "situation": "Fundraising",
+          "question": "What is the price for 1.2 kg if 3 kg cost €7.80?",
+          "type": "proportional",
+          "strategy": "Find price per kilo, then scale up."
+        },
+        {
+          "situation": "Construction work",
+          "question": "How long do 9 people need instead of 6?",
+          "type": "inverse",
+          "strategy": "Keep product constant and divide by new team size."
+        },
+        {
+          "situation": "Chemical mixture",
+          "question": "How much solvent for 250 ml at 60 g per 150 ml?",
+          "type": "proportional",
+          "strategy": "Convert to 1 ml first, then scale."
+        },
+        {
+          "situation": "Logistics",
+          "question": "How many trips with a smaller truck?",
+          "type": "inverse",
+          "strategy": "Keep load × trips constant."
+        }
+      ],
+      "tips": [
+        "Check units carefully.",
+        "Write down intermediate values.",
+        "Run a plausibility check with the original scenario."
+      ]
+    },
+    "checklist": {
+      "label": "Quality control",
+      "title": "Checklist for safe Dreisatz calculations",
+      "description": "Use these checkpoints whenever you work with the Dreisatz Rechner – in class or on the job.",
+      "items": [
+        {
+          "title": "Verify units",
+          "body": "Note the unit next to every number and convert before starting if units do not match."
+        },
+        {
+          "title": "Identify the relation",
+          "body": "Visualise the situation: do values move in the same direction or opposite? That decides proportional vs inverse."
+        },
+        {
+          "title": "Secure intermediate values",
+          "body": "Record value per unit or the total product before proceeding."
+        },
+        {
+          "title": "Plausibility test",
+          "body": "Compare the result with the original scenario. Does the magnitude make sense?"
+        }
+      ]
+    },
+    "glossary": {
+      "label": "Glossary",
+      "title": "Glossary for the Dreisatz Rechner",
+      "description": "Look up the most important terms when explaining Dreisatz problems.",
+      "entries": [
+        {
+          "term": "Base quantity (A₁)",
+          "definition": "The known starting quantity used as reference."
+        },
+        {
+          "term": "Base value (B₁)",
+          "definition": "The value belonging to the base quantity – price, time or workload."
+        },
+        {
+          "term": "Target quantity (A₂)",
+          "definition": "The new quantity for which you want to compute a value."
+        },
+        {
+          "term": "Target value (B₂)",
+          "definition": "The result produced by the Dreisatz Rechner for the target quantity."
+        },
+        {
+          "term": "Unit step",
+          "definition": "Intermediate step in proportional Dreisatz: value per single unit."
+        },
+        {
+          "term": "Total product",
+          "definition": "Intermediate step in inverse Dreisatz: A₁ multiplied by B₁."
+        }
+      ]
+    },
+    "newsletter": {
+      "label": "Learning updates",
+      "title": "Newsletter for the Dreisatz Rechner",
+      "description": "Monthly Dreisatz exercises, worksheets and teaching tips. No ads – only relevant content.",
+      "placeholder": "Enter e-mail address",
+      "button": "Subscribe",
+      "legal": "By subscribing you agree to our privacy policy. Unsubscribe at any time."
+    },
+    "video": {
+      "label": "Video & worksheet",
+      "title": "Video: Dreisatz Rechner step by step",
+      "description": "This tutorial shows how to transfer German text problems straight into the Dreisatz Rechner. Great for flipped classroom and self study.",
+      "downloadCta": "Download infographic",
+      "downloadHint": "Use the PDF in lessons, workshops and documentation.",
+      "tip": "Tip: Pause the video after each step and let participants enter the numbers in the Dreisatz Rechner themselves."
+    },
+    "seoText": {
+      "title": "Dreisatz Rechner knowledge for lasting success",
+      "paragraphs": [
+        "The Dreisatz Rechner structures every word problem with analysis, formula and answer sentence. Teachers build lessons around real use cases using the same workflow.",
+        "Professionals rely on the Dreisatz Rechner for transparent calculations—from purchasing decisions to technical scaling. With AI mode and classic inputs the tool remains flexible and reliable."
+      ]
+    }
   }
 }

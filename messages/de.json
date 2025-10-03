@@ -1014,5 +1014,210 @@
       "Proportionaler und antiproportionaler Dreisatz mit Rechenweg",
       "Kostenloses Tool für Schule, Ausbildung und Beruf"
     ]
+  },
+  "DreisatzSections": {
+    "visuals": {
+      "label": "Schritt-für-Schritt-Verständnis",
+      "title": "Dreisatz Rechner mit visuellen Erklärungen",
+      "description": "Die grafische Darstellung zeigt, wie der Dreisatz Rechner A₁, B₁, A₂ und B₂ farblich kennzeichnet. So bleiben Mengenverhältnisse für Lernende jederzeit nachvollziehbar.",
+      "cards": [
+        {
+          "title": "Videoempfehlung",
+          "body": "Kombinieren Sie den Dreisatz Rechner mit kurzen Erklärvideos. Lassen Sie sich den Rechenweg vorlesen und prüfen Sie parallel die Werte im Tool."
+        },
+        {
+          "title": "Infografik nutzen",
+          "body": "Das Rechner-Symbol eignet sich als Anker für Arbeitsblätter. Verbinden Sie Pfeile mit den Rechenschritten und halten Sie Zwischenergebnisse fest."
+        }
+      ],
+      "imageCaption": "Dreisatz Rechner: KI-Textmodus und klassische Eingabe in einer Oberfläche.",
+      "downloadCta": "Infografik herunterladen",
+      "downloadHint": "Ideal für Unterrichtsfolien und Bildschirmaufnahmen."
+    },
+    "useCases": {
+      "label": "Praxisnah rechnen",
+      "title": "Typische Anwendungsfälle für den Dreisatz Rechner",
+      "description": "Ob Einkauf, Physikaufgabe oder Projektplanung – der Dreisatz Rechner liefert in Sekunden belastbare Ergebnisse. Wählen Sie ein Beispiel und übertragen Sie den Rechenweg auf Ihre Aufgabe.",
+      "categories": [
+        {
+          "title": "Beruf & Alltag",
+          "body": "Kalkulationen und Mengenzuschläge lassen sich mit dem Dreisatz Rechner transparent darstellen.",
+          "bullets": [
+            "Materialbedarf im Bauwesen",
+            "Rezeptanpassungen in der Gastronomie",
+            "Preis- und Rabattvergleiche"
+          ]
+        },
+        {
+          "title": "Schule & Studium",
+          "body": "Schülerinnen und Studierende sichern mit dem Dreisatz Rechner ihr Verständnis für proportionale und antiproportionale Aufgaben.",
+          "bullets": [
+            "Arbeitsblätter mit Lösungsweg",
+            "Vorbereitung auf Klassenarbeiten",
+            "Selbstkontrolle mit Kontrollfragen"
+          ]
+        },
+        {
+          "title": "Technik & Wissenschaft",
+          "body": "Messreihen, Laufzeiten und Dosierungen skalieren Sie im Dreisatz Rechner ohne Rechenfehler.",
+          "bullets": [
+            "Strom- und Druckberechnungen",
+            "Dosierung in Laborrezepturen",
+            "Kapazitätsplanung bei Maschinen"
+          ]
+        }
+      ],
+      "exercises": [
+        "Ein Drucker schafft 120 Seiten in 6 Minuten. Berechnen Sie mit dem Dreisatz Rechner die Dauer für 420 Seiten, wenn ein zweites Modell 150 Seiten in 6 Minuten druckt.",
+        "18 Liter Farbe reichen für 240 m². Wie viel Farbe benötigen Sie für 86 m²? Nutzen Sie den Dreisatz Rechner zur Kontrolle.",
+        "Vier Server bearbeiten einen Datenstapel in 15 Minuten. Wie lange dauert es mit sechs Servern? Setzen Sie den antiproportionalen Dreisatz ein."
+      ],
+      "learningGoals": {
+        "title": "Lernziele & Kompetenzraster",
+        "points": [
+          "Grundschule: Verhältnisse und Einheiten bewusst benennen.",
+          "Sekundarstufe I: Textaufgaben strukturieren und Dreisatzart korrekt bestimmen.",
+          "Berufsschule/FOS: Prozentrechnungen, Mischkalkulationen und Kennzahlen mit dem Dreisatz Rechner darstellen."
+        ],
+        "note": "Ergänzen Sie eigene Beispiele, um branchenspezifische Begriffe zu trainieren."
+      }
+    },
+    "formulas": {
+      "label": "Formelwissen",
+      "title": "Proportionaler und antiproportionaler Dreisatz",
+      "description": "Der Dreisatz Rechner dokumentiert alle Rechenschritte. Die folgenden Boxen fassen Formeln und Kontrollfragen zusammen.",
+      "sections": [
+        {
+          "name": "Proportionaler Dreisatz",
+          "formula": "B₂ = B₁ × (A₂ ÷ A₁)",
+          "steps": [
+            "Wert pro Einheit bestimmen: B₁ ÷ A₁.",
+            "Mit der Zielmenge multiplizieren: Ergebnis × A₂."
+          ],
+          "question": "Steigen beide Werte gemeinsam? → proportional.",
+          "example": "5 kg Äpfel kosten 9,50 €. Wie viel kosten 3,2 kg? Ergebnis: 6,08 €.",
+          "tags": "Einkaufspreise, Mengenumrechnung, Rezepte"
+        },
+        {
+          "name": "Antiproportionaler Dreisatz",
+          "formula": "B₂ = (A₁ × B₁) ÷ A₂",
+          "steps": [
+            "Produkt der Ausgangswerte bilden: A₁ × B₁.",
+            "Durch die neue Menge teilen: Produkt ÷ A₂."
+          ],
+          "question": "Wird ein Wert größer und der andere kleiner? → antiproportional.",
+          "example": "3 Monteur:innen erledigen eine Arbeit in 8 Stunden. Wie lange brauchen 5 Monteur:innen? Ergebnis: 4,8 Stunden.",
+          "tags": "Teamarbeit, Maschinenlaufzeit, Geschwindigkeiten"
+        }
+      ],
+      "table": [
+        {
+          "situation": "Spendenvorbereitung",
+          "question": "Wie viel kostet 1,2 kg bei 7,80 € für 3 kg?",
+          "type": "proportional",
+          "strategy": "Preis für 1 kg bestimmen, dann hochrechnen."
+        },
+        {
+          "situation": "Bauarbeiten",
+          "question": "Wie lange brauchen 9 Personen statt 6?",
+          "type": "antiproportional",
+          "strategy": "Produkt konstant halten und durch neue Personenzahl teilen."
+        },
+        {
+          "situation": "Chemische Mischung",
+          "question": "Wie viel Lösungsmittel für 250 ml bei 60 g/150 ml?",
+          "type": "proportional",
+          "strategy": "Auf 1 ml zurückrechnen und hochskalieren."
+        },
+        {
+          "situation": "Transportlogistik",
+          "question": "Wie viele Fahrten mit kleinerem LKW?",
+          "type": "antiproportional",
+          "strategy": "Ladung × Fahrten konstant halten."
+        }
+      ],
+      "tips": [
+        "Einheiten konsequent prüfen.",
+        "Zwischenergebnisse notieren und vergleichen.",
+        "Ergebnis mit einer Plausibilitätsfrage prüfen."
+      ]
+    },
+    "checklist": {
+      "label": "Qualitätssicherung",
+      "title": "Checkliste für sichere Dreisatz Berechnungen",
+      "description": "Nutzen Sie diese Kontrollpunkte, wenn Sie mit dem Dreisatz Rechner arbeiten – im Unterricht wie im Berufsalltag.",
+      "items": [
+        {
+          "title": "Einheiten prüfen",
+          "body": "Schreiben Sie die Einheit hinter jede Zahl und wandeln Sie vorher um, wenn Einheiten nicht zusammenpassen."
+        },
+        {
+          "title": "Dreisatzart erkennen",
+          "body": "Visualisieren Sie die Aufgabe: steigen beide Werte gemeinsam (proportional) oder gegensinnig (antiproportional)?"
+        },
+        {
+          "title": "Zwischenwerte sichern",
+          "body": "Notieren Sie Wert pro Einheit oder Gesamtprodukt, bevor Sie den nächsten Schritt ausführen."
+        },
+        {
+          "title": "Plausibilitätscheck",
+          "body": "Vergleichen Sie das Ergebnis mit dem Ausgangsszenario. Passt die Größenordnung?"
+        }
+      ]
+    },
+    "glossary": {
+      "label": "Begriffe",
+      "title": "Glossar zum Dreisatz Rechner",
+      "description": "Alle relevanten Fachbegriffe schnell nachschlagen – ideal für Unterricht und Prüfungsvorbereitung.",
+      "entries": [
+        {
+          "term": "Grundwert (A₁)",
+          "definition": "Ausgangsmenge, die im Dreisatz Rechner als Referenz dient."
+        },
+        {
+          "term": "Bezugswert (B₁)",
+          "definition": "Wert, der zum Grundwert gehört – z. B. Preis oder Zeit."
+        },
+        {
+          "term": "Zielmenge (A₂)",
+          "definition": "Die gesuchte Menge, für die der neue Wert berechnet wird."
+        },
+        {
+          "term": "Gesuchter Wert (B₂)",
+          "definition": "Ergebnis des Dreisatz Rechners – der Wert zur Zielmenge."
+        },
+        {
+          "term": "Einheitenschritt",
+          "definition": "Zwischenschritt beim proportionalen Dreisatz: Wert pro Einheit."
+        },
+        {
+          "term": "Gesamtprodukt",
+          "definition": "Zwischenschritt beim antiproportionalen Dreisatz: A₁ × B₁."
+        }
+      ]
+    },
+    "newsletter": {
+      "label": "Lernupdates",
+      "title": "Newsletter für den Dreisatz Rechner",
+      "description": "Monatlich neue Aufgaben, Unterrichtsmaterial und Tipps – ohne Werbung, ausschließlich Dreisatz Rechner Inhalte.",
+      "placeholder": "E-Mail-Adresse eingeben",
+      "button": "Anmelden",
+      "legal": "Mit der Anmeldung akzeptieren Sie unsere Datenschutzerklärung. Abmeldung jederzeit möglich."
+    },
+    "video": {
+      "label": "Video & Arbeitsblatt",
+      "title": "Video: Dreisatz Rechner Schritt für Schritt",
+      "description": "Die Videoanleitung zeigt, wie Dreisatz Textaufgaben direkt in den Rechner überführt werden. Perfekt für Flipped Classroom und Selbststudium.",
+      "downloadCta": "Infografik herunterladen",
+      "downloadHint": "PDF eignet sich für Unterricht, Workshops und Dokumentationen.",
+      "tip": "Tipp: Pausieren Sie das Video nach jedem Schritt und lassen Sie Lernende den Dreisatz Rechner selbst bedienen."
+    },
+    "seoText": {
+      "title": "Dreisatz Rechner Wissen für langfristige Lernerfolge",
+      "paragraphs": [
+        "Der Dreisatz Rechner unterstützt Lernende dabei, Verhältnisse zu verstehen, indem er Analyse, Formel und Antwortsatz strukturiert präsentiert. Lehrkräfte nutzen das Tool, um Unterrichtseinheiten mit realen Beispielen aufzubauen.",
+        "Im Berufsalltag sorgt der Dreisatz Rechner für transparente Kalkulationen – von Einkaufsentscheidungen bis zu technischen Skalierungen. Durch KI-Modus und klassische Eingabe bleibt das Tool flexibel und nachvollziehbar."
+      ]
+    }
   }
 }
